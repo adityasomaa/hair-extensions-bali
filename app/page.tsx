@@ -1,65 +1,75 @@
-import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { brand, designs } from "@/lib/content";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="min-h-screen bg-neutral-50 text-neutral-900">
+      <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
+        <header className="mb-16 md:mb-24">
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-neutral-500">
+            Design Preview · Internal
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+          <h1 className="mt-4 font-serif text-4xl leading-tight md:text-6xl">
+            {brand.name}
+          </h1>
+          <p className="mt-4 max-w-xl text-lg text-neutral-600">
+            Three landing-page directions to choose from. Click any preview to
+            view the full design. They share the same content — only the visual
+            language changes.
+          </p>
+        </header>
+
+        <ul className="grid gap-6 md:grid-cols-3">
+          {designs.map((design, idx) => (
+            <li key={design.slug}>
+              <Link
+                href={`/${design.slug}`}
+                className="group block h-full rounded-2xl border border-neutral-200 bg-white p-6 transition-all hover:-translate-y-1 hover:shadow-xl md:p-8"
+              >
+                <div className="flex h-full flex-col">
+                  <div className="mb-6 flex items-baseline justify-between">
+                    <span className="font-mono text-xs uppercase tracking-[0.2em] text-neutral-400">
+                      Design {idx + 1}
+                    </span>
+                    <ArrowRight
+                      className="h-4 w-4 text-neutral-400 transition-all group-hover:translate-x-1 group-hover:text-neutral-900"
+                      aria-hidden
+                    />
+                  </div>
+
+                  <h2 className="mb-3 font-serif text-2xl md:text-3xl">
+                    {design.name}
+                  </h2>
+
+                  <p className="mb-6 flex-1 text-sm leading-relaxed text-neutral-600">
+                    {design.description}
+                  </p>
+
+                  <div className="flex gap-1.5">
+                    {design.palette.map((color) => (
+                      <span
+                        key={color}
+                        className="h-8 flex-1 rounded-md border border-neutral-100"
+                        style={{ backgroundColor: color }}
+                        aria-label={`Palette color ${color}`}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <footer className="mt-20 border-t border-neutral-200 pt-8 text-sm text-neutral-500">
+          <p>
+            Once a direction is approved we&apos;ll connect a custom domain via
+            Vercel and refine the chosen design with real photography and any
+            content tweaks.
+          </p>
+        </footer>
+      </div>
+    </main>
   );
 }
