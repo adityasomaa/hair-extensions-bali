@@ -19,8 +19,10 @@ import {
   faqs,
   processSteps,
   galleryPhotos,
+  heroVideoEditorial,
   formatIDR,
 } from "@/lib/content";
+import VideoLoop from "@/components/VideoLoop";
 
 export const metadata = {
   title: `${brand.name} — Bold Editorial`,
@@ -159,16 +161,13 @@ export default function Design3Page() {
         <div className="grid grid-cols-12 border-t-2 border-black">
           <div className="col-span-12 aspect-[16/9] md:col-span-8 md:aspect-auto md:h-[60vh]">
             <ClipReveal delay={2.0} duration={1.1} className="relative h-full w-full">
-              <div className="relative h-full w-full">
-                <Image
-                  src="/brand/1.jpg.jpeg"
-                  alt="The Hair Extensions Bali"
-                  fill
-                  priority
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 67vw"
-                />
-              </div>
+              <VideoLoop
+                src={heroVideoEditorial.src}
+                poster={heroVideoEditorial.poster}
+                alt={heroVideoEditorial.caption}
+                lazy={false}
+                className="relative h-full w-full"
+              />
             </ClipReveal>
           </div>
 

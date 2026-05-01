@@ -21,8 +21,12 @@ import {
   faqs,
   processSteps,
   galleryPhotos,
+  aboutPhoto,
+  visitPhoto,
+  heroVideoBoho,
   formatIDR,
 } from "@/lib/content";
+import VideoLoop from "@/components/VideoLoop";
 
 export const metadata = {
   title: `${brand.name} — Tropical Bali Boho`,
@@ -234,16 +238,13 @@ export default function Design2Page() {
             <div className="relative">
               {/* Main hero image */}
               <ClipReveal delay={1.7} duration={1.2}>
-                <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] shadow-xl shadow-[#3d2c1e]/15">
-                  <Image
-                    src="/brand/1.jpg.jpeg"
-                    alt="The Hair Extensions Bali"
-                    fill
-                    priority
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 40vw"
-                  />
-                </div>
+                <VideoLoop
+                  src={heroVideoBoho.src}
+                  poster={heroVideoBoho.poster}
+                  alt={heroVideoBoho.caption}
+                  lazy={false}
+                  className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] shadow-xl shadow-[#3d2c1e]/15"
+                />
               </ClipReveal>
 
               {/* Floating sticker badges */}
@@ -286,7 +287,7 @@ export default function Design2Page() {
               <div className="relative">
                 <div className="aspect-[4/5] overflow-hidden rounded-[2.5rem]">
                   <Image
-                    src="/brand/2.jpg.jpeg"
+                    src={aboutPhoto}
                     alt="About Hair Extensions Bali"
                     fill={false}
                     width={500}
@@ -679,7 +680,7 @@ export default function Design2Page() {
           <div className="relative">
             <div className="aspect-[4/5] overflow-hidden rounded-[2.5rem]">
               <Image
-                src="/brand/19.jpg.jpeg"
+                src={visitPhoto}
                 alt="The studio"
                 fill={false}
                 width={500}

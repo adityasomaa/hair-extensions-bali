@@ -273,18 +273,46 @@ export function formatIDRShort(amount: number): string {
   return formatIDR(amount);
 }
 
+// Photos — real photography from PHOTOS & VIDEOS folders, processed via
+// scripts/process-photos.mjs. Each name has both `.jpg` (large, ~1920w/1280h)
+// and `-md.jpg` (medium, ~1200w/800h) versions in /public/photos/.
+export const heroPhoto = "/photos/hero-salon.jpg";
+export const aboutPhoto = "/photos/hero-rack.jpg";
+export const visitPhoto = "/photos/salon-2.jpg";
+export const productHero = "/photos/products-1.jpg";
+
 export const galleryPhotos = [
-  "/brand/4.jpg.jpeg",
-  "/brand/6.jpg.jpeg",
-  "/brand/9.jpg.jpeg",
-  "/brand/12.jpg.jpeg",
-  "/brand/13.jpg.jpeg",
-  "/brand/16.jpg.jpeg",
-  "/brand/18.jpg.jpeg",
-  "/brand/19.jpg.jpeg",
+  "/photos/products-1-md.jpg",
+  "/photos/products-2-md.jpg",
+  "/photos/products-3-md.jpg",
+  "/photos/salon-1-md.jpg",
+  "/photos/products-5-md.jpg",
+  "/photos/detail-2-md.jpg",
+  "/photos/products-6-md.jpg",
+  "/photos/detail-3-md.jpg",
 ];
 
-export const heroPhoto = "/brand/1.jpg.jpeg";
+// Videos — vertical (9:16) showcases of hair extensions, looped silently as
+// hero/section accents. Each `src` has matching `poster` for fast first-paint.
+export type Showcase = {
+  src: string;
+  poster: string;
+  caption: string;
+};
+
+export const showcaseVideos: Showcase[] = [
+  { src: "/videos/showcase-blonde-tape.mp4", poster: "/videos/showcase-blonde-tape-poster.jpg", caption: "Tape-in extensions, hand-held" },
+  { src: "/videos/showcase-wavy-rose.mp4", poster: "/videos/showcase-wavy-rose-poster.jpg", caption: "Wavy rose-blonde weft" },
+  { src: "/videos/showcase-curly-blonde.mp4", poster: "/videos/showcase-curly-blonde-poster.jpg", caption: "Curly blonde weft" },
+  { src: "/videos/showcase-platinum.mp4", poster: "/videos/showcase-platinum-poster.jpg", caption: "Platinum texture, close" },
+  { src: "/videos/showcase-bulk-blonde.mp4", poster: "/videos/showcase-bulk-blonde-poster.jpg", caption: "Blonde bulk hair, raw" },
+  { src: "/videos/showcase-bulk-dark.mp4", poster: "/videos/showcase-bulk-dark-poster.jpg", caption: "Dark bulk hair, raw" },
+];
+
+// Per-design hero video — picked to match each palette/mood
+export const heroVideoLuxe = showcaseVideos[5];      // dark bulk — moody dark luxe
+export const heroVideoBoho = showcaseVideos[2];      // curly blonde — warm tones
+export const heroVideoEditorial = showcaseVideos[4]; // blonde bulk — bold contrast
 
 export const designs = [
   {

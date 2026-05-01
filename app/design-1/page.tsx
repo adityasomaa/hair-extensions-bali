@@ -20,8 +20,11 @@ import {
   faqs,
   processSteps,
   galleryPhotos,
+  visitPhoto,
+  heroVideoLuxe,
   formatIDR,
 } from "@/lib/content";
+import VideoLoop from "@/components/VideoLoop";
 
 export const metadata = {
   title: `${brand.name} — Luxe Minimal`,
@@ -175,16 +178,13 @@ export default function Design1Page() {
           <div className="relative md:col-span-5 lg:col-span-5">
             <ClipReveal delay={1.8} duration={1.4}>
               <Parallax intensity={0.18}>
-                <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
-                  <Image
-                    src="/brand/1.jpg.jpeg"
-                    alt="The Hair Extensions Bali brand mark"
-                    fill
-                    priority
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 40vw"
-                  />
-                </div>
+                <VideoLoop
+                  src={heroVideoLuxe.src}
+                  poster={heroVideoLuxe.poster}
+                  alt={heroVideoLuxe.caption}
+                  lazy={false}
+                  className="relative aspect-[4/5] overflow-hidden rounded-sm"
+                />
               </Parallax>
             </ClipReveal>
             <div className="absolute -bottom-6 -left-6 hidden h-32 w-32 border border-[#c9a87c]/40 md:block" aria-hidden />
@@ -530,7 +530,7 @@ export default function Design1Page() {
 
           <div className="relative aspect-[4/5] overflow-hidden rounded-sm md:aspect-auto">
             <Image
-              src="/brand/13.jpg.jpeg"
+              src={visitPhoto}
               alt="Hair Extensions Bali studio detail"
               fill
               className="object-cover"
