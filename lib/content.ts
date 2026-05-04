@@ -276,10 +276,7 @@ export function formatIDRShort(amount: number): string {
 // Photos — real photography from PHOTOS & VIDEOS folders, processed via
 // scripts/process-photos.mjs. Each name has both `.jpg` (large, ~1920w/1280h)
 // and `-md.jpg` (medium, ~1200w/800h) versions in /public/photos/.
-export const heroPhoto = "/photos/hero-salon.jpg";
-export const aboutPhoto = "/photos/hero-rack.jpg";
 export const visitPhoto = "/photos/salon-2.jpg";
-export const productHero = "/photos/products-1.jpg";
 
 export const galleryPhotos = [
   "/photos/products-1-md.jpg",
@@ -292,45 +289,10 @@ export const galleryPhotos = [
   "/photos/detail-3-md.jpg",
 ];
 
-// Videos — vertical (9:16) showcases of hair extensions, looped silently as
-// hero/section accents. Each `src` has matching `poster` for fast first-paint.
-export type Showcase = {
-  src: string;
-  poster: string;
-  caption: string;
+// Hero video — vertical (9:16) showcase of hair extensions, looped silently
+// as hero accent. Has matching `poster` for fast first-paint.
+export const heroVideoLuxe = {
+  src: "/videos/showcase-bulk-dark.mp4",
+  poster: "/videos/showcase-bulk-dark-poster.jpg",
+  caption: "Dark bulk hair, raw",
 };
-
-export const showcaseVideos: Showcase[] = [
-  { src: "/videos/showcase-blonde-tape.mp4", poster: "/videos/showcase-blonde-tape-poster.jpg", caption: "Tape-in extensions, hand-held" },
-  { src: "/videos/showcase-wavy-rose.mp4", poster: "/videos/showcase-wavy-rose-poster.jpg", caption: "Wavy rose-blonde weft" },
-  { src: "/videos/showcase-curly-blonde.mp4", poster: "/videos/showcase-curly-blonde-poster.jpg", caption: "Curly blonde weft" },
-  { src: "/videos/showcase-platinum.mp4", poster: "/videos/showcase-platinum-poster.jpg", caption: "Platinum texture, close" },
-  { src: "/videos/showcase-bulk-blonde.mp4", poster: "/videos/showcase-bulk-blonde-poster.jpg", caption: "Blonde bulk hair, raw" },
-  { src: "/videos/showcase-bulk-dark.mp4", poster: "/videos/showcase-bulk-dark-poster.jpg", caption: "Dark bulk hair, raw" },
-];
-
-// Per-design hero video — picked to match each palette/mood
-export const heroVideoLuxe = showcaseVideos[5];      // dark bulk — moody dark luxe
-export const heroVideoBoho = showcaseVideos[2];      // curly blonde — warm tones
-export const heroVideoEditorial = showcaseVideos[4]; // blonde bulk — bold contrast
-
-export const designs = [
-  {
-    slug: "design-1",
-    name: "Luxe Minimal",
-    description: "Dark, moody, premium boutique. Closest to your current Instagram identity — refined serif type, generous whitespace, editorial photography.",
-    palette: ["#0e0b09", "#f6efe6", "#c9a87c", "#5e4936"],
-  },
-  {
-    slug: "design-2",
-    name: "Tropical Bali Boho",
-    description: "Warm sand, terracotta, sage green. A sun-kissed island lifestyle vibe — organic shapes, layered photography, vacation energy.",
-    palette: ["#fef7ee", "#c66a3d", "#8a9a7b", "#3d2c1e"],
-  },
-  {
-    slug: "design-3",
-    name: "Bold Editorial",
-    description: "Black, white, hot accent. Fashion magazine confidence — oversized condensed type, full-bleed images, statement layouts.",
-    palette: ["#0a0a0a", "#ffffff", "#ff3d6e", "#e8e8e8"],
-  },
-];
