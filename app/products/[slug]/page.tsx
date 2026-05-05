@@ -1,0 +1,341 @@
+import Image from "next/image";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import {
+  ArrowLeft,
+  ArrowRight,
+  ArrowUpRight,
+  Clock,
+  MessageCircle,
+  Sparkles,
+} from "lucide-react";
+import {
+  ScrollReveal,
+  ScrollStagger,
+  ClipReveal,
+  AccentLine,
+} from "@/components/animations-gsap";
+import BeforeAfter from "@/components/BeforeAfter";
+import { brand, services, serviceBySlug, formatIDR } from "@/lib/content";
+
+export function generateStaticParams() {
+  return services.map((s) => ({ slug: s.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const s = serviceBySlug(slug);
+  if (!s) return { title: `Not found — ${brand.name}` };
+  return {
+    title: `${s.name} — ${brand.name}`,
+    description: s.tagline,
+  };
+}
+
+export default async function ServiceDetailPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const service = serviceBySlug(slug);
+  if (!service) notFound();
+
+  // Find next service for "next →" nav
+  const idx = services.findIndex((s) => s.slug === slug);
+  const next = services[(idx + 1) % services.length];
+  const prev = services[(idx - 1 + services.length) % services.length];
+
+  return (
+    <>
+      {/* ── HERO ──────────────────────────────────────────────────────── */}
+      <section className="relative overflow-hidden pt-32 md:pt-40">
+        <div className="mx-auto max-w-7xl px-6">
+          <ScrollReveal>
+            <Link
+              href="/products"
+              className="inline-flex items-center gap-2 text-sm text-[#8a7a66] transition-colors hover:text-[#c9a87c]"
+            >
+              <ArrowLeft className="h-4 w-4" aria-hidden />
+              All services
+            </Link>
+          </ScrollReveal>
+
+          <div className="mt-10 grid items-end gap-12 md:grid-cols-12 md:gap-16">
+            <div className="md:col-span-7">
+              <ScrollReveal delay={0.1}>
+                <p className="mb-4 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.28em] text-[#c9a87c]">
+                  <Sparkles className="h-3 w-3" aria-hidden /> Method · {service.lasts}
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={0.2} duration={0.9}>
+                <h1 className="font-serif text-5xl leading-[1.05] md:text-7xl lg:text-[5.4rem]">
+                  {service.name}.
+                </h1>
+              </ScrollReveal>
+              <ScrollReveal delay={0.35}>
+                <p className="mt-6 max-w-xl text-lg italic text-[#c9a87c] md:text-xl">
+                  {service.tagline}
+                </p>
+              </ScrollReveal>
+              <AccentLine className="mt-6 h-px w-32 bg-[#c9a87c]" delay={0.5} duration={1.1} />
+            </div>
+
+            {service.heroPhoto && (
+              <ClipReveal delay={0.4} duration={1.3} className="md:col-span-5">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
+                  <Image
+                    src={service.heroPhoto}
+                    alt={`${service.name} — ${service.tagline}`}
+                    fill
+                    priority
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 40vw"
+                  />
+                </div>
+              </ClipReveal>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* ── BEFORE / AFTER ────────────────────────────────────────────── */}
+      {service.beforeAfter && (
+        <section className="py-24 md:py-32">
+          <div className="mx-auto max-w-7xl px-6">
+            <ScrollReveal className="mb-12 max-w-2xl">
+              <p className="mb-4 text-[11px] uppercase tracking-[0.28em] text-[#c9a87c]">
+                Before · After
+              </p>
+              <h2 className="font-serif text-3xl leading-tight md:text-5xl">
+                The transformation
+              </h2>
+              <p className="mt-3 text-sm text-[#8a7a66] italic">
+                Photo placeholders — real before/after photos coming soon.
+              </p>
+            </ScrollReveal>
+
+            <BeforeAfter
+              before={service.beforeAfter.before}
+              after={service.beforeAfter.after}
+              alt={`${service.name} before and after`}
+            />
+          </div>
+        </section>
+      )}
+
+      {/* ── DETAIL: 2-column ─────────────────────────────────────────── */}
+      <section className="border-t border-white/5 bg-[#0a0807] py-24 md:py-32">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="grid gap-16 md:grid-cols-12 md:gap-20">
+            {/* LEFT: Long-form description */}
+            <div className="md:col-span-7">
+              <ScrollReveal>
+                <p className="mb-4 text-[11px] uppercase tracking-[0.28em] text-[#c9a87c]">
+                  About the method
+                </p>
+                <h2 className="font-serif text-3xl leading-tight md:text-5xl">
+                  How it works
+                </h2>
+                <p className="mt-6 text-base leading-relaxed text-[#c2b8a8] md:text-lg">
+                  {service.longDescription ?? service.description}
+                </p>
+              </ScrollReveal>
+
+              {/* Materials */}
+              {service.materials && (
+                <ScrollReveal className="mt-12">
+                  <h3 className="text-[11px] uppercase tracking-[0.28em] text-[#c9a87c]">
+                    Materials
+                  </h3>
+                  <ul className="mt-5 space-y-3 text-[#d8cdbd]">
+                    {service.materials.map((m) => (
+                      <li key={m} className="flex gap-3 text-sm leading-relaxed">
+                        <span className="mt-2 h-px w-4 flex-shrink-0 bg-[#c9a87c]" aria-hidden />
+                        {m}
+                      </li>
+                    ))}
+                  </ul>
+                </ScrollReveal>
+              )}
+
+              {/* What's included */}
+              {service.whatsIncluded && (
+                <ScrollReveal className="mt-12">
+                  <h3 className="text-[11px] uppercase tracking-[0.28em] text-[#c9a87c]">
+                    What&apos;s included
+                  </h3>
+                  <ul className="mt-5 space-y-3 text-[#d8cdbd]">
+                    {service.whatsIncluded.map((m) => (
+                      <li key={m} className="flex gap-3 text-sm leading-relaxed">
+                        <span className="mt-2 h-px w-4 flex-shrink-0 bg-[#c9a87c]" aria-hidden />
+                        {m}
+                      </li>
+                    ))}
+                  </ul>
+                </ScrollReveal>
+              )}
+
+              {/* Aftercare */}
+              {service.aftercare && (
+                <ScrollReveal className="mt-12">
+                  <h3 className="text-[11px] uppercase tracking-[0.28em] text-[#c9a87c]">
+                    Aftercare
+                  </h3>
+                  <ul className="mt-5 space-y-3 text-[#d8cdbd]">
+                    {service.aftercare.map((m) => (
+                      <li key={m} className="flex gap-3 text-sm leading-relaxed">
+                        <span className="mt-2 h-px w-4 flex-shrink-0 bg-[#c9a87c]" aria-hidden />
+                        {m}
+                      </li>
+                    ))}
+                  </ul>
+                </ScrollReveal>
+              )}
+            </div>
+
+            {/* RIGHT: Sticky sidebar with key facts + price */}
+            <div className="md:col-span-5">
+              <div className="md:sticky md:top-32">
+                <ScrollReveal direction="left">
+                  <div className="rounded-sm border border-white/10 p-7">
+                    <p className="text-[11px] uppercase tracking-[0.28em] text-[#c9a87c]">
+                      Investment
+                    </p>
+                    <ul className="mt-5 space-y-3 border-b border-white/10 pb-5">
+                      {service.prices.map((p) => (
+                        <li
+                          key={p.label}
+                          className="flex items-baseline justify-between gap-3"
+                        >
+                          <span className="text-sm text-[#b5a896]">{p.label}</span>
+                          <span className="font-serif text-lg text-[#f6efe6]">
+                            {formatIDR(p.amountIDR)}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="mt-3 text-[10px] uppercase tracking-[0.2em] text-[#8a7a66]">
+                      {service.unit}
+                      {service.minPurchase ? ` · ${service.minPurchase}` : ""}
+                    </p>
+
+                    <dl className="mt-7 space-y-5 border-t border-white/10 pt-5 text-sm">
+                      <div>
+                        <dt className="flex items-center gap-2 text-[10px] uppercase tracking-[0.22em] text-[#8a7a66]">
+                          <Clock className="h-3 w-3" aria-hidden /> Duration
+                        </dt>
+                        <dd className="mt-1.5 text-[#f6efe6]">{service.durationLabel}</dd>
+                      </div>
+                      <div>
+                        <dt className="text-[10px] uppercase tracking-[0.22em] text-[#8a7a66]">
+                          Lasts
+                        </dt>
+                        <dd className="mt-1.5 text-[#f6efe6]">{service.lasts}</dd>
+                      </div>
+                      {service.reusable && (
+                        <div>
+                          <dt className="text-[10px] uppercase tracking-[0.22em] text-[#8a7a66]">
+                            Reusable
+                          </dt>
+                          <dd className="mt-1.5 text-[#f6efe6]">{service.reusable}</dd>
+                        </div>
+                      )}
+                    </dl>
+
+                    <Link
+                      href={`/book?service=${service.slug}`}
+                      className="mt-7 flex w-full items-center justify-center gap-2 rounded-full bg-[#c9a87c] px-6 py-3.5 text-sm font-medium text-[#0e0b09] transition-all hover:bg-[#d8b889]"
+                    >
+                      <MessageCircle className="h-4 w-4" aria-hidden />
+                      Book this service
+                      <ArrowUpRight className="h-4 w-4" aria-hidden />
+                    </Link>
+                  </div>
+                </ScrollReveal>
+
+                {/* Tips card */}
+                {service.idealHairType && (
+                  <ScrollReveal direction="left" delay={0.1}>
+                    <div className="mt-6 rounded-sm border border-white/10 p-7">
+                      <p className="text-[11px] uppercase tracking-[0.28em] text-[#c9a87c]">
+                        Ideal hair type
+                      </p>
+                      <ul className="mt-5 space-y-3 text-sm text-[#d8cdbd]">
+                        {service.idealHairType.map((m) => (
+                          <li key={m} className="flex gap-3 leading-relaxed">
+                            <span className="mt-2 h-px w-4 flex-shrink-0 bg-[#c9a87c]" aria-hidden />
+                            {m}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </ScrollReveal>
+                )}
+
+                {/* Best for */}
+                {service.bestFor && (
+                  <ScrollReveal direction="left" delay={0.15}>
+                    <div className="mt-6 rounded-sm border border-white/10 p-7">
+                      <p className="text-[11px] uppercase tracking-[0.28em] text-[#c9a87c]">
+                        Best for
+                      </p>
+                      <ul className="mt-5 space-y-3 text-sm text-[#d8cdbd]">
+                        {service.bestFor.map((m) => (
+                          <li key={m} className="flex gap-3 leading-relaxed">
+                            <span className="mt-2 h-px w-4 flex-shrink-0 bg-[#c9a87c]" aria-hidden />
+                            {m}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </ScrollReveal>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── PREV / NEXT ──────────────────────────────────────────────── */}
+      <section className="py-16 md:py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="grid gap-4 md:grid-cols-2">
+            <Link
+              href={`/products/${prev.slug}`}
+              className="group flex items-center gap-4 rounded-sm border border-white/10 p-6 transition-all hover:border-[#c9a87c]/40 md:p-8"
+            >
+              <ArrowLeft className="h-4 w-4 flex-shrink-0 text-[#8a7a66] transition-colors group-hover:text-[#c9a87c]" aria-hidden />
+              <div>
+                <span className="text-[10px] uppercase tracking-[0.22em] text-[#8a7a66]">
+                  Previous
+                </span>
+                <h3 className="mt-1 font-serif text-2xl text-[#f6efe6] group-hover:text-[#c9a87c]">
+                  {prev.name}
+                </h3>
+              </div>
+            </Link>
+            <Link
+              href={`/products/${next.slug}`}
+              className="group flex items-center justify-end gap-4 rounded-sm border border-white/10 p-6 text-right transition-all hover:border-[#c9a87c]/40 md:p-8"
+            >
+              <div>
+                <span className="text-[10px] uppercase tracking-[0.22em] text-[#8a7a66]">
+                  Next
+                </span>
+                <h3 className="mt-1 font-serif text-2xl text-[#f6efe6] group-hover:text-[#c9a87c]">
+                  {next.name}
+                </h3>
+              </div>
+              <ArrowRight className="h-4 w-4 flex-shrink-0 text-[#8a7a66] transition-colors group-hover:text-[#c9a87c]" aria-hidden />
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
