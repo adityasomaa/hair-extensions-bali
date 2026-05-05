@@ -9,7 +9,7 @@ import process from "node:process";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const WEB = resolve(__dirname, "..");
 const ROOT = resolve(WEB, "..");
-const SRC = resolve(ROOT, "PHOTOS & VIDEOS/The Hair/Video");
+const SRC = resolve(ROOT, "photos/the hair/Video");
 const OUT = resolve(WEB, "public/videos");
 
 const FFMPEG = "C:/Users/User/AppData/Local/Microsoft/WinGet/Links/ffmpeg.exe";

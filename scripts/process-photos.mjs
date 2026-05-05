@@ -8,8 +8,8 @@ import { fileURLToPath } from "node:url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const WEB = resolve(__dirname, "..");
 const ROOT = resolve(WEB, "..");
-const SRC_SELENA = resolve(ROOT, "PHOTOS & VIDEOS/SELENA PROJECT (RAW)");
-const SRC_HAIR = resolve(ROOT, "PHOTOS & VIDEOS/The Hair");
+const SRC_SELENA = resolve(ROOT, "photos/selena project");
+const SRC_HAIR = resolve(ROOT, "photos/the hair");
 const OUT = resolve(WEB, "public/photos");
 
 const photos = [
