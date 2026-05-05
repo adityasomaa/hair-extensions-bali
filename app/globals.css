@@ -9,26 +9,34 @@
 html,
 body {
   font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  background: #ffffff;
-  color: #0a0a0a;
+  /* Background + text color set on <body> via Tailwind classes
+     in app/layout.tsx — don't redeclare here, it overrides them. */
+  background: #0e0b09;
+  color: #f6efe6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
-/* Smooth scroll for anchor links */
+/* Smooth scroll for anchor links (Lenis takes over when JS loads) */
 html {
   scroll-behavior: smooth;
 }
 
 /* Focus styles for accessibility */
 :focus-visible {
-  outline: 2px solid currentColor;
+  outline: 2px solid #c9a87c;
   outline-offset: 3px;
   border-radius: 2px;
 }
 
-/* Selection */
+/* Selection — gold on dark for the Luxe Minimal direction */
 ::selection {
-  background: #0a0a0a;
-  color: #ffffff;
+  background: #c9a87c;
+  color: #0e0b09;
+}
+
+/* Disable Lenis-injected anchor smoothing if it conflicts with html scroll-behavior */
+html.lenis,
+html.lenis body {
+  height: auto;
 }
