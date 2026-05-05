@@ -49,7 +49,7 @@ export default function ProductsPage() {
                   <span className="font-serif text-xs italic text-[#c9a87c]">
                     {String(idx + 1).padStart(2, "0")}
                   </span>
-                  <span className="text-[10px] uppercase tracking-[0.22em] text-[#8a7a66]">
+                  <span className="text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
                     {s.lasts}
                   </span>
                 </div>
@@ -73,14 +73,14 @@ export default function ProductsPage() {
 
                 <div className="mt-auto pt-7">
                   <div className="flex items-baseline justify-between gap-3 border-t border-white/10 pt-5">
-                    <span className="text-[10px] uppercase tracking-[0.22em] text-[#8a7a66]">
+                    <span className="text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
                       Starting from
                     </span>
                     <span className="font-serif text-xl text-[#f6efe6]">
                       {formatIDR(s.prices[0]?.amountIDR ?? 0)}
                     </span>
                   </div>
-                  <p className="mt-3 text-[10px] uppercase tracking-[0.2em] text-[#8a7a66]">
+                  <p className="mt-3 text-[10px] uppercase tracking-[0.2em] text-[#a8957d]">
                     {s.unit}
                   </p>
                   <span className="mt-5 inline-flex items-center gap-2 text-sm text-[#c9a87c] underline-offset-4 group-hover:underline">

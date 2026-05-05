@@ -58,7 +58,7 @@ export default async function ServiceDetailPage({
           <ScrollReveal>
             <Link
               href="/products"
-              className="inline-flex items-center gap-2 text-sm text-[#8a7a66] transition-colors hover:text-[#c9a87c]"
+              className="inline-flex items-center gap-2 text-sm text-[#a8957d] transition-colors hover:text-[#c9a87c]"
             >
               <ArrowLeft className="h-4 w-4" aria-hidden />
               All services
@@ -114,7 +114,7 @@ export default async function ServiceDetailPage({
               <h2 className="font-serif text-3xl leading-tight md:text-5xl">
                 The transformation
               </h2>
-              <p className="mt-3 text-sm text-[#8a7a66] italic">
+              <p className="mt-3 text-sm text-[#a8957d] italic">
                 Photo placeholders — real before/after photos coming soon.
               </p>
             </ScrollReveal>
@@ -219,27 +219,27 @@ export default async function ServiceDetailPage({
                         </li>
                       ))}
                     </ul>
-                    <p className="mt-3 text-[10px] uppercase tracking-[0.2em] text-[#8a7a66]">
+                    <p className="mt-3 text-[10px] uppercase tracking-[0.2em] text-[#a8957d]">
                       {service.unit}
                       {service.minPurchase ? ` · ${service.minPurchase}` : ""}
                     </p>
 
                     <dl className="mt-7 space-y-5 border-t border-white/10 pt-5 text-sm">
                       <div>
-                        <dt className="flex items-center gap-2 text-[10px] uppercase tracking-[0.22em] text-[#8a7a66]">
+                        <dt className="flex items-center gap-2 text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
                           <Clock className="h-3 w-3" aria-hidden /> Duration
                         </dt>
                         <dd className="mt-1.5 text-[#f6efe6]">{service.durationLabel}</dd>
                       </div>
                       <div>
-                        <dt className="text-[10px] uppercase tracking-[0.22em] text-[#8a7a66]">
+                        <dt className="text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
                           Lasts
                         </dt>
                         <dd className="mt-1.5 text-[#f6efe6]">{service.lasts}</dd>
                       </div>
                       {service.reusable && (
                         <div>
-                          <dt className="text-[10px] uppercase tracking-[0.22em] text-[#8a7a66]">
+                          <dt className="text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
                             Reusable
                           </dt>
                           <dd className="mt-1.5 text-[#f6efe6]">{service.reusable}</dd>
@@ -309,9 +309,9 @@ export default async function ServiceDetailPage({
               href={`/products/${prev.slug}`}
               className="group flex items-center gap-4 rounded-sm border border-white/10 p-6 transition-all hover:border-[#c9a87c]/40 md:p-8"
             >
-              <ArrowLeft className="h-4 w-4 flex-shrink-0 text-[#8a7a66] transition-colors group-hover:text-[#c9a87c]" aria-hidden />
+              <ArrowLeft className="h-4 w-4 flex-shrink-0 text-[#a8957d] transition-colors group-hover:text-[#c9a87c]" aria-hidden />
               <div>
-                <span className="text-[10px] uppercase tracking-[0.22em] text-[#8a7a66]">
+                <span className="text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
                   Previous
                 </span>
                 <h3 className="mt-1 font-serif text-2xl text-[#f6efe6] group-hover:text-[#c9a87c]">
@@ -324,14 +324,14 @@ export default async function ServiceDetailPage({
               className="group flex items-center justify-end gap-4 rounded-sm border border-white/10 p-6 text-right transition-all hover:border-[#c9a87c]/40 md:p-8"
             >
               <div>
-                <span className="text-[10px] uppercase tracking-[0.22em] text-[#8a7a66]">
+                <span className="text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
                   Next
                 </span>
                 <h3 className="mt-1 font-serif text-2xl text-[#f6efe6] group-hover:text-[#c9a87c]">
                   {next.name}
                 </h3>
               </div>
-              <ArrowRight className="h-4 w-4 flex-shrink-0 text-[#8a7a66] transition-colors group-hover:text-[#c9a87c]" aria-hidden />
+              <ArrowRight className="h-4 w-4 flex-shrink-0 text-[#a8957d] transition-colors group-hover:text-[#c9a87c]" aria-hidden />
             </Link>
           </div>
         </div>

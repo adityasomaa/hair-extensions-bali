@@ -114,7 +114,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-start justify-between gap-3 border-t border-white/5 pt-8 text-xs text-[#8a7a66] md:flex-row md:items-center">
+        <div className="mt-14 flex flex-col items-start justify-between gap-3 border-t border-white/5 pt-8 text-xs text-[#a8957d] md:flex-row md:items-center">
           <p>© {new Date().getFullYear()} {brand.name}. All rights reserved.</p>
           <p className="italic">By appointment only · Kerobokan, Bali</p>
         </div>

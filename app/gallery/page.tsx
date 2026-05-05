@@ -121,7 +121,7 @@ export default function GalleryPage() {
           </ScrollStagger>
 
           {filtered.length === 0 && (
-            <p className="py-20 text-center text-sm text-[#8a7a66]">
+            <p className="py-20 text-center text-sm text-[#a8957d]">
               No items in this category yet.
             </p>
           )}

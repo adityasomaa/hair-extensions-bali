@@ -82,7 +82,7 @@ export default function TipsPage() {
                   </p>
                   <div className="mt-7 flex items-center gap-5 text-sm">
                     {featured.readingMinutes && (
-                      <span className="inline-flex items-center gap-1.5 text-[#8a7a66]">
+                      <span className="inline-flex items-center gap-1.5 text-[#a8957d]">
                         <Clock className="h-3.5 w-3.5" aria-hidden /> {featured.readingMinutes} min read
                       </span>
                     )}
@@ -150,11 +150,11 @@ export default function TipsPage() {
                     {tip.excerpt}
                   </p>
                   <div className="mt-5 flex items-center justify-between border-t border-white/10 pt-4 text-xs">
-                    <span className="inline-flex items-center gap-1.5 text-[#8a7a66]">
+                    <span className="inline-flex items-center gap-1.5 text-[#a8957d]">
                       <Clock className="h-3 w-3" aria-hidden /> {tip.readingMinutes ?? 2} min
                     </span>
                     <ArrowRight
-                      className="h-3.5 w-3.5 text-[#8a7a66] transition-all group-hover:translate-x-1 group-hover:text-[#c9a87c]"
+                      className="h-3.5 w-3.5 text-[#a8957d] transition-all group-hover:translate-x-1 group-hover:text-[#c9a87c]"
                       aria-hidden
                     />
                   </div>
@@ -186,7 +186,7 @@ export default function TipsPage() {
                   {tip.title}
                 </h2>
                 {tip.readingMinutes && (
-                  <p className="mt-4 inline-flex items-center gap-1.5 text-xs text-[#8a7a66]">
+                  <p className="mt-4 inline-flex items-center gap-1.5 text-xs text-[#a8957d]">
                     <Clock className="h-3 w-3" aria-hidden /> {tip.readingMinutes} min read
                   </p>
                 )}

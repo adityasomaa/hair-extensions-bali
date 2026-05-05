@@ -81,7 +81,7 @@ export default function HomePage() {
             </ScrollReveal>
 
             <ScrollReveal delay={2.3} duration={0.7}>
-              <dl className="mt-14 grid grid-cols-3 gap-6 border-t border-white/10 pt-8 text-[11px] uppercase tracking-[0.18em] text-[#8a7a66]">
+              <dl className="mt-14 grid grid-cols-3 gap-6 border-t border-white/10 pt-8 text-[11px] uppercase tracking-[0.18em] text-[#a8957d]">
                 <div>
                   <dt className="text-[#c9a87c]">Methods</dt>
                   <dd className="mt-1.5 font-serif text-2xl text-[#f6efe6] normal-case tracking-normal">
@@ -124,7 +124,7 @@ export default function HomePage() {
 
       {/* ── Marquee ──────────────────────────────────────────────────────── */}
       <div className="overflow-hidden border-y border-white/5 bg-[#0a0807] py-5">
-        <div className="flex animate-[marquee_35s_linear_infinite] gap-12 whitespace-nowrap font-serif text-[#8a7a66] text-xl tracking-wide">
+        <div className="flex animate-[marquee_35s_linear_infinite] gap-12 whitespace-nowrap font-serif text-[#a8957d] text-xl tracking-wide">
           {Array.from({ length: 4 }).flatMap((_, i) =>
             ["Keratin Bond", "Nano Ring", "Micro Ring", "Weft", "Tape-In", "Clip-In", "—"].map(
               (s, j) => (
@@ -212,11 +212,11 @@ export default function HomePage() {
                 className="group flex flex-col rounded-sm border border-white/10 bg-[#0e0b09] p-7 transition-all hover:-translate-y-1 hover:border-[#c9a87c]/40"
               >
                 <div className="mb-5 flex items-baseline justify-between border-b border-white/10 pb-5">
-                  <span className="text-[10px] uppercase tracking-[0.22em] text-[#8a7a66]">
+                  <span className="text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
                     {s.lasts}
                   </span>
                   <ArrowRight
-                    className="h-4 w-4 text-[#8a7a66] transition-all group-hover:translate-x-1 group-hover:text-[#c9a87c]"
+                    className="h-4 w-4 text-[#a8957d] transition-all group-hover:translate-x-1 group-hover:text-[#c9a87c]"
                     aria-hidden
                   />
                 </div>
@@ -229,7 +229,7 @@ export default function HomePage() {
 
                 <div className="mt-auto pt-7">
                   <div className="flex items-baseline justify-between gap-3 border-t border-white/10 pt-5">
-                    <span className="text-[10px] uppercase tracking-[0.22em] text-[#8a7a66]">
+                    <span className="text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
                       Starting from
                     </span>
                     <span className="font-serif text-xl text-[#f6efe6]">
@@ -286,7 +286,7 @@ export default function HomePage() {
                       <Star key={i} className="h-3.5 w-3.5 fill-[#c9a87c] text-[#c9a87c]" aria-hidden />
                     ))}
                   </div>
-                  <span className="text-[10px] uppercase tracking-[0.22em] text-[#8a7a66]">
+                  <span className="text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
                     {r.when}
                   </span>
                 </div>
@@ -295,7 +295,7 @@ export default function HomePage() {
                 </blockquote>
                 <figcaption className="mt-6 border-t border-white/10 pt-4 text-sm">
                   <span className="block text-[#c9a87c]">{r.name}</span>
-                  <span className="mt-0.5 block text-xs text-[#8a7a66]">
+                  <span className="mt-0.5 block text-xs text-[#a8957d]">
                     {r.location} · {r.service}
                   </span>
                 </figcaption>
@@ -351,7 +351,7 @@ export default function HomePage() {
                 <div className="flex items-start gap-4">
                   <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#c9a87c]" aria-hidden />
                   <div>
-                    <span className="block text-[10px] uppercase tracking-[0.22em] text-[#8a7a66]">
+                    <span className="block text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
                       Visit
                     </span>
                     <a
@@ -367,7 +367,7 @@ export default function HomePage() {
                 <div className="flex items-start gap-4">
                   <Clock className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#c9a87c]" aria-hidden />
                   <div>
-                    <span className="block text-[10px] uppercase tracking-[0.22em] text-[#8a7a66]">
+                    <span className="block text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
                       Hours
                     </span>
                     <p className="mt-1 text-[#f6efe6]">{brand.hours}</p>
@@ -376,7 +376,7 @@ export default function HomePage() {
                 <div className="flex items-start gap-4">
                   <MessageCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#c9a87c]" aria-hidden />
                   <div>
-                    <span className="block text-[10px] uppercase tracking-[0.22em] text-[#8a7a66]">
+                    <span className="block text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
                       WhatsApp
                     </span>
                     <a

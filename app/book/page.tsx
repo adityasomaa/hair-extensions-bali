@@ -61,7 +61,7 @@ export default function BookPage() {
                   <div className="flex items-start gap-3">
                     <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#c9a87c]" aria-hidden />
                     <div>
-                      <span className="block text-[10px] uppercase tracking-[0.22em] text-[#8a7a66]">
+                      <span className="block text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
                         Address
                       </span>
                       <a
@@ -77,7 +77,7 @@ export default function BookPage() {
                   <div className="flex items-start gap-3">
                     <Clock className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#c9a87c]" aria-hidden />
                     <div>
-                      <span className="block text-[10px] uppercase tracking-[0.22em] text-[#8a7a66]">
+                      <span className="block text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
                         Hours
                       </span>
                       <p className="mt-1 text-[#f6efe6]">{brand.hours}</p>
@@ -86,7 +86,7 @@ export default function BookPage() {
                   <div className="flex items-start gap-3">
                     <MessageCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#c9a87c]" aria-hidden />
                     <div>
-                      <span className="block text-[10px] uppercase tracking-[0.22em] text-[#8a7a66]">
+                      <span className="block text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
                         WhatsApp
                       </span>
                       <a
@@ -102,7 +102,7 @@ export default function BookPage() {
                   <div className="flex items-start gap-3">
                     <Instagram className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#c9a87c]" aria-hidden />
                     <div>
-                      <span className="block text-[10px] uppercase tracking-[0.22em] text-[#8a7a66]">
+                      <span className="block text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
                         Instagram
                       </span>
                       <a

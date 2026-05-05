@@ -48,14 +48,14 @@ export default function Nav() {
       <header
         className={`fixed left-0 right-0 top-0 z-40 transition-all duration-300 ${
           scrolled
-            ? "border-b border-white/5 bg-[#0e0b09]/85 backdrop-blur-md"
-            : "bg-transparent"
+            ? "border-b border-white/10 bg-[#0e0b09]/90 backdrop-blur-md"
+            : "border-b border-white/[0.04] bg-[#0e0b09]/55 backdrop-blur-sm"
         }`}
       >
         <nav className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-4 md:py-5">
           <Link href="/" className="leading-none" aria-label="Home">
             <span className="block font-script text-2xl text-[#c9a87c] -mb-1">The</span>
-            <span className="block font-serif text-base tracking-[0.32em] uppercase text-[#f6efe6]">
+            <span className="block font-serif font-medium text-base tracking-[0.28em] uppercase text-[#f6efe6]">
               Hair Extensions
             </span>
             <span className="block text-right font-script text-xl text-[#c9a87c] -mt-1">
@@ -69,10 +69,10 @@ export default function Nav() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm transition-colors hover:text-[#c9a87c] ${
+                className={`text-sm font-medium transition-colors hover:text-[#c9a87c] ${
                   isActive(link.href)
                     ? "text-[#c9a87c]"
-                    : "text-[#d8cdbd]"
+                    : "text-[#f6efe6]"
                 }`}
               >
                 {link.label}
@@ -137,7 +137,7 @@ export default function Nav() {
               <MessageCircle className="h-4 w-4" aria-hidden />
               Book on WhatsApp · {brand.whatsappDisplay}
             </a>
-            <p className="mt-4 text-center text-xs uppercase tracking-[0.22em] text-[#8a7a66]">
+            <p className="mt-4 text-center text-xs uppercase tracking-[0.22em] text-[#a8957d]">
               By appointment · Kerobokan, Bali
             </p>
           </div>

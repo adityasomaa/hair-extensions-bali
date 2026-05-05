@@ -79,7 +79,7 @@ export default function BookingForm({ services }: Props) {
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="As you'd like us to address you"
-          className="mt-2 w-full rounded-sm border border-white/10 bg-[#0e0b09] px-4 py-3 text-[#f6efe6] placeholder-[#8a7a66] focus:border-[#c9a87c] focus:outline-none focus:ring-1 focus:ring-[#c9a87c]"
+          className="mt-2 w-full rounded-sm border border-white/10 bg-[#0e0b09] px-4 py-3 text-[#f6efe6] placeholder-[#a8957d] focus:border-[#c9a87c] focus:outline-none focus:ring-1 focus:ring-[#c9a87c]"
         />
       </div>
 
@@ -138,7 +138,7 @@ export default function BookingForm({ services }: Props) {
           htmlFor="date"
           className="block text-[11px] uppercase tracking-[0.22em] text-[#c9a87c]"
         >
-          Preferred date <span className="text-[#8a7a66] normal-case tracking-normal">(optional)</span>
+          Preferred date <span className="text-[#a8957d] normal-case tracking-normal">(optional)</span>
         </label>
         <input
           id="date"
@@ -156,7 +156,7 @@ export default function BookingForm({ services }: Props) {
           htmlFor="message"
           className="block text-[11px] uppercase tracking-[0.22em] text-[#c9a87c]"
         >
-          Anything else? <span className="text-[#8a7a66] normal-case tracking-normal">(optional)</span>
+          Anything else? <span className="text-[#a8957d] normal-case tracking-normal">(optional)</span>
         </label>
         <textarea
           id="message"
@@ -164,9 +164,9 @@ export default function BookingForm({ services }: Props) {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Reference photos, color goals, questions, special occasions…"
-          className="mt-2 w-full resize-none rounded-sm border border-white/10 bg-[#0e0b09] px-4 py-3 text-[#f6efe6] placeholder-[#8a7a66] focus:border-[#c9a87c] focus:outline-none focus:ring-1 focus:ring-[#c9a87c]"
+          className="mt-2 w-full resize-none rounded-sm border border-white/10 bg-[#0e0b09] px-4 py-3 text-[#f6efe6] placeholder-[#a8957d] focus:border-[#c9a87c] focus:outline-none focus:ring-1 focus:ring-[#c9a87c]"
         />
-        <p className="mt-2 text-xs text-[#8a7a66]">
+        <p className="mt-2 text-xs text-[#a8957d]">
           Tip: send 2–3 photos of your natural hair (front, back, side) directly
           on WhatsApp after submitting — it speeds up the colour match.
         </p>
@@ -183,7 +183,7 @@ export default function BookingForm({ services }: Props) {
         <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden />
       </button>
 
-      <p className="text-center text-xs text-[#8a7a66]">
+      <p className="text-center text-xs text-[#a8957d]">
         We don&apos;t store your details. Submitting opens WhatsApp with your
         message pre-filled — review and send.
       </p>
