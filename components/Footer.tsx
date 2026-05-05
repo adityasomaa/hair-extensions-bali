@@ -33,12 +33,12 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-12 md:gap-10">
           {/* Brand */}
           <div className="md:col-span-5">
-            <Link href="/" className="inline-block leading-none">
-              <span className="block font-script text-3xl text-[#c9a87c] -mb-1">The</span>
-              <span className="block font-serif text-lg tracking-[0.32em] uppercase text-[#f6efe6]">
+            <Link href="/" className="inline-flex flex-col leading-none">
+              <span className="font-script text-3xl text-[#c9a87c] -mb-1">The</span>
+              <span className="font-serif text-lg tracking-[0.32em] uppercase text-[#f6efe6]">
                 Hair Extensions
               </span>
-              <span className="block text-right font-script text-2xl text-[#c9a87c] -mt-1">
+              <span className="self-end font-script text-2xl text-[#c9a87c] -mt-1">
                 Bali
               </span>
             </Link>

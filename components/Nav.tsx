@@ -53,12 +53,12 @@ export default function Nav() {
         }`}
       >
         <nav className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-4 md:py-5">
-          <Link href="/" className="leading-none" aria-label="Home">
-            <span className="block font-script text-2xl text-[#c9a87c] -mb-1">The</span>
-            <span className="block font-serif font-medium text-base tracking-[0.28em] uppercase text-[#f6efe6]">
+          <Link href="/" className="inline-flex flex-col leading-none" aria-label="Home">
+            <span className="font-script text-2xl text-[#c9a87c] -mb-1">The</span>
+            <span className="font-serif font-medium text-base tracking-[0.28em] uppercase text-[#f6efe6]">
               Hair Extensions
             </span>
-            <span className="block text-right font-script text-xl text-[#c9a87c] -mt-1">
+            <span className="self-end font-script text-xl text-[#c9a87c] -mt-1">
               Bali
             </span>
           </Link>
