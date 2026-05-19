@@ -15,12 +15,12 @@ export default function ProductsPage() {
       <section className="pt-32 md:pt-40">
         <div className="mx-auto max-w-7xl px-6">
           <ScrollReveal className="max-w-3xl">
-            <p className="mb-5 text-[11px] uppercase tracking-[0.28em] text-[#c9a87c]">
+            <p className="mb-5 text-[11px] uppercase tracking-[0.28em] text-[#ffb6c1]">
               Services & investment
             </p>
             <h1 className="font-serif text-5xl leading-[1.05] md:text-7xl lg:text-[5.4rem]">
               Six methods, one obsession with the{" "}
-              <span className="font-script italic text-[#c9a87c]">natural</span> finish.
+              <span className="font-script italic text-[#ffb6c1]">natural</span> finish.
             </h1>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#c2b8a8]">
               Every method below uses 100% real human hair. We match the technique
@@ -43,10 +43,10 @@ export default function ProductsPage() {
               <Link
                 key={s.slug}
                 href={`/products/${s.slug}`}
-                className="group flex h-full flex-col rounded-sm border border-white/10 bg-[#0e0b09] p-7 transition-all hover:-translate-y-1 hover:border-[#c9a87c]/40"
+                className="group flex h-full flex-col rounded-sm border border-white/10 bg-[#0e0b09] p-7 transition-all hover:-translate-y-1 hover:border-[#ffb6c1]/40"
               >
                 <div className="mb-5 flex items-baseline justify-between border-b border-white/10 pb-5">
-                  <span className="font-serif text-xs italic text-[#c9a87c]">
+                  <span className="font-serif text-xs italic text-[#ffb6c1]">
                     {String(idx + 1).padStart(2, "0")}
                   </span>
                   <span className="text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
@@ -55,7 +55,7 @@ export default function ProductsPage() {
                 </div>
 
                 <h2 className="font-serif text-2xl text-[#f6efe6] md:text-3xl">{s.name}</h2>
-                <p className="mt-2 text-sm italic text-[#c9a87c]">{s.tagline}</p>
+                <p className="mt-2 text-sm italic text-[#ffb6c1]">{s.tagline}</p>
                 <p className="mt-4 text-sm leading-relaxed text-[#b5a896]">
                   {s.description}
                 </p>
@@ -83,7 +83,7 @@ export default function ProductsPage() {
                   <p className="mt-3 text-[10px] uppercase tracking-[0.2em] text-[#a8957d]">
                     {s.unit}
                   </p>
-                  <span className="mt-5 inline-flex items-center gap-2 text-sm text-[#c9a87c] underline-offset-4 group-hover:underline">
+                  <span className="mt-5 inline-flex items-center gap-2 text-sm text-[#ffb6c1] underline-offset-4 group-hover:underline">
                     See full detail
                     <ArrowRight
                       className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1"
@@ -108,7 +108,7 @@ export default function ProductsPage() {
               href={brand.whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#c9a87c] px-7 py-3.5 text-sm font-medium text-[#0e0b09] transition-all hover:bg-[#d8b889]"
+              className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#ffb6c1] px-7 py-3.5 text-sm font-medium text-[#0e0b09] transition-all hover:bg-[#ffc9d2]"
             >
               <MessageCircle className="h-4 w-4" aria-hidden />
               Get a free recommendation

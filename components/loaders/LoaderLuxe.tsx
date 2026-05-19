@@ -52,7 +52,7 @@ export default function LoaderLuxe() {
         >
           <div className="relative flex flex-col items-center">
             <motion.span
-              className="font-script text-4xl text-[#c9a87c] -mb-1"
+              className="font-script text-4xl text-[#ffb6c1] -mb-1"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: reduce ? 0 : 0.1, ease: [0.22, 0.61, 0.36, 1] }}
@@ -68,7 +68,7 @@ export default function LoaderLuxe() {
               Hair Extensions
             </motion.span>
             <motion.span
-              className="font-script text-3xl text-[#c9a87c] -mt-1"
+              className="font-script text-3xl text-[#ffb6c1] -mt-1"
               initial={{ opacity: 0, y: -6 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: reduce ? 0 : 0.45, ease: [0.22, 0.61, 0.36, 1] }}
@@ -77,7 +77,7 @@ export default function LoaderLuxe() {
             </motion.span>
 
             <motion.div
-              className="mt-7 h-px bg-[#c9a87c] origin-left"
+              className="mt-7 h-px bg-[#ffb6c1] origin-left"
               initial={{ scaleX: 0, width: "9rem" }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 1, delay: reduce ? 0 : 0.7, ease: [0.65, 0, 0.35, 1] }}

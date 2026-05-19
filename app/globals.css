@@ -24,14 +24,14 @@ html {
 
 /* Focus styles for accessibility */
 :focus-visible {
-  outline: 2px solid #c9a87c;
+  outline: 2px solid #ffb6c1;
   outline-offset: 3px;
   border-radius: 2px;
 }
 
 /* Selection — gold on dark for the Luxe Minimal direction */
 ::selection {
-  background: #c9a87c;
+  background: #ffb6c1;
   color: #0e0b09;
 }
 

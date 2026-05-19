@@ -58,7 +58,7 @@ export default async function ServiceDetailPage({
           <ScrollReveal>
             <Link
               href="/products"
-              className="inline-flex items-center gap-2 text-sm text-[#a8957d] transition-colors hover:text-[#c9a87c]"
+              className="inline-flex items-center gap-2 text-sm text-[#a8957d] transition-colors hover:text-[#ffb6c1]"
             >
               <ArrowLeft className="h-4 w-4" aria-hidden />
               All services
@@ -68,7 +68,7 @@ export default async function ServiceDetailPage({
           <div className="mt-10 grid items-end gap-12 md:grid-cols-12 md:gap-16">
             <div className="md:col-span-7">
               <ScrollReveal delay={0.1}>
-                <p className="mb-4 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.28em] text-[#c9a87c]">
+                <p className="mb-4 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.28em] text-[#ffb6c1]">
                   <Sparkles className="h-3 w-3" aria-hidden /> Method · {service.lasts}
                 </p>
               </ScrollReveal>
@@ -78,11 +78,11 @@ export default async function ServiceDetailPage({
                 </h1>
               </ScrollReveal>
               <ScrollReveal delay={0.35}>
-                <p className="mt-6 max-w-xl text-lg italic text-[#c9a87c] md:text-xl">
+                <p className="mt-6 max-w-xl text-lg italic text-[#ffb6c1] md:text-xl">
                   {service.tagline}
                 </p>
               </ScrollReveal>
-              <AccentLine className="mt-6 h-px w-32 bg-[#c9a87c]" delay={0.5} duration={1.1} />
+              <AccentLine className="mt-6 h-px w-32 bg-[#ffb6c1]" delay={0.5} duration={1.1} />
             </div>
 
             {service.heroPhoto && (
@@ -108,7 +108,7 @@ export default async function ServiceDetailPage({
         <section className="py-24 md:py-32">
           <div className="mx-auto max-w-7xl px-6">
             <ScrollReveal className="mb-12 max-w-2xl">
-              <p className="mb-4 text-[11px] uppercase tracking-[0.28em] text-[#c9a87c]">
+              <p className="mb-4 text-[11px] uppercase tracking-[0.28em] text-[#ffb6c1]">
                 Before · After
               </p>
               <h2 className="font-serif text-3xl leading-tight md:text-5xl">
@@ -135,7 +135,7 @@ export default async function ServiceDetailPage({
             {/* LEFT: Long-form description */}
             <div className="md:col-span-7">
               <ScrollReveal>
-                <p className="mb-4 text-[11px] uppercase tracking-[0.28em] text-[#c9a87c]">
+                <p className="mb-4 text-[11px] uppercase tracking-[0.28em] text-[#ffb6c1]">
                   About the method
                 </p>
                 <h2 className="font-serif text-3xl leading-tight md:text-5xl">
@@ -149,13 +149,13 @@ export default async function ServiceDetailPage({
               {/* Materials */}
               {service.materials && (
                 <ScrollReveal className="mt-12">
-                  <h3 className="text-[11px] uppercase tracking-[0.28em] text-[#c9a87c]">
+                  <h3 className="text-[11px] uppercase tracking-[0.28em] text-[#ffb6c1]">
                     Materials
                   </h3>
                   <ul className="mt-5 space-y-3 text-[#d8cdbd]">
                     {service.materials.map((m) => (
                       <li key={m} className="flex gap-3 text-sm leading-relaxed">
-                        <span className="mt-2 h-px w-4 flex-shrink-0 bg-[#c9a87c]" aria-hidden />
+                        <span className="mt-2 h-px w-4 flex-shrink-0 bg-[#ffb6c1]" aria-hidden />
                         {m}
                       </li>
                     ))}
@@ -166,13 +166,13 @@ export default async function ServiceDetailPage({
               {/* What's included */}
               {service.whatsIncluded && (
                 <ScrollReveal className="mt-12">
-                  <h3 className="text-[11px] uppercase tracking-[0.28em] text-[#c9a87c]">
+                  <h3 className="text-[11px] uppercase tracking-[0.28em] text-[#ffb6c1]">
                     What&apos;s included
                   </h3>
                   <ul className="mt-5 space-y-3 text-[#d8cdbd]">
                     {service.whatsIncluded.map((m) => (
                       <li key={m} className="flex gap-3 text-sm leading-relaxed">
-                        <span className="mt-2 h-px w-4 flex-shrink-0 bg-[#c9a87c]" aria-hidden />
+                        <span className="mt-2 h-px w-4 flex-shrink-0 bg-[#ffb6c1]" aria-hidden />
                         {m}
                       </li>
                     ))}
@@ -183,13 +183,13 @@ export default async function ServiceDetailPage({
               {/* Aftercare */}
               {service.aftercare && (
                 <ScrollReveal className="mt-12">
-                  <h3 className="text-[11px] uppercase tracking-[0.28em] text-[#c9a87c]">
+                  <h3 className="text-[11px] uppercase tracking-[0.28em] text-[#ffb6c1]">
                     Aftercare
                   </h3>
                   <ul className="mt-5 space-y-3 text-[#d8cdbd]">
                     {service.aftercare.map((m) => (
                       <li key={m} className="flex gap-3 text-sm leading-relaxed">
-                        <span className="mt-2 h-px w-4 flex-shrink-0 bg-[#c9a87c]" aria-hidden />
+                        <span className="mt-2 h-px w-4 flex-shrink-0 bg-[#ffb6c1]" aria-hidden />
                         {m}
                       </li>
                     ))}
@@ -203,7 +203,7 @@ export default async function ServiceDetailPage({
               <div className="md:sticky md:top-32">
                 <ScrollReveal direction="left">
                   <div className="rounded-sm border border-white/10 p-7">
-                    <p className="text-[11px] uppercase tracking-[0.28em] text-[#c9a87c]">
+                    <p className="text-[11px] uppercase tracking-[0.28em] text-[#ffb6c1]">
                       Investment
                     </p>
                     <ul className="mt-5 space-y-3 border-b border-white/10 pb-5">
@@ -249,7 +249,7 @@ export default async function ServiceDetailPage({
 
                     <Link
                       href={`/book?service=${service.slug}`}
-                      className="mt-7 flex w-full items-center justify-center gap-2 rounded-full bg-[#c9a87c] px-6 py-3.5 text-sm font-medium text-[#0e0b09] transition-all hover:bg-[#d8b889]"
+                      className="mt-7 flex w-full items-center justify-center gap-2 rounded-full bg-[#ffb6c1] px-6 py-3.5 text-sm font-medium text-[#0e0b09] transition-all hover:bg-[#ffc9d2]"
                     >
                       <MessageCircle className="h-4 w-4" aria-hidden />
                       Book this service
@@ -262,13 +262,13 @@ export default async function ServiceDetailPage({
                 {service.idealHairType && (
                   <ScrollReveal direction="left" delay={0.1}>
                     <div className="mt-6 rounded-sm border border-white/10 p-7">
-                      <p className="text-[11px] uppercase tracking-[0.28em] text-[#c9a87c]">
+                      <p className="text-[11px] uppercase tracking-[0.28em] text-[#ffb6c1]">
                         Ideal hair type
                       </p>
                       <ul className="mt-5 space-y-3 text-sm text-[#d8cdbd]">
                         {service.idealHairType.map((m) => (
                           <li key={m} className="flex gap-3 leading-relaxed">
-                            <span className="mt-2 h-px w-4 flex-shrink-0 bg-[#c9a87c]" aria-hidden />
+                            <span className="mt-2 h-px w-4 flex-shrink-0 bg-[#ffb6c1]" aria-hidden />
                             {m}
                           </li>
                         ))}
@@ -281,13 +281,13 @@ export default async function ServiceDetailPage({
                 {service.bestFor && (
                   <ScrollReveal direction="left" delay={0.15}>
                     <div className="mt-6 rounded-sm border border-white/10 p-7">
-                      <p className="text-[11px] uppercase tracking-[0.28em] text-[#c9a87c]">
+                      <p className="text-[11px] uppercase tracking-[0.28em] text-[#ffb6c1]">
                         Best for
                       </p>
                       <ul className="mt-5 space-y-3 text-sm text-[#d8cdbd]">
                         {service.bestFor.map((m) => (
                           <li key={m} className="flex gap-3 leading-relaxed">
-                            <span className="mt-2 h-px w-4 flex-shrink-0 bg-[#c9a87c]" aria-hidden />
+                            <span className="mt-2 h-px w-4 flex-shrink-0 bg-[#ffb6c1]" aria-hidden />
                             {m}
                           </li>
                         ))}
@@ -307,31 +307,31 @@ export default async function ServiceDetailPage({
           <div className="grid gap-4 md:grid-cols-2">
             <Link
               href={`/products/${prev.slug}`}
-              className="group flex items-center gap-4 rounded-sm border border-white/10 p-6 transition-all hover:border-[#c9a87c]/40 md:p-8"
+              className="group flex items-center gap-4 rounded-sm border border-white/10 p-6 transition-all hover:border-[#ffb6c1]/40 md:p-8"
             >
-              <ArrowLeft className="h-4 w-4 flex-shrink-0 text-[#a8957d] transition-colors group-hover:text-[#c9a87c]" aria-hidden />
+              <ArrowLeft className="h-4 w-4 flex-shrink-0 text-[#a8957d] transition-colors group-hover:text-[#ffb6c1]" aria-hidden />
               <div>
                 <span className="text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
                   Previous
                 </span>
-                <h3 className="mt-1 font-serif text-2xl text-[#f6efe6] group-hover:text-[#c9a87c]">
+                <h3 className="mt-1 font-serif text-2xl text-[#f6efe6] group-hover:text-[#ffb6c1]">
                   {prev.name}
                 </h3>
               </div>
             </Link>
             <Link
               href={`/products/${next.slug}`}
-              className="group flex items-center justify-end gap-4 rounded-sm border border-white/10 p-6 text-right transition-all hover:border-[#c9a87c]/40 md:p-8"
+              className="group flex items-center justify-end gap-4 rounded-sm border border-white/10 p-6 text-right transition-all hover:border-[#ffb6c1]/40 md:p-8"
             >
               <div>
                 <span className="text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
                   Next
                 </span>
-                <h3 className="mt-1 font-serif text-2xl text-[#f6efe6] group-hover:text-[#c9a87c]">
+                <h3 className="mt-1 font-serif text-2xl text-[#f6efe6] group-hover:text-[#ffb6c1]">
                   {next.name}
                 </h3>
               </div>
-              <ArrowRight className="h-4 w-4 flex-shrink-0 text-[#a8957d] transition-colors group-hover:text-[#c9a87c]" aria-hidden />
+              <ArrowRight className="h-4 w-4 flex-shrink-0 text-[#a8957d] transition-colors group-hover:text-[#ffb6c1]" aria-hidden />
             </Link>
           </div>
         </div>

@@ -16,30 +16,30 @@ const WEB = resolve(__dirname, "..");
 const APP = resolve(WEB, "app");
 
 // SVG master — 512×512.
-// Design: warm-dark rounded square + champagne-gold serif H drawn as
-// vector rectangles (so it renders identically on every OS, no font
-// dependency). Subtle gold ring at the inner edge for depth.
+// Design: warm-dark rounded square + light-pink (#ffb6c1) serif H drawn
+// as vector rectangles (so it renders identically on every OS, no font
+// dependency). Subtle pink ring at the inner edge for depth.
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
   <!-- Background plate -->
   <rect width="512" height="512" rx="96" fill="#0e0b09"/>
 
   <!-- Subtle inner ring -->
   <rect x="32" y="32" width="448" height="448" rx="72" fill="none"
-        stroke="#c9a87c" stroke-width="2" opacity="0.18"/>
+        stroke="#ffb6c1" stroke-width="2" opacity="0.18"/>
 
   <!-- Serif H — drawn as overlapping rectangles for crisp render at any size -->
   <!-- Left stem -->
-  <rect x="142" y="138" width="56" height="236" fill="#c9a87c"/>
+  <rect x="142" y="138" width="56" height="236" fill="#ffb6c1"/>
   <!-- Right stem -->
-  <rect x="314" y="138" width="56" height="236" fill="#c9a87c"/>
+  <rect x="314" y="138" width="56" height="236" fill="#ffb6c1"/>
   <!-- Crossbar -->
-  <rect x="170" y="237" width="172" height="38" fill="#c9a87c"/>
+  <rect x="170" y="237" width="172" height="38" fill="#ffb6c1"/>
 
   <!-- Serif feet — slightly wider rectangles top/bottom of each stem -->
-  <rect x="120" y="132" width="100" height="14" fill="#c9a87c"/>
-  <rect x="120" y="368" width="100" height="14" fill="#c9a87c"/>
-  <rect x="292" y="132" width="100" height="14" fill="#c9a87c"/>
-  <rect x="292" y="368" width="100" height="14" fill="#c9a87c"/>
+  <rect x="120" y="132" width="100" height="14" fill="#ffb6c1"/>
+  <rect x="120" y="368" width="100" height="14" fill="#ffb6c1"/>
+  <rect x="292" y="132" width="100" height="14" fill="#ffb6c1"/>
+  <rect x="292" y="368" width="100" height="14" fill="#ffb6c1"/>
 </svg>`;
 
 async function pngBuffer(size) {

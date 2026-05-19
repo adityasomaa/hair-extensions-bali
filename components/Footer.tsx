@@ -34,11 +34,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-5">
             <Link href="/" className="inline-flex flex-col leading-none">
-              <span className="font-script text-3xl text-[#c9a87c] -mb-1">The</span>
+              <span className="font-script text-3xl text-[#ffb6c1] -mb-1">The</span>
               <span className="font-serif text-lg tracking-[0.32em] uppercase text-[#f6efe6]">
                 Hair Extensions
               </span>
-              <span className="self-end font-script text-2xl text-[#c9a87c] -mt-1">
+              <span className="self-end font-script text-2xl text-[#ffb6c1] -mt-1">
                 Bali
               </span>
             </Link>
@@ -52,31 +52,31 @@ export default function Footer() {
                 href={brand.mapsLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-start gap-3 text-[#b5a896] hover:text-[#c9a87c]"
+                className="group flex items-start gap-3 text-[#b5a896] hover:text-[#ffb6c1]"
               >
-                <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#c9a87c]" aria-hidden />
+                <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#ffb6c1]" aria-hidden />
                 <span>{brand.address}</span>
               </a>
               <a
                 href={brand.whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-3 text-[#b5a896] hover:text-[#c9a87c]"
+                className="group flex items-center gap-3 text-[#b5a896] hover:text-[#ffb6c1]"
               >
-                <MessageCircle className="h-4 w-4 flex-shrink-0 text-[#c9a87c]" aria-hidden />
+                <MessageCircle className="h-4 w-4 flex-shrink-0 text-[#ffb6c1]" aria-hidden />
                 <span>{brand.whatsappDisplay}</span>
               </a>
               <a
                 href={brand.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-3 text-[#b5a896] hover:text-[#c9a87c]"
+                className="group flex items-center gap-3 text-[#b5a896] hover:text-[#ffb6c1]"
               >
-                <Instagram className="h-4 w-4 flex-shrink-0 text-[#c9a87c]" aria-hidden />
+                <Instagram className="h-4 w-4 flex-shrink-0 text-[#ffb6c1]" aria-hidden />
                 <span>@{brand.instagram}</span>
               </a>
               <div className="flex items-center gap-3 text-[#b5a896]">
-                <Clock className="h-4 w-4 flex-shrink-0 text-[#c9a87c]" aria-hidden />
+                <Clock className="h-4 w-4 flex-shrink-0 text-[#ffb6c1]" aria-hidden />
                 <span>{brand.hours}</span>
               </div>
             </div>
@@ -85,7 +85,7 @@ export default function Footer() {
           {/* Link groups */}
           {groups.map((g) => (
             <div key={g.title} className="md:col-span-3">
-              <p className="text-[10px] uppercase tracking-[0.28em] text-[#c9a87c]">
+              <p className="text-[10px] uppercase tracking-[0.28em] text-[#ffb6c1]">
                 {g.title}
               </p>
               <ul className="mt-5 space-y-3 text-sm">
@@ -93,7 +93,7 @@ export default function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-[#d8cdbd] transition-colors hover:text-[#c9a87c]"
+                      className="text-[#d8cdbd] transition-colors hover:text-[#ffb6c1]"
                     >
                       {link.label}
                     </Link>
@@ -107,7 +107,7 @@ export default function Footer() {
           <div className="md:col-span-1 md:flex md:flex-col md:items-end md:justify-end">
             <Link
               href="/book"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#c9a87c] px-6 py-3.5 text-sm font-medium text-[#0e0b09] transition-all hover:bg-[#d8b889] md:w-auto"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#ffb6c1] px-6 py-3.5 text-sm font-medium text-[#0e0b09] transition-all hover:bg-[#ffc9d2] md:w-auto"
             >
               Book →
             </Link>

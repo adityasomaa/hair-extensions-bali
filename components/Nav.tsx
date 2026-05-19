@@ -54,11 +54,11 @@ export default function Nav() {
       >
         <nav className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-4 md:py-5">
           <Link href="/" className="inline-flex flex-col leading-none" aria-label="Home">
-            <span className="font-script text-2xl text-[#c9a87c] -mb-1">The</span>
+            <span className="font-script text-2xl text-[#ffb6c1] -mb-1">The</span>
             <span className="font-serif font-medium text-base tracking-[0.28em] uppercase text-[#f6efe6]">
               Hair Extensions
             </span>
-            <span className="self-end font-script text-xl text-[#c9a87c] -mt-1">
+            <span className="self-end font-script text-xl text-[#ffb6c1] -mt-1">
               Bali
             </span>
           </Link>
@@ -69,9 +69,9 @@ export default function Nav() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-[#c9a87c] ${
+                className={`text-sm font-medium transition-colors hover:text-[#ffb6c1] ${
                   isActive(link.href)
-                    ? "text-[#c9a87c]"
+                    ? "text-[#ffb6c1]"
                     : "text-[#f6efe6]"
                 }`}
               >
@@ -82,7 +82,7 @@ export default function Nav() {
               href={brand.whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-[#c9a87c] px-5 py-2.5 text-sm font-medium text-[#0e0b09] transition-all hover:bg-[#d8b889]"
+              className="inline-flex items-center gap-2 rounded-full bg-[#ffb6c1] px-5 py-2.5 text-sm font-medium text-[#0e0b09] transition-all hover:bg-[#ffc9d2]"
             >
               <MessageCircle className="h-3.5 w-3.5" aria-hidden /> WhatsApp
             </a>
@@ -94,7 +94,7 @@ export default function Nav() {
             onClick={() => setOpen((o) => !o)}
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-[#f6efe6] transition-colors hover:border-[#c9a87c] hover:text-[#c9a87c] md:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-[#f6efe6] transition-colors hover:border-[#ffb6c1] hover:text-[#ffb6c1] md:hidden"
           >
             {open ? <X className="h-5 w-5" aria-hidden /> : <Menu className="h-5 w-5" aria-hidden />}
           </button>
@@ -115,8 +115,8 @@ export default function Nav() {
                 <Link
                   href={link.href}
                   className={`block border-b border-white/10 py-5 font-serif text-3xl transition-colors ${
-                    isActive(link.href) ? "text-[#c9a87c]" : "text-[#f6efe6]"
-                  } hover:text-[#c9a87c]`}
+                    isActive(link.href) ? "text-[#ffb6c1]" : "text-[#f6efe6]"
+                  } hover:text-[#ffb6c1]`}
                   style={{
                     transitionDelay: open ? `${100 + i * 50}ms` : "0ms",
                   }}
@@ -132,7 +132,7 @@ export default function Nav() {
               href={brand.whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex w-full items-center justify-center gap-2 rounded-full bg-[#c9a87c] px-6 py-4 text-base font-medium text-[#0e0b09]"
+              className="flex w-full items-center justify-center gap-2 rounded-full bg-[#ffb6c1] px-6 py-4 text-base font-medium text-[#0e0b09]"
             >
               <MessageCircle className="h-4 w-4" aria-hidden />
               Book on WhatsApp · {brand.whatsappDisplay}

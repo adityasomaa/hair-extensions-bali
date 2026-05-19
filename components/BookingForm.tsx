@@ -68,7 +68,7 @@ export default function BookingForm({ services }: Props) {
       <div>
         <label
           htmlFor="name"
-          className="block text-[11px] uppercase tracking-[0.22em] text-[#c9a87c]"
+          className="block text-[11px] uppercase tracking-[0.22em] text-[#ffb6c1]"
         >
           Your name
         </label>
@@ -79,7 +79,7 @@ export default function BookingForm({ services }: Props) {
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="As you'd like us to address you"
-          className="mt-2 w-full rounded-sm border border-white/10 bg-[#0e0b09] px-4 py-3 text-[#f6efe6] placeholder-[#a8957d] focus:border-[#c9a87c] focus:outline-none focus:ring-1 focus:ring-[#c9a87c]"
+          className="mt-2 w-full rounded-sm border border-white/10 bg-[#0e0b09] px-4 py-3 text-[#f6efe6] placeholder-[#a8957d] focus:border-[#ffb6c1] focus:outline-none focus:ring-1 focus:ring-[#ffb6c1]"
         />
       </div>
 
@@ -87,7 +87,7 @@ export default function BookingForm({ services }: Props) {
       <div>
         <label
           htmlFor="hair-type"
-          className="block text-[11px] uppercase tracking-[0.22em] text-[#c9a87c]"
+          className="block text-[11px] uppercase tracking-[0.22em] text-[#ffb6c1]"
         >
           Hair type
         </label>
@@ -96,7 +96,7 @@ export default function BookingForm({ services }: Props) {
           required
           value={hairType}
           onChange={(e) => setHairType(e.target.value)}
-          className="mt-2 w-full rounded-sm border border-white/10 bg-[#0e0b09] px-4 py-3 text-[#f6efe6] focus:border-[#c9a87c] focus:outline-none focus:ring-1 focus:ring-[#c9a87c]"
+          className="mt-2 w-full rounded-sm border border-white/10 bg-[#0e0b09] px-4 py-3 text-[#f6efe6] focus:border-[#ffb6c1] focus:outline-none focus:ring-1 focus:ring-[#ffb6c1]"
         >
           <option value="" disabled>
             Select your hair type
@@ -113,7 +113,7 @@ export default function BookingForm({ services }: Props) {
       <div>
         <label
           htmlFor="service"
-          className="block text-[11px] uppercase tracking-[0.22em] text-[#c9a87c]"
+          className="block text-[11px] uppercase tracking-[0.22em] text-[#ffb6c1]"
         >
           Preferred service
         </label>
@@ -121,7 +121,7 @@ export default function BookingForm({ services }: Props) {
           id="service"
           value={serviceSlug}
           onChange={(e) => setServiceSlug(e.target.value)}
-          className="mt-2 w-full rounded-sm border border-white/10 bg-[#0e0b09] px-4 py-3 text-[#f6efe6] focus:border-[#c9a87c] focus:outline-none focus:ring-1 focus:ring-[#c9a87c]"
+          className="mt-2 w-full rounded-sm border border-white/10 bg-[#0e0b09] px-4 py-3 text-[#f6efe6] focus:border-[#ffb6c1] focus:outline-none focus:ring-1 focus:ring-[#ffb6c1]"
         >
           <option value="not-sure">Not sure yet — recommend something</option>
           {services.map((s) => (
@@ -136,7 +136,7 @@ export default function BookingForm({ services }: Props) {
       <div>
         <label
           htmlFor="date"
-          className="block text-[11px] uppercase tracking-[0.22em] text-[#c9a87c]"
+          className="block text-[11px] uppercase tracking-[0.22em] text-[#ffb6c1]"
         >
           Preferred date <span className="text-[#a8957d] normal-case tracking-normal">(optional)</span>
         </label>
@@ -146,7 +146,7 @@ export default function BookingForm({ services }: Props) {
           min={today}
           value={date}
           onChange={(e) => setDate(e.target.value)}
-          className="mt-2 w-full rounded-sm border border-white/10 bg-[#0e0b09] px-4 py-3 text-[#f6efe6] focus:border-[#c9a87c] focus:outline-none focus:ring-1 focus:ring-[#c9a87c] [color-scheme:dark]"
+          className="mt-2 w-full rounded-sm border border-white/10 bg-[#0e0b09] px-4 py-3 text-[#f6efe6] focus:border-[#ffb6c1] focus:outline-none focus:ring-1 focus:ring-[#ffb6c1] [color-scheme:dark]"
         />
       </div>
 
@@ -154,7 +154,7 @@ export default function BookingForm({ services }: Props) {
       <div>
         <label
           htmlFor="message"
-          className="block text-[11px] uppercase tracking-[0.22em] text-[#c9a87c]"
+          className="block text-[11px] uppercase tracking-[0.22em] text-[#ffb6c1]"
         >
           Anything else? <span className="text-[#a8957d] normal-case tracking-normal">(optional)</span>
         </label>
@@ -164,7 +164,7 @@ export default function BookingForm({ services }: Props) {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Reference photos, color goals, questions, special occasions…"
-          className="mt-2 w-full resize-none rounded-sm border border-white/10 bg-[#0e0b09] px-4 py-3 text-[#f6efe6] placeholder-[#a8957d] focus:border-[#c9a87c] focus:outline-none focus:ring-1 focus:ring-[#c9a87c]"
+          className="mt-2 w-full resize-none rounded-sm border border-white/10 bg-[#0e0b09] px-4 py-3 text-[#f6efe6] placeholder-[#a8957d] focus:border-[#ffb6c1] focus:outline-none focus:ring-1 focus:ring-[#ffb6c1]"
         />
         <p className="mt-2 text-xs text-[#a8957d]">
           Tip: send 2–3 photos of your natural hair (front, back, side) directly
@@ -176,7 +176,7 @@ export default function BookingForm({ services }: Props) {
       <button
         type="submit"
         disabled={submitting || !name || !hairType}
-        className="group flex w-full items-center justify-center gap-2 rounded-full bg-[#c9a87c] px-7 py-4 text-sm font-medium text-[#0e0b09] transition-all hover:bg-[#d8b889] disabled:cursor-not-allowed disabled:opacity-50"
+        className="group flex w-full items-center justify-center gap-2 rounded-full bg-[#ffb6c1] px-7 py-4 text-sm font-medium text-[#0e0b09] transition-all hover:bg-[#ffc9d2] disabled:cursor-not-allowed disabled:opacity-50"
       >
         <MessageCircle className="h-4 w-4" aria-hidden />
         {submitting ? "Opening WhatsApp…" : "Continue on WhatsApp"}

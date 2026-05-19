@@ -37,12 +37,12 @@ export default function GalleryPage() {
       <section className="pt-32 md:pt-40">
         <div className="mx-auto max-w-7xl px-6">
           <ScrollReveal className="max-w-3xl">
-            <p className="mb-5 text-[11px] uppercase tracking-[0.28em] text-[#c9a87c]">
+            <p className="mb-5 text-[11px] uppercase tracking-[0.28em] text-[#ffb6c1]">
               Gallery
             </p>
             <h1 className="font-serif text-5xl leading-[1.05] md:text-7xl lg:text-[5.4rem]">
               A look inside{" "}
-              <span className="font-script italic text-[#c9a87c]">the studio</span>.
+              <span className="font-script italic text-[#ffb6c1]">the studio</span>.
             </h1>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#c2b8a8]">
               Recent work, the colour wall, methods up close, and the studio
@@ -53,7 +53,7 @@ export default function GalleryPage() {
               href={brand.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-7 inline-flex items-center gap-2 rounded-full border border-[#c9a87c]/40 px-5 py-2.5 text-sm text-[#c9a87c] transition-all hover:bg-[#c9a87c] hover:text-[#0e0b09]"
+              className="mt-7 inline-flex items-center gap-2 rounded-full border border-[#ffb6c1]/40 px-5 py-2.5 text-sm text-[#ffb6c1] transition-all hover:bg-[#ffb6c1] hover:text-[#0e0b09]"
             >
               <Instagram className="h-4 w-4" aria-hidden /> @{brand.instagram}
             </a>
@@ -74,8 +74,8 @@ export default function GalleryPage() {
                   onClick={() => setActive(f.value)}
                   className={`rounded-full px-4 py-1.5 text-xs uppercase tracking-[0.2em] transition-colors ${
                     isActive
-                      ? "bg-[#c9a87c] text-[#0e0b09]"
-                      : "border border-white/10 text-[#d8cdbd] hover:border-[#c9a87c]/40 hover:text-[#c9a87c]"
+                      ? "bg-[#ffb6c1] text-[#0e0b09]"
+                      : "border border-white/10 text-[#d8cdbd] hover:border-[#ffb6c1]/40 hover:text-[#ffb6c1]"
                   }`}
                   aria-pressed={isActive}
                 >
@@ -111,7 +111,7 @@ export default function GalleryPage() {
                   sizes="(max-width: 768px) 50vw, 25vw"
                 />
                 <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0a0807]/85 to-transparent p-4 opacity-0 transition-opacity hover:opacity-100">
-                  <span className="text-[10px] uppercase tracking-[0.22em] text-[#c9a87c]">
+                  <span className="text-[10px] uppercase tracking-[0.22em] text-[#ffb6c1]">
                     {item.category}
                   </span>
                   <p className="mt-1 text-sm text-[#f6efe6]">{item.alt}</p>

@@ -101,16 +101,16 @@ export default function BeforeAfter({ before, after, alt = "Before and after" }:
       </div>
 
       {/* Labels */}
-      <span className="pointer-events-none absolute left-4 top-4 rounded-full bg-[#0e0b09]/80 px-3 py-1 text-[10px] uppercase tracking-[0.22em] text-[#c9a87c] backdrop-blur-sm">
+      <span className="pointer-events-none absolute left-4 top-4 rounded-full bg-[#0e0b09]/80 px-3 py-1 text-[10px] uppercase tracking-[0.22em] text-[#ffb6c1] backdrop-blur-sm">
         Before
       </span>
-      <span className="pointer-events-none absolute right-4 top-4 rounded-full bg-[#0e0b09]/80 px-3 py-1 text-[10px] uppercase tracking-[0.22em] text-[#c9a87c] backdrop-blur-sm">
+      <span className="pointer-events-none absolute right-4 top-4 rounded-full bg-[#0e0b09]/80 px-3 py-1 text-[10px] uppercase tracking-[0.22em] text-[#ffb6c1] backdrop-blur-sm">
         After
       </span>
 
       {/* Divider */}
       <div
-        className="absolute inset-y-0 w-px bg-[#c9a87c]"
+        className="absolute inset-y-0 w-px bg-[#ffb6c1]"
         style={{ left: `${pos}%` }}
         aria-hidden
       />
@@ -124,7 +124,7 @@ export default function BeforeAfter({ before, after, alt = "Before and after" }:
         aria-valuemin={0}
         aria-valuemax={100}
         role="slider"
-        className="absolute top-1/2 grid h-12 w-12 -translate-x-1/2 -translate-y-1/2 cursor-ew-resize place-items-center rounded-full border border-[#c9a87c] bg-[#0e0b09]/85 backdrop-blur-md transition-transform hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a87c] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0e0b09]"
+        className="absolute top-1/2 grid h-12 w-12 -translate-x-1/2 -translate-y-1/2 cursor-ew-resize place-items-center rounded-full border border-[#ffb6c1] bg-[#0e0b09]/85 backdrop-blur-md transition-transform hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ffb6c1] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0e0b09]"
         style={{ left: `${pos}%` }}
         onMouseDown={(e) => {
           e.stopPropagation();
@@ -138,7 +138,7 @@ export default function BeforeAfter({ before, after, alt = "Before and after" }:
         <svg
           viewBox="0 0 24 24"
           fill="none"
-          stroke="#c9a87c"
+          stroke="#ffb6c1"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"

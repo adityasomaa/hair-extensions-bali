@@ -11,10 +11,10 @@ export const metadata = {
 };
 
 const tagAccent: Record<string, string> = {
-  Aftercare: "text-[#c9a87c]",
-  Choosing: "text-[#d8b889]",
-  Lifestyle: "text-[#b58d5a]",
-  Maintenance: "text-[#c2a07a]",
+  Aftercare: "text-[#ffb6c1]",
+  Choosing: "text-[#ffc9d2]",
+  Lifestyle: "text-[#e89aa8]",
+  Maintenance: "text-[#f5a5b1]",
 };
 
 export default function TipsPage() {
@@ -27,12 +27,12 @@ export default function TipsPage() {
       <section className="pt-32 md:pt-40">
         <div className="mx-auto max-w-7xl px-6">
           <ScrollReveal className="max-w-3xl">
-            <p className="mb-5 text-[11px] uppercase tracking-[0.28em] text-[#c9a87c]">
+            <p className="mb-5 text-[11px] uppercase tracking-[0.28em] text-[#ffb6c1]">
               Tips & care guides
             </p>
             <h1 className="font-serif text-5xl leading-[1.05] md:text-7xl lg:text-[5.4rem]">
               Practical guides from{" "}
-              <span className="font-script italic text-[#c9a87c]">the studio</span>.
+              <span className="font-script italic text-[#ffb6c1]">the studio</span>.
             </h1>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#c2b8a8]">
               Aftercare. Method choices. Travel and maintenance. Everything we tell
@@ -86,7 +86,7 @@ export default function TipsPage() {
                         <Clock className="h-3.5 w-3.5" aria-hidden /> {featured.readingMinutes} min read
                       </span>
                     )}
-                    <span className="inline-flex items-center gap-2 text-[#c9a87c] underline-offset-4 group-hover:underline">
+                    <span className="inline-flex items-center gap-2 text-[#ffb6c1] underline-offset-4 group-hover:underline">
                       Read the guide
                       <ArrowRight
                         className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1"
@@ -105,7 +105,7 @@ export default function TipsPage() {
       <section className="border-t border-white/5 bg-[#0a0807] py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-6">
           <ScrollReveal className="mb-12 max-w-2xl">
-            <p className="mb-4 text-[11px] uppercase tracking-[0.28em] text-[#c9a87c]">
+            <p className="mb-4 text-[11px] uppercase tracking-[0.28em] text-[#ffb6c1]">
               Quick guides
             </p>
             <h2 className="font-serif text-3xl leading-tight md:text-5xl">
@@ -122,7 +122,7 @@ export default function TipsPage() {
               <Link
                 key={tip.slug}
                 href={`#${tip.slug}`}
-                className="group flex h-full flex-col overflow-hidden rounded-sm border border-white/10 bg-[#0e0b09] transition-all hover:-translate-y-1 hover:border-[#c9a87c]/40"
+                className="group flex h-full flex-col overflow-hidden rounded-sm border border-white/10 bg-[#0e0b09] transition-all hover:-translate-y-1 hover:border-[#ffb6c1]/40"
               >
                 {tip.photo && (
                   <div className="relative aspect-[4/3] overflow-hidden">
@@ -154,7 +154,7 @@ export default function TipsPage() {
                       <Clock className="h-3 w-3" aria-hidden /> {tip.readingMinutes ?? 2} min
                     </span>
                     <ArrowRight
-                      className="h-3.5 w-3.5 text-[#a8957d] transition-all group-hover:translate-x-1 group-hover:text-[#c9a87c]"
+                      className="h-3.5 w-3.5 text-[#a8957d] transition-all group-hover:translate-x-1 group-hover:text-[#ffb6c1]"
                       aria-hidden
                     />
                   </div>
