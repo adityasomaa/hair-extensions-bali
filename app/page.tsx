@@ -23,6 +23,7 @@ import {
   aboutCopy,
   services,
   valueProps,
+  faqs,
   heroVideoLuxe,
   formatIDR,
 } from "@/lib/content";
@@ -307,10 +308,52 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ── 5. BOOK AN APPOINTMENT ───────────────────────────────────────── */}
+      {/* ── 5. FREQUENTLY ASKED ──────────────────────────────────────────── */}
+      <section className="border-t border-white/5 bg-[#0a0807] py-24 md:py-36">
+        <div className="mx-auto grid max-w-7xl gap-14 px-6 md:grid-cols-12 md:gap-16">
+          <ScrollReveal className="md:col-span-4">
+            <p className="mb-5 text-[11px] uppercase tracking-[0.28em] text-[#ffb6c1]">
+              Frequently asked
+            </p>
+            <h2 className="font-serif text-4xl leading-tight md:text-5xl">
+              Good things to{" "}
+              <span className="font-script italic text-[#ffb6c1]">know</span>.
+            </h2>
+            <p className="mt-6 max-w-xs text-sm leading-relaxed text-[#c2b3b8]">
+              Don&apos;t see your question? Send us a WhatsApp message — we
+              usually reply within an hour during studio hours.
+            </p>
+          </ScrollReveal>
+
+          <ScrollStagger className="md:col-span-8" stagger={0.06} distance={12}>
+            <dl className="divide-y divide-white/10 border-y border-white/10">
+              {faqs.map((f) => (
+                <details key={f.q} className="group py-6 first:pt-0 last:pb-0">
+                  <summary className="flex cursor-pointer items-baseline justify-between gap-4 list-none">
+                    <dt className="font-serif text-lg leading-tight text-[#f6e9ec] md:text-xl">
+                      {f.q}
+                    </dt>
+                    <span
+                      className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border border-[#ffb6c1]/40 text-[#ffb6c1] transition-transform group-open:rotate-45"
+                      aria-hidden
+                    >
+                      +
+                    </span>
+                  </summary>
+                  <dd className="mt-3 max-w-2xl text-sm leading-relaxed text-[#c2b3b8] md:text-base">
+                    {f.a}
+                  </dd>
+                </details>
+              ))}
+            </dl>
+          </ScrollStagger>
+        </div>
+      </section>
+
+      {/* ── 6. BOOK AN APPOINTMENT ───────────────────────────────────────── */}
       <section
         id="book"
-        className="border-t border-white/5 bg-[#0a0807] py-24 md:py-36"
+        className="border-t border-white/5 py-24 md:py-36"
       >
         <div className="mx-auto grid max-w-7xl gap-14 px-6 md:grid-cols-12 md:gap-16">
           <ScrollReveal className="md:col-span-7">
