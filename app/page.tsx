@@ -23,17 +23,19 @@ import {
   aboutCopy,
   services,
   valueProps,
-  googleReviews,
   heroVideoLuxe,
   formatIDR,
 } from "@/lib/content";
+import { getReviews } from "@/lib/reviews";
 
 export const metadata = {
   title: `${brand.name} — Premium Hair Extensions in Bali`,
   description: brand.tagline,
 };
 
-export default function HomePage() {
+export default async function HomePage() {
+  const googleReviews = await getReviews();
+
   return (
     <>
       <LoaderLuxe />
@@ -296,7 +298,7 @@ export default function HomePage() {
                 <figcaption className="mt-6 border-t border-white/10 pt-4 text-sm">
                   <span className="block text-[#ffb6c1]">{r.name}</span>
                   <span className="mt-0.5 block text-xs text-[#ab9aa1]">
-                    {r.location} · {r.service}
+                    {[r.location, r.service].filter(Boolean).join(" · ")}
                   </span>
                 </figcaption>
               </figure>
