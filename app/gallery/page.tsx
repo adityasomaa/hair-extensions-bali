@@ -44,7 +44,7 @@ export default function GalleryPage() {
               A look inside{" "}
               <span className="font-script italic text-[#ffb6c1]">the studio</span>.
             </h1>
-            <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#c2b8a8]">
+            <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#c2b3b8]">
               Recent work, the colour wall, methods up close, and the studio
               itself. New images added regularly — follow along on Instagram for
               behind-the-scenes.
@@ -75,7 +75,7 @@ export default function GalleryPage() {
                   className={`rounded-full px-4 py-1.5 text-xs uppercase tracking-[0.2em] transition-colors ${
                     isActive
                       ? "bg-[#ffb6c1] text-[#0e0b09]"
-                      : "border border-white/10 text-[#d8cdbd] hover:border-[#ffb6c1]/40 hover:text-[#ffb6c1]"
+                      : "border border-white/10 text-[#d8c8cd] hover:border-[#ffb6c1]/40 hover:text-[#ffb6c1]"
                   }`}
                   aria-pressed={isActive}
                 >
@@ -114,14 +114,14 @@ export default function GalleryPage() {
                   <span className="text-[10px] uppercase tracking-[0.22em] text-[#ffb6c1]">
                     {item.category}
                   </span>
-                  <p className="mt-1 text-sm text-[#f6efe6]">{item.alt}</p>
+                  <p className="mt-1 text-sm text-[#f6e9ec]">{item.alt}</p>
                 </figcaption>
               </figure>
             ))}
           </ScrollStagger>
 
           {filtered.length === 0 && (
-            <p className="py-20 text-center text-sm text-[#a8957d]">
+            <p className="py-20 text-center text-sm text-[#ab9aa1]">
               No items in this category yet.
             </p>
           )}

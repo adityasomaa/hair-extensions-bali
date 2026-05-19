@@ -60,7 +60,7 @@ export default function LoaderLuxe() {
               The
             </motion.span>
             <motion.span
-              className="font-serif text-lg tracking-[0.4em] uppercase text-[#f6efe6]"
+              className="font-serif text-lg tracking-[0.4em] uppercase text-[#f6e9ec]"
               initial={{ opacity: 0, letterSpacing: "0.6em" }}
               animate={{ opacity: 1, letterSpacing: "0.4em" }}
               transition={{ duration: 0.9, delay: reduce ? 0 : 0.25, ease: [0.22, 0.61, 0.36, 1] }}

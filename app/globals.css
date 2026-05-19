@@ -12,7 +12,7 @@ body {
   /* Background + text color set on <body> via Tailwind classes
      in app/layout.tsx — don't redeclare here, it overrides them. */
   background: #0e0b09;
-  color: #f6efe6;
+  color: #f6e9ec;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }

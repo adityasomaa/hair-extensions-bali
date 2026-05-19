@@ -55,7 +55,7 @@ export default function Nav() {
         <nav className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-4 md:py-5">
           <Link href="/" className="inline-flex flex-col leading-none" aria-label="Home">
             <span className="font-script text-2xl text-[#ffb6c1] -mb-1">The</span>
-            <span className="font-serif font-medium text-base tracking-[0.28em] uppercase text-[#f6efe6]">
+            <span className="font-serif font-medium text-base tracking-[0.28em] uppercase text-[#f6e9ec]">
               Hair Extensions
             </span>
             <span className="self-end font-script text-xl text-[#ffb6c1] -mt-1">
@@ -72,7 +72,7 @@ export default function Nav() {
                 className={`text-sm font-medium transition-colors hover:text-[#ffb6c1] ${
                   isActive(link.href)
                     ? "text-[#ffb6c1]"
-                    : "text-[#f6efe6]"
+                    : "text-[#f6e9ec]"
                 }`}
               >
                 {link.label}
@@ -94,7 +94,7 @@ export default function Nav() {
             onClick={() => setOpen((o) => !o)}
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-[#f6efe6] transition-colors hover:border-[#ffb6c1] hover:text-[#ffb6c1] md:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-[#f6e9ec] transition-colors hover:border-[#ffb6c1] hover:text-[#ffb6c1] md:hidden"
           >
             {open ? <X className="h-5 w-5" aria-hidden /> : <Menu className="h-5 w-5" aria-hidden />}
           </button>
@@ -115,7 +115,7 @@ export default function Nav() {
                 <Link
                   href={link.href}
                   className={`block border-b border-white/10 py-5 font-serif text-3xl transition-colors ${
-                    isActive(link.href) ? "text-[#ffb6c1]" : "text-[#f6efe6]"
+                    isActive(link.href) ? "text-[#ffb6c1]" : "text-[#f6e9ec]"
                   } hover:text-[#ffb6c1]`}
                   style={{
                     transitionDelay: open ? `${100 + i * 50}ms` : "0ms",
@@ -137,7 +137,7 @@ export default function Nav() {
               <MessageCircle className="h-4 w-4" aria-hidden />
               Book on WhatsApp · {brand.whatsappDisplay}
             </a>
-            <p className="mt-4 text-center text-xs uppercase tracking-[0.22em] text-[#a8957d]">
+            <p className="mt-4 text-center text-xs uppercase tracking-[0.22em] text-[#ab9aa1]">
               By appointment · Kerobokan, Bali
             </p>
           </div>

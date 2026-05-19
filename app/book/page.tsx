@@ -25,7 +25,7 @@ export default function BookPage() {
               Tell us about{" "}
               <span className="font-script italic text-[#ffb6c1]">your hair</span>.
             </h1>
-            <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#c2b8a8]">
+            <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#c2b3b8]">
               Fill in a few details below. When you submit, we&apos;ll open
               WhatsApp with your message pre-filled — just hit send to start
               the conversation. No accounts, no forms-to-nowhere.
@@ -52,7 +52,7 @@ export default function BookPage() {
                 <p className="text-[11px] uppercase tracking-[0.28em] text-[#ffb6c1]">
                   Visit the studio
                 </p>
-                <p className="mt-4 text-sm leading-relaxed text-[#c2b8a8]">
+                <p className="mt-4 text-sm leading-relaxed text-[#c2b3b8]">
                   Tucked into Kerobokan, ten minutes from Seminyak. Walk-ins
                   welcome by appointment only.
                 </p>
@@ -61,14 +61,14 @@ export default function BookPage() {
                   <div className="flex items-start gap-3">
                     <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#ffb6c1]" aria-hidden />
                     <div>
-                      <span className="block text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
+                      <span className="block text-[10px] uppercase tracking-[0.22em] text-[#ab9aa1]">
                         Address
                       </span>
                       <a
                         href={brand.mapsLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-1 block leading-relaxed text-[#f6efe6] transition-colors hover:text-[#ffb6c1]"
+                        className="mt-1 block leading-relaxed text-[#f6e9ec] transition-colors hover:text-[#ffb6c1]"
                       >
                         {brand.address}
                       </a>
@@ -77,23 +77,23 @@ export default function BookPage() {
                   <div className="flex items-start gap-3">
                     <Clock className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#ffb6c1]" aria-hidden />
                     <div>
-                      <span className="block text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
+                      <span className="block text-[10px] uppercase tracking-[0.22em] text-[#ab9aa1]">
                         Hours
                       </span>
-                      <p className="mt-1 text-[#f6efe6]">{brand.hours}</p>
+                      <p className="mt-1 text-[#f6e9ec]">{brand.hours}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <MessageCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#ffb6c1]" aria-hidden />
                     <div>
-                      <span className="block text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
+                      <span className="block text-[10px] uppercase tracking-[0.22em] text-[#ab9aa1]">
                         WhatsApp
                       </span>
                       <a
                         href={brand.whatsappLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-1 block text-[#f6efe6] transition-colors hover:text-[#ffb6c1]"
+                        className="mt-1 block text-[#f6e9ec] transition-colors hover:text-[#ffb6c1]"
                       >
                         {brand.whatsappDisplay}
                       </a>
@@ -102,14 +102,14 @@ export default function BookPage() {
                   <div className="flex items-start gap-3">
                     <Instagram className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#ffb6c1]" aria-hidden />
                     <div>
-                      <span className="block text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
+                      <span className="block text-[10px] uppercase tracking-[0.22em] text-[#ab9aa1]">
                         Instagram
                       </span>
                       <a
                         href={brand.instagramUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-1 block text-[#f6efe6] transition-colors hover:text-[#ffb6c1]"
+                        className="mt-1 block text-[#f6e9ec] transition-colors hover:text-[#ffb6c1]"
                       >
                         @{brand.instagram}
                       </a>
@@ -138,7 +138,7 @@ export default function BookPage() {
 
               <div className="mt-6 rounded-sm border border-[#ffb6c1]/30 bg-[#ffb6c1]/5 p-6 text-sm">
                 <p className="text-[#ffb6c1]">⏱ Reply within ~1 hour</p>
-                <p className="mt-2 text-[#b5a896]">
+                <p className="mt-2 text-[#b5a3a8]">
                   We respond on WhatsApp during studio hours
                   (Mon – Sun 09:00 – 19:00 WITA). Outside those hours, we&apos;ll
                   message you back first thing the next morning.

@@ -79,7 +79,7 @@ export default function BookingForm({ services }: Props) {
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="As you'd like us to address you"
-          className="mt-2 w-full rounded-sm border border-white/10 bg-[#0e0b09] px-4 py-3 text-[#f6efe6] placeholder-[#a8957d] focus:border-[#ffb6c1] focus:outline-none focus:ring-1 focus:ring-[#ffb6c1]"
+          className="mt-2 w-full rounded-sm border border-white/10 bg-[#0e0b09] px-4 py-3 text-[#f6e9ec] placeholder-[#ab9aa1] focus:border-[#ffb6c1] focus:outline-none focus:ring-1 focus:ring-[#ffb6c1]"
         />
       </div>
 
@@ -96,7 +96,7 @@ export default function BookingForm({ services }: Props) {
           required
           value={hairType}
           onChange={(e) => setHairType(e.target.value)}
-          className="mt-2 w-full rounded-sm border border-white/10 bg-[#0e0b09] px-4 py-3 text-[#f6efe6] focus:border-[#ffb6c1] focus:outline-none focus:ring-1 focus:ring-[#ffb6c1]"
+          className="mt-2 w-full rounded-sm border border-white/10 bg-[#0e0b09] px-4 py-3 text-[#f6e9ec] focus:border-[#ffb6c1] focus:outline-none focus:ring-1 focus:ring-[#ffb6c1]"
         >
           <option value="" disabled>
             Select your hair type
@@ -121,7 +121,7 @@ export default function BookingForm({ services }: Props) {
           id="service"
           value={serviceSlug}
           onChange={(e) => setServiceSlug(e.target.value)}
-          className="mt-2 w-full rounded-sm border border-white/10 bg-[#0e0b09] px-4 py-3 text-[#f6efe6] focus:border-[#ffb6c1] focus:outline-none focus:ring-1 focus:ring-[#ffb6c1]"
+          className="mt-2 w-full rounded-sm border border-white/10 bg-[#0e0b09] px-4 py-3 text-[#f6e9ec] focus:border-[#ffb6c1] focus:outline-none focus:ring-1 focus:ring-[#ffb6c1]"
         >
           <option value="not-sure">Not sure yet — recommend something</option>
           {services.map((s) => (
@@ -138,7 +138,7 @@ export default function BookingForm({ services }: Props) {
           htmlFor="date"
           className="block text-[11px] uppercase tracking-[0.22em] text-[#ffb6c1]"
         >
-          Preferred date <span className="text-[#a8957d] normal-case tracking-normal">(optional)</span>
+          Preferred date <span className="text-[#ab9aa1] normal-case tracking-normal">(optional)</span>
         </label>
         <input
           id="date"
@@ -146,7 +146,7 @@ export default function BookingForm({ services }: Props) {
           min={today}
           value={date}
           onChange={(e) => setDate(e.target.value)}
-          className="mt-2 w-full rounded-sm border border-white/10 bg-[#0e0b09] px-4 py-3 text-[#f6efe6] focus:border-[#ffb6c1] focus:outline-none focus:ring-1 focus:ring-[#ffb6c1] [color-scheme:dark]"
+          className="mt-2 w-full rounded-sm border border-white/10 bg-[#0e0b09] px-4 py-3 text-[#f6e9ec] focus:border-[#ffb6c1] focus:outline-none focus:ring-1 focus:ring-[#ffb6c1] [color-scheme:dark]"
         />
       </div>
 
@@ -156,7 +156,7 @@ export default function BookingForm({ services }: Props) {
           htmlFor="message"
           className="block text-[11px] uppercase tracking-[0.22em] text-[#ffb6c1]"
         >
-          Anything else? <span className="text-[#a8957d] normal-case tracking-normal">(optional)</span>
+          Anything else? <span className="text-[#ab9aa1] normal-case tracking-normal">(optional)</span>
         </label>
         <textarea
           id="message"
@@ -164,9 +164,9 @@ export default function BookingForm({ services }: Props) {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Reference photos, color goals, questions, special occasions…"
-          className="mt-2 w-full resize-none rounded-sm border border-white/10 bg-[#0e0b09] px-4 py-3 text-[#f6efe6] placeholder-[#a8957d] focus:border-[#ffb6c1] focus:outline-none focus:ring-1 focus:ring-[#ffb6c1]"
+          className="mt-2 w-full resize-none rounded-sm border border-white/10 bg-[#0e0b09] px-4 py-3 text-[#f6e9ec] placeholder-[#ab9aa1] focus:border-[#ffb6c1] focus:outline-none focus:ring-1 focus:ring-[#ffb6c1]"
         />
-        <p className="mt-2 text-xs text-[#a8957d]">
+        <p className="mt-2 text-xs text-[#ab9aa1]">
           Tip: send 2–3 photos of your natural hair (front, back, side) directly
           on WhatsApp after submitting — it speeds up the colour match.
         </p>
@@ -183,7 +183,7 @@ export default function BookingForm({ services }: Props) {
         <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden />
       </button>
 
-      <p className="text-center text-xs text-[#a8957d]">
+      <p className="text-center text-xs text-[#ab9aa1]">
         We don&apos;t store your details. Submitting opens WhatsApp with your
         message pre-filled — review and send.
       </p>

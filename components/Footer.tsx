@@ -35,14 +35,14 @@ export default function Footer() {
           <div className="md:col-span-5">
             <Link href="/" className="inline-flex flex-col leading-none">
               <span className="font-script text-3xl text-[#ffb6c1] -mb-1">The</span>
-              <span className="font-serif text-lg tracking-[0.32em] uppercase text-[#f6efe6]">
+              <span className="font-serif text-lg tracking-[0.32em] uppercase text-[#f6e9ec]">
                 Hair Extensions
               </span>
               <span className="self-end font-script text-2xl text-[#ffb6c1] -mt-1">
                 Bali
               </span>
             </Link>
-            <p className="mt-6 max-w-sm text-sm leading-relaxed text-[#b5a896]">
+            <p className="mt-6 max-w-sm text-sm leading-relaxed text-[#b5a3a8]">
               Premium hair extensions, expertly applied in the heart of Bali.
               International-quality hair, six methods, family feeling.
             </p>
@@ -52,7 +52,7 @@ export default function Footer() {
                 href={brand.mapsLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-start gap-3 text-[#b5a896] hover:text-[#ffb6c1]"
+                className="group flex items-start gap-3 text-[#b5a3a8] hover:text-[#ffb6c1]"
               >
                 <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#ffb6c1]" aria-hidden />
                 <span>{brand.address}</span>
@@ -61,7 +61,7 @@ export default function Footer() {
                 href={brand.whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-3 text-[#b5a896] hover:text-[#ffb6c1]"
+                className="group flex items-center gap-3 text-[#b5a3a8] hover:text-[#ffb6c1]"
               >
                 <MessageCircle className="h-4 w-4 flex-shrink-0 text-[#ffb6c1]" aria-hidden />
                 <span>{brand.whatsappDisplay}</span>
@@ -70,12 +70,12 @@ export default function Footer() {
                 href={brand.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-3 text-[#b5a896] hover:text-[#ffb6c1]"
+                className="group flex items-center gap-3 text-[#b5a3a8] hover:text-[#ffb6c1]"
               >
                 <Instagram className="h-4 w-4 flex-shrink-0 text-[#ffb6c1]" aria-hidden />
                 <span>@{brand.instagram}</span>
               </a>
-              <div className="flex items-center gap-3 text-[#b5a896]">
+              <div className="flex items-center gap-3 text-[#b5a3a8]">
                 <Clock className="h-4 w-4 flex-shrink-0 text-[#ffb6c1]" aria-hidden />
                 <span>{brand.hours}</span>
               </div>
@@ -93,7 +93,7 @@ export default function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-[#d8cdbd] transition-colors hover:text-[#ffb6c1]"
+                      className="text-[#d8c8cd] transition-colors hover:text-[#ffb6c1]"
                     >
                       {link.label}
                     </Link>
@@ -114,7 +114,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-start justify-between gap-3 border-t border-white/5 pt-8 text-xs text-[#a8957d] md:flex-row md:items-center">
+        <div className="mt-14 flex flex-col items-start justify-between gap-3 border-t border-white/5 pt-8 text-xs text-[#ab9aa1] md:flex-row md:items-center">
           <p>© {new Date().getFullYear()} {brand.name}. All rights reserved.</p>
           <p className="italic">By appointment only · Kerobokan, Bali</p>
         </div>

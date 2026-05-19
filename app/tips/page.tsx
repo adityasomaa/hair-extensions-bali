@@ -34,7 +34,7 @@ export default function TipsPage() {
               Practical guides from{" "}
               <span className="font-script italic text-[#ffb6c1]">the studio</span>.
             </h1>
-            <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#c2b8a8]">
+            <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#c2b3b8]">
               Aftercare. Method choices. Travel and maintenance. Everything we tell
               clients in person, written down so you can come back to it.
             </p>
@@ -77,12 +77,12 @@ export default function TipsPage() {
                   <h2 className="font-serif text-3xl leading-tight md:text-5xl">
                     {featured.title}
                   </h2>
-                  <p className="mt-5 text-lg leading-relaxed text-[#c2b8a8]">
+                  <p className="mt-5 text-lg leading-relaxed text-[#c2b3b8]">
                     {featured.excerpt}
                   </p>
                   <div className="mt-7 flex items-center gap-5 text-sm">
                     {featured.readingMinutes && (
-                      <span className="inline-flex items-center gap-1.5 text-[#a8957d]">
+                      <span className="inline-flex items-center gap-1.5 text-[#ab9aa1]">
                         <Clock className="h-3.5 w-3.5" aria-hidden /> {featured.readingMinutes} min read
                       </span>
                     )}
@@ -143,18 +143,18 @@ export default function TipsPage() {
                   >
                     {tip.tag}
                   </p>
-                  <h3 className="mt-3 font-serif text-2xl leading-tight text-[#f6efe6]">
+                  <h3 className="mt-3 font-serif text-2xl leading-tight text-[#f6e9ec]">
                     {tip.title}
                   </h3>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-[#b5a896]">
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-[#b5a3a8]">
                     {tip.excerpt}
                   </p>
                   <div className="mt-5 flex items-center justify-between border-t border-white/10 pt-4 text-xs">
-                    <span className="inline-flex items-center gap-1.5 text-[#a8957d]">
+                    <span className="inline-flex items-center gap-1.5 text-[#ab9aa1]">
                       <Clock className="h-3 w-3" aria-hidden /> {tip.readingMinutes ?? 2} min
                     </span>
                     <ArrowRight
-                      className="h-3.5 w-3.5 text-[#a8957d] transition-all group-hover:translate-x-1 group-hover:text-[#ffb6c1]"
+                      className="h-3.5 w-3.5 text-[#ab9aa1] transition-all group-hover:translate-x-1 group-hover:text-[#ffb6c1]"
                       aria-hidden
                     />
                   </div>
@@ -186,13 +186,13 @@ export default function TipsPage() {
                   {tip.title}
                 </h2>
                 {tip.readingMinutes && (
-                  <p className="mt-4 inline-flex items-center gap-1.5 text-xs text-[#a8957d]">
+                  <p className="mt-4 inline-flex items-center gap-1.5 text-xs text-[#ab9aa1]">
                     <Clock className="h-3 w-3" aria-hidden /> {tip.readingMinutes} min read
                   </p>
                 )}
               </ScrollReveal>
 
-              <ScrollStagger className="mt-10 space-y-6 text-base leading-relaxed text-[#c2b8a8] md:text-lg" stagger={0.06} distance={12}>
+              <ScrollStagger className="mt-10 space-y-6 text-base leading-relaxed text-[#c2b3b8] md:text-lg" stagger={0.06} distance={12}>
                 {tip.body.map((p, i) => (
                   <p key={i}>{p}</p>
                 ))}

@@ -46,7 +46,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${playfair.variable} ${caveat.variable} antialiased`}
     >
-      <body className="min-h-screen bg-[#0e0b09] text-[#f6efe6]">
+      <body className="min-h-screen bg-[#0e0b09] text-[#f6e9ec]">
         <SmoothScroll>
           <Nav />
           <main>{children}</main>

@@ -55,7 +55,7 @@ export default function HomePage() {
               </h1>
             </ScrollReveal>
             <ScrollReveal delay={2} duration={0.8}>
-              <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#c2b8a8] md:text-xl">
+              <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#c2b3b8] md:text-xl">
                 Transformation is in the details. International-quality hair, six
                 expert application methods, and warm Balinese hospitality —
                 quietly perfected since day one.
@@ -65,7 +65,7 @@ export default function HomePage() {
               <div className="mt-10 flex flex-wrap items-center gap-4">
                 <Link
                   href="/book"
-                  className="group inline-flex items-center gap-2.5 rounded-full bg-[#f6efe6] px-7 py-3.5 text-sm font-medium text-[#0e0b09] transition-all hover:bg-[#ffb6c1]"
+                  className="group inline-flex items-center gap-2.5 rounded-full bg-[#f6e9ec] px-7 py-3.5 text-sm font-medium text-[#0e0b09] transition-all hover:bg-[#ffb6c1]"
                 >
                   <MessageCircle className="h-4 w-4" aria-hidden />
                   Book a consultation
@@ -73,7 +73,7 @@ export default function HomePage() {
                 </Link>
                 <Link
                   href="/products"
-                  className="text-sm tracking-wide text-[#d8cdbd] underline-offset-8 transition-colors hover:text-[#ffb6c1] hover:underline"
+                  className="text-sm tracking-wide text-[#d8c8cd] underline-offset-8 transition-colors hover:text-[#ffb6c1] hover:underline"
                 >
                   Explore services
                 </Link>
@@ -81,22 +81,22 @@ export default function HomePage() {
             </ScrollReveal>
 
             <ScrollReveal delay={2.3} duration={0.7}>
-              <dl className="mt-14 grid grid-cols-3 gap-6 border-t border-white/10 pt-8 text-[11px] uppercase tracking-[0.18em] text-[#a8957d]">
+              <dl className="mt-14 grid grid-cols-3 gap-6 border-t border-white/10 pt-8 text-[11px] uppercase tracking-[0.18em] text-[#ab9aa1]">
                 <div>
                   <dt className="text-[#ffb6c1]">Methods</dt>
-                  <dd className="mt-1.5 font-serif text-2xl text-[#f6efe6] normal-case tracking-normal">
+                  <dd className="mt-1.5 font-serif text-2xl text-[#f6e9ec] normal-case tracking-normal">
                     6 techniques
                   </dd>
                 </div>
                 <div>
                   <dt className="text-[#ffb6c1]">Lasts up to</dt>
-                  <dd className="mt-1.5 font-serif text-2xl text-[#f6efe6] normal-case tracking-normal">
+                  <dd className="mt-1.5 font-serif text-2xl text-[#f6e9ec] normal-case tracking-normal">
                     9 months
                   </dd>
                 </div>
                 <div>
                   <dt className="text-[#ffb6c1]">Located</dt>
-                  <dd className="mt-1.5 font-serif text-2xl text-[#f6efe6] normal-case tracking-normal">
+                  <dd className="mt-1.5 font-serif text-2xl text-[#f6e9ec] normal-case tracking-normal">
                     Kerobokan
                   </dd>
                 </div>
@@ -124,7 +124,7 @@ export default function HomePage() {
 
       {/* ── Marquee ──────────────────────────────────────────────────────── */}
       <div className="overflow-hidden border-y border-white/5 bg-[#0a0807] py-5">
-        <div className="flex animate-[marquee_35s_linear_infinite] gap-12 whitespace-nowrap font-serif text-[#a8957d] text-xl tracking-wide">
+        <div className="flex animate-[marquee_35s_linear_infinite] gap-12 whitespace-nowrap font-serif text-[#ab9aa1] text-xl tracking-wide">
           {Array.from({ length: 4 }).flatMap((_, i) =>
             ["Keratin Bond", "Nano Ring", "Micro Ring", "Weft", "Tape-In", "Clip-In", "—"].map(
               (s, j) => (
@@ -151,7 +151,7 @@ export default function HomePage() {
             <AccentLine className="mt-8 h-px w-32 bg-[#ffb6c1]" delay={0.2} duration={1.1} />
           </ScrollReveal>
           <ScrollStagger
-            className="space-y-6 text-[#c2b8a8] md:col-span-7 md:text-lg md:leading-relaxed"
+            className="space-y-6 text-[#c2b3b8] md:col-span-7 md:text-lg md:leading-relaxed"
             stagger={0.12}
             distance={16}
           >
@@ -171,7 +171,7 @@ export default function HomePage() {
             {valueProps.map((v) => (
               <div key={v.title} className="bg-[#0e0b09] p-8">
                 <h3 className="font-serif text-xl text-[#ffb6c1]">{v.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-[#b5a896]">{v.body}</p>
+                <p className="mt-3 text-sm leading-relaxed text-[#b5a3a8]">{v.body}</p>
               </div>
             ))}
           </ScrollStagger>
@@ -193,7 +193,7 @@ export default function HomePage() {
             </div>
             <Link
               href="/products"
-              className="group inline-flex items-center gap-2 text-sm text-[#ffb6c1] underline underline-offset-8 transition-colors hover:text-[#f6efe6]"
+              className="group inline-flex items-center gap-2 text-sm text-[#ffb6c1] underline underline-offset-8 transition-colors hover:text-[#f6e9ec]"
             >
               View all services
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden />
@@ -212,27 +212,27 @@ export default function HomePage() {
                 className="group flex flex-col rounded-sm border border-white/10 bg-[#0e0b09] p-7 transition-all hover:-translate-y-1 hover:border-[#ffb6c1]/40"
               >
                 <div className="mb-5 flex items-baseline justify-between border-b border-white/10 pb-5">
-                  <span className="text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
+                  <span className="text-[10px] uppercase tracking-[0.22em] text-[#ab9aa1]">
                     {s.lasts}
                   </span>
                   <ArrowRight
-                    className="h-4 w-4 text-[#a8957d] transition-all group-hover:translate-x-1 group-hover:text-[#ffb6c1]"
+                    className="h-4 w-4 text-[#ab9aa1] transition-all group-hover:translate-x-1 group-hover:text-[#ffb6c1]"
                     aria-hidden
                   />
                 </div>
 
-                <h3 className="font-serif text-2xl text-[#f6efe6] md:text-3xl">{s.name}</h3>
+                <h3 className="font-serif text-2xl text-[#f6e9ec] md:text-3xl">{s.name}</h3>
                 <p className="mt-2 text-sm italic text-[#ffb6c1]">{s.tagline}</p>
-                <p className="mt-4 text-sm leading-relaxed text-[#b5a896] line-clamp-3">
+                <p className="mt-4 text-sm leading-relaxed text-[#b5a3a8] line-clamp-3">
                   {s.description}
                 </p>
 
                 <div className="mt-auto pt-7">
                   <div className="flex items-baseline justify-between gap-3 border-t border-white/10 pt-5">
-                    <span className="text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
+                    <span className="text-[10px] uppercase tracking-[0.22em] text-[#ab9aa1]">
                       Starting from
                     </span>
-                    <span className="font-serif text-xl text-[#f6efe6]">
+                    <span className="font-serif text-xl text-[#f6e9ec]">
                       {formatIDR(s.prices[0]?.amountIDR ?? 0)}
                     </span>
                   </div>
@@ -242,14 +242,14 @@ export default function HomePage() {
           </ScrollStagger>
 
           <ScrollReveal className="mt-14 flex flex-col items-center gap-4 text-center" delay={0.1}>
-            <p className="text-sm text-[#b5a896]">
+            <p className="text-sm text-[#b5a3a8]">
               Not sure which method is right for you?
             </p>
             <a
               href={brand.whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-[#ffb6c1] underline underline-offset-8 transition-colors hover:text-[#f6efe6]"
+              className="inline-flex items-center gap-2 text-sm text-[#ffb6c1] underline underline-offset-8 transition-colors hover:text-[#f6e9ec]"
             >
               <MessageCircle className="h-4 w-4" aria-hidden /> Message us on WhatsApp
             </a>
@@ -286,16 +286,16 @@ export default function HomePage() {
                       <Star key={i} className="h-3.5 w-3.5 fill-[#ffb6c1] text-[#ffb6c1]" aria-hidden />
                     ))}
                   </div>
-                  <span className="text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
+                  <span className="text-[10px] uppercase tracking-[0.22em] text-[#ab9aa1]">
                     {r.when}
                   </span>
                 </div>
-                <blockquote className="mt-5 flex-1 font-serif text-base italic leading-relaxed text-[#f6efe6]">
+                <blockquote className="mt-5 flex-1 font-serif text-base italic leading-relaxed text-[#f6e9ec]">
                   &ldquo;{r.quote}&rdquo;
                 </blockquote>
                 <figcaption className="mt-6 border-t border-white/10 pt-4 text-sm">
                   <span className="block text-[#ffb6c1]">{r.name}</span>
-                  <span className="mt-0.5 block text-xs text-[#a8957d]">
+                  <span className="mt-0.5 block text-xs text-[#ab9aa1]">
                     {r.location} · {r.service}
                   </span>
                 </figcaption>
@@ -319,7 +319,7 @@ export default function HomePage() {
               Send us a message —{" "}
               <span className="font-script italic text-[#ffb6c1]">we&rsquo;ll do the rest</span>.
             </h2>
-            <p className="mt-8 max-w-xl text-lg text-[#c2b8a8]">
+            <p className="mt-8 max-w-xl text-lg text-[#c2b3b8]">
               Share a few photos of your natural hair on WhatsApp. We&apos;ll
               recommend the best method, confirm the colour match and gram amount,
               and book you in — usually within an hour during studio hours.
@@ -338,7 +338,7 @@ export default function HomePage() {
                 href={brand.whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm tracking-wide text-[#d8cdbd] underline-offset-8 transition-colors hover:text-[#ffb6c1] hover:underline"
+                className="text-sm tracking-wide text-[#d8c8cd] underline-offset-8 transition-colors hover:text-[#ffb6c1] hover:underline"
               >
                 Or message directly on WhatsApp →
               </a>
@@ -351,14 +351,14 @@ export default function HomePage() {
                 <div className="flex items-start gap-4">
                   <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#ffb6c1]" aria-hidden />
                   <div>
-                    <span className="block text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
+                    <span className="block text-[10px] uppercase tracking-[0.22em] text-[#ab9aa1]">
                       Visit
                     </span>
                     <a
                       href={brand.mapsLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-1 block leading-relaxed text-[#f6efe6] transition-colors hover:text-[#ffb6c1]"
+                      className="mt-1 block leading-relaxed text-[#f6e9ec] transition-colors hover:text-[#ffb6c1]"
                     >
                       {brand.address}
                     </a>
@@ -367,23 +367,23 @@ export default function HomePage() {
                 <div className="flex items-start gap-4">
                   <Clock className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#ffb6c1]" aria-hidden />
                   <div>
-                    <span className="block text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
+                    <span className="block text-[10px] uppercase tracking-[0.22em] text-[#ab9aa1]">
                       Hours
                     </span>
-                    <p className="mt-1 text-[#f6efe6]">{brand.hours}</p>
+                    <p className="mt-1 text-[#f6e9ec]">{brand.hours}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <MessageCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#ffb6c1]" aria-hidden />
                   <div>
-                    <span className="block text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
+                    <span className="block text-[10px] uppercase tracking-[0.22em] text-[#ab9aa1]">
                       WhatsApp
                     </span>
                     <a
                       href={brand.whatsappLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-1 block text-[#f6efe6] transition-colors hover:text-[#ffb6c1]"
+                      className="mt-1 block text-[#f6e9ec] transition-colors hover:text-[#ffb6c1]"
                     >
                       {brand.whatsappDisplay}
                     </a>

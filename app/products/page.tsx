@@ -22,7 +22,7 @@ export default function ProductsPage() {
               Six methods, one obsession with the{" "}
               <span className="font-script italic text-[#ffb6c1]">natural</span> finish.
             </h1>
-            <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#c2b8a8]">
+            <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#c2b3b8]">
               Every method below uses 100% real human hair. We match the technique
               to your hair type, lifestyle, and goals. Tap any card for the full
               breakdown — materials, what&apos;s included, ideal hair type, aftercare,
@@ -49,14 +49,14 @@ export default function ProductsPage() {
                   <span className="font-serif text-xs italic text-[#ffb6c1]">
                     {String(idx + 1).padStart(2, "0")}
                   </span>
-                  <span className="text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
+                  <span className="text-[10px] uppercase tracking-[0.22em] text-[#ab9aa1]">
                     {s.lasts}
                   </span>
                 </div>
 
-                <h2 className="font-serif text-2xl text-[#f6efe6] md:text-3xl">{s.name}</h2>
+                <h2 className="font-serif text-2xl text-[#f6e9ec] md:text-3xl">{s.name}</h2>
                 <p className="mt-2 text-sm italic text-[#ffb6c1]">{s.tagline}</p>
-                <p className="mt-4 text-sm leading-relaxed text-[#b5a896]">
+                <p className="mt-4 text-sm leading-relaxed text-[#b5a3a8]">
                   {s.description}
                 </p>
 
@@ -64,7 +64,7 @@ export default function ProductsPage() {
                   {s.highlights.map((h) => (
                     <li
                       key={h}
-                      className="rounded-full border border-white/10 px-3 py-1 text-[#d8cdbd]"
+                      className="rounded-full border border-white/10 px-3 py-1 text-[#d8c8cd]"
                     >
                       {h}
                     </li>
@@ -73,14 +73,14 @@ export default function ProductsPage() {
 
                 <div className="mt-auto pt-7">
                   <div className="flex items-baseline justify-between gap-3 border-t border-white/10 pt-5">
-                    <span className="text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
+                    <span className="text-[10px] uppercase tracking-[0.22em] text-[#ab9aa1]">
                       Starting from
                     </span>
-                    <span className="font-serif text-xl text-[#f6efe6]">
+                    <span className="font-serif text-xl text-[#f6e9ec]">
                       {formatIDR(s.prices[0]?.amountIDR ?? 0)}
                     </span>
                   </div>
-                  <p className="mt-3 text-[10px] uppercase tracking-[0.2em] text-[#a8957d]">
+                  <p className="mt-3 text-[10px] uppercase tracking-[0.2em] text-[#ab9aa1]">
                     {s.unit}
                   </p>
                   <span className="mt-5 inline-flex items-center gap-2 text-sm text-[#ffb6c1] underline-offset-4 group-hover:underline">
@@ -96,10 +96,10 @@ export default function ProductsPage() {
           </ScrollStagger>
 
           <ScrollReveal className="mt-16 rounded-sm border border-white/10 bg-[#0a0807] p-10 text-center md:p-14">
-            <h3 className="font-serif text-3xl text-[#f6efe6] md:text-4xl">
+            <h3 className="font-serif text-3xl text-[#f6e9ec] md:text-4xl">
               Not sure which method fits you?
             </h3>
-            <p className="mx-auto mt-4 max-w-lg text-sm text-[#b5a896] md:text-base">
+            <p className="mx-auto mt-4 max-w-lg text-sm text-[#b5a3a8] md:text-base">
               Send us a photo of your natural hair on WhatsApp. We&apos;ll
               recommend the perfect method, colour match, and gram amount —
               completely free.

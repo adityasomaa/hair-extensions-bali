@@ -58,7 +58,7 @@ export default async function ServiceDetailPage({
           <ScrollReveal>
             <Link
               href="/products"
-              className="inline-flex items-center gap-2 text-sm text-[#a8957d] transition-colors hover:text-[#ffb6c1]"
+              className="inline-flex items-center gap-2 text-sm text-[#ab9aa1] transition-colors hover:text-[#ffb6c1]"
             >
               <ArrowLeft className="h-4 w-4" aria-hidden />
               All services
@@ -114,7 +114,7 @@ export default async function ServiceDetailPage({
               <h2 className="font-serif text-3xl leading-tight md:text-5xl">
                 The transformation
               </h2>
-              <p className="mt-3 text-sm text-[#a8957d] italic">
+              <p className="mt-3 text-sm text-[#ab9aa1] italic">
                 Photo placeholders — real before/after photos coming soon.
               </p>
             </ScrollReveal>
@@ -141,7 +141,7 @@ export default async function ServiceDetailPage({
                 <h2 className="font-serif text-3xl leading-tight md:text-5xl">
                   How it works
                 </h2>
-                <p className="mt-6 text-base leading-relaxed text-[#c2b8a8] md:text-lg">
+                <p className="mt-6 text-base leading-relaxed text-[#c2b3b8] md:text-lg">
                   {service.longDescription ?? service.description}
                 </p>
               </ScrollReveal>
@@ -152,7 +152,7 @@ export default async function ServiceDetailPage({
                   <h3 className="text-[11px] uppercase tracking-[0.28em] text-[#ffb6c1]">
                     Materials
                   </h3>
-                  <ul className="mt-5 space-y-3 text-[#d8cdbd]">
+                  <ul className="mt-5 space-y-3 text-[#d8c8cd]">
                     {service.materials.map((m) => (
                       <li key={m} className="flex gap-3 text-sm leading-relaxed">
                         <span className="mt-2 h-px w-4 flex-shrink-0 bg-[#ffb6c1]" aria-hidden />
@@ -169,7 +169,7 @@ export default async function ServiceDetailPage({
                   <h3 className="text-[11px] uppercase tracking-[0.28em] text-[#ffb6c1]">
                     What&apos;s included
                   </h3>
-                  <ul className="mt-5 space-y-3 text-[#d8cdbd]">
+                  <ul className="mt-5 space-y-3 text-[#d8c8cd]">
                     {service.whatsIncluded.map((m) => (
                       <li key={m} className="flex gap-3 text-sm leading-relaxed">
                         <span className="mt-2 h-px w-4 flex-shrink-0 bg-[#ffb6c1]" aria-hidden />
@@ -186,7 +186,7 @@ export default async function ServiceDetailPage({
                   <h3 className="text-[11px] uppercase tracking-[0.28em] text-[#ffb6c1]">
                     Aftercare
                   </h3>
-                  <ul className="mt-5 space-y-3 text-[#d8cdbd]">
+                  <ul className="mt-5 space-y-3 text-[#d8c8cd]">
                     {service.aftercare.map((m) => (
                       <li key={m} className="flex gap-3 text-sm leading-relaxed">
                         <span className="mt-2 h-px w-4 flex-shrink-0 bg-[#ffb6c1]" aria-hidden />
@@ -212,37 +212,37 @@ export default async function ServiceDetailPage({
                           key={p.label}
                           className="flex items-baseline justify-between gap-3"
                         >
-                          <span className="text-sm text-[#b5a896]">{p.label}</span>
-                          <span className="font-serif text-lg text-[#f6efe6]">
+                          <span className="text-sm text-[#b5a3a8]">{p.label}</span>
+                          <span className="font-serif text-lg text-[#f6e9ec]">
                             {formatIDR(p.amountIDR)}
                           </span>
                         </li>
                       ))}
                     </ul>
-                    <p className="mt-3 text-[10px] uppercase tracking-[0.2em] text-[#a8957d]">
+                    <p className="mt-3 text-[10px] uppercase tracking-[0.2em] text-[#ab9aa1]">
                       {service.unit}
                       {service.minPurchase ? ` · ${service.minPurchase}` : ""}
                     </p>
 
                     <dl className="mt-7 space-y-5 border-t border-white/10 pt-5 text-sm">
                       <div>
-                        <dt className="flex items-center gap-2 text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
+                        <dt className="flex items-center gap-2 text-[10px] uppercase tracking-[0.22em] text-[#ab9aa1]">
                           <Clock className="h-3 w-3" aria-hidden /> Duration
                         </dt>
-                        <dd className="mt-1.5 text-[#f6efe6]">{service.durationLabel}</dd>
+                        <dd className="mt-1.5 text-[#f6e9ec]">{service.durationLabel}</dd>
                       </div>
                       <div>
-                        <dt className="text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
+                        <dt className="text-[10px] uppercase tracking-[0.22em] text-[#ab9aa1]">
                           Lasts
                         </dt>
-                        <dd className="mt-1.5 text-[#f6efe6]">{service.lasts}</dd>
+                        <dd className="mt-1.5 text-[#f6e9ec]">{service.lasts}</dd>
                       </div>
                       {service.reusable && (
                         <div>
-                          <dt className="text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
+                          <dt className="text-[10px] uppercase tracking-[0.22em] text-[#ab9aa1]">
                             Reusable
                           </dt>
-                          <dd className="mt-1.5 text-[#f6efe6]">{service.reusable}</dd>
+                          <dd className="mt-1.5 text-[#f6e9ec]">{service.reusable}</dd>
                         </div>
                       )}
                     </dl>
@@ -265,7 +265,7 @@ export default async function ServiceDetailPage({
                       <p className="text-[11px] uppercase tracking-[0.28em] text-[#ffb6c1]">
                         Ideal hair type
                       </p>
-                      <ul className="mt-5 space-y-3 text-sm text-[#d8cdbd]">
+                      <ul className="mt-5 space-y-3 text-sm text-[#d8c8cd]">
                         {service.idealHairType.map((m) => (
                           <li key={m} className="flex gap-3 leading-relaxed">
                             <span className="mt-2 h-px w-4 flex-shrink-0 bg-[#ffb6c1]" aria-hidden />
@@ -284,7 +284,7 @@ export default async function ServiceDetailPage({
                       <p className="text-[11px] uppercase tracking-[0.28em] text-[#ffb6c1]">
                         Best for
                       </p>
-                      <ul className="mt-5 space-y-3 text-sm text-[#d8cdbd]">
+                      <ul className="mt-5 space-y-3 text-sm text-[#d8c8cd]">
                         {service.bestFor.map((m) => (
                           <li key={m} className="flex gap-3 leading-relaxed">
                             <span className="mt-2 h-px w-4 flex-shrink-0 bg-[#ffb6c1]" aria-hidden />
@@ -309,12 +309,12 @@ export default async function ServiceDetailPage({
               href={`/products/${prev.slug}`}
               className="group flex items-center gap-4 rounded-sm border border-white/10 p-6 transition-all hover:border-[#ffb6c1]/40 md:p-8"
             >
-              <ArrowLeft className="h-4 w-4 flex-shrink-0 text-[#a8957d] transition-colors group-hover:text-[#ffb6c1]" aria-hidden />
+              <ArrowLeft className="h-4 w-4 flex-shrink-0 text-[#ab9aa1] transition-colors group-hover:text-[#ffb6c1]" aria-hidden />
               <div>
-                <span className="text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
+                <span className="text-[10px] uppercase tracking-[0.22em] text-[#ab9aa1]">
                   Previous
                 </span>
-                <h3 className="mt-1 font-serif text-2xl text-[#f6efe6] group-hover:text-[#ffb6c1]">
+                <h3 className="mt-1 font-serif text-2xl text-[#f6e9ec] group-hover:text-[#ffb6c1]">
                   {prev.name}
                 </h3>
               </div>
@@ -324,14 +324,14 @@ export default async function ServiceDetailPage({
               className="group flex items-center justify-end gap-4 rounded-sm border border-white/10 p-6 text-right transition-all hover:border-[#ffb6c1]/40 md:p-8"
             >
               <div>
-                <span className="text-[10px] uppercase tracking-[0.22em] text-[#a8957d]">
+                <span className="text-[10px] uppercase tracking-[0.22em] text-[#ab9aa1]">
                   Next
                 </span>
-                <h3 className="mt-1 font-serif text-2xl text-[#f6efe6] group-hover:text-[#ffb6c1]">
+                <h3 className="mt-1 font-serif text-2xl text-[#f6e9ec] group-hover:text-[#ffb6c1]">
                   {next.name}
                 </h3>
               </div>
-              <ArrowRight className="h-4 w-4 flex-shrink-0 text-[#a8957d] transition-colors group-hover:text-[#ffb6c1]" aria-hidden />
+              <ArrowRight className="h-4 w-4 flex-shrink-0 text-[#ab9aa1] transition-colors group-hover:text-[#ffb6c1]" aria-hidden />
             </Link>
           </div>
         </div>
