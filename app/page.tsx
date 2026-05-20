@@ -10,6 +10,7 @@ import {
   Clock,
 } from "lucide-react";
 import LoaderLuxe from "@/components/loaders/LoaderLuxe";
+import FaqList from "@/components/FaqList";
 import {
   ScrollReveal,
   ScrollStagger,
@@ -326,28 +327,9 @@ export default async function HomePage() {
             </p>
           </ScrollReveal>
 
-          <ScrollStagger className="md:col-span-8" stagger={0.06} distance={12}>
-            <dl className="divide-y divide-white/10 border-y border-white/10">
-              {faqs.map((f) => (
-                <details key={f.q} className="group py-6">
-                  <summary className="flex cursor-pointer items-baseline justify-between gap-4 list-none">
-                    <dt className="font-serif text-lg leading-tight text-[#f6e9ec] md:text-xl">
-                      {f.q}
-                    </dt>
-                    <span
-                      className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border border-[#ffb6c1]/40 text-[#ffb6c1] transition-transform group-open:rotate-45"
-                      aria-hidden
-                    >
-                      +
-                    </span>
-                  </summary>
-                  <dd className="mt-3 max-w-2xl text-sm leading-relaxed text-[#c2b3b8] md:text-base">
-                    {f.a}
-                  </dd>
-                </details>
-              ))}
-            </dl>
-          </ScrollStagger>
+          <ScrollReveal className="md:col-span-8" distance={12}>
+            <FaqList items={faqs} />
+          </ScrollReveal>
         </div>
       </section>
 
