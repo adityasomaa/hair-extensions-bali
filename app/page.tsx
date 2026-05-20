@@ -10,7 +10,6 @@ import {
   Clock,
 } from "lucide-react";
 import LoaderLuxe from "@/components/loaders/LoaderLuxe";
-import VideoLoop from "@/components/VideoLoop";
 import {
   ScrollReveal,
   ScrollStagger,
@@ -24,7 +23,6 @@ import {
   services,
   valueProps,
   faqs,
-  heroVideoLuxe,
   formatIDR,
 } from "@/lib/content";
 import { getReviews } from "@/lib/reviews";
@@ -110,13 +108,16 @@ export default async function HomePage() {
           <div className="relative md:col-span-5 lg:col-span-5">
             <ClipReveal delay={1.8} duration={1.4}>
               <ParallaxScroll intensity={0.18}>
-                <VideoLoop
-                  src={heroVideoLuxe.src}
-                  poster={heroVideoLuxe.poster}
-                  alt={heroVideoLuxe.caption}
-                  lazy={false}
-                  className="relative aspect-[4/5] overflow-hidden rounded-sm"
-                />
+                <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
+                  <Image
+                    src="/photos/hero-rack.jpg"
+                    alt="The Hair Extensions Bali studio — wall of premium hair colors and mannequin display"
+                    fill
+                    priority
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 40vw"
+                  />
+                </div>
               </ParallaxScroll>
             </ClipReveal>
             <div className="absolute -bottom-6 -left-6 hidden h-32 w-32 border border-[#ffb6c1]/40 md:block" aria-hidden />

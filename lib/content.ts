@@ -102,11 +102,7 @@ export const services: Service[] = [
       "Always sleep with hair loosely tied + silk pillowcase",
       "Avoid direct heat on the bonds — keep iron 2 cm below",
     ],
-    beforeAfter: {
-      before: "/photos/detail-2-md.jpg",
-      after: "/photos/detail-3-md.jpg",
-    },
-    heroPhoto: "/photos/detail-3.jpg",
+    heroPhoto: "/photos/detail-4.jpg",
   },
   {
     slug: "nano-ring",
@@ -156,11 +152,7 @@ export const services: Service[] = [
       "Sleep with hair tied in a low loose braid",
       "Schedule a refit every 8 – 12 weeks as natural hair grows",
     ],
-    beforeAfter: {
-      before: "/photos/detail-1-md.jpg",
-      after: "/photos/detail-4-md.jpg",
-    },
-    heroPhoto: "/photos/detail-4.jpg",
+    heroPhoto: "/photos/products-5.jpg",
   },
   {
     slug: "micro-ring",
@@ -206,11 +198,7 @@ export const services: Service[] = [
       "Avoid silicone leave-ins (can slip the bonds)",
       "Refit every 8 – 10 weeks as natural hair grows",
     ],
-    beforeAfter: {
-      before: "/photos/products-3-md.jpg",
-      after: "/photos/products-5-md.jpg",
-    },
-    heroPhoto: "/photos/products-5.jpg",
+    heroPhoto: "/photos/detail-2.jpg",
   },
   {
     slug: "weft",
@@ -259,10 +247,6 @@ export const services: Service[] = [
       "Sleep with hair in a low ponytail or loose braid",
       "Schedule repositioning every 6 – 8 weeks",
     ],
-    beforeAfter: {
-      before: "/photos/products-2-md.jpg",
-      after: "/photos/products-1-md.jpg",
-    },
     heroPhoto: "/photos/products-1.jpg",
   },
   {
@@ -309,11 +293,7 @@ export const services: Service[] = [
       "Sulfate-free shampoo only",
       "Schedule a refit every 6 – 8 weeks for fresh tapes",
     ],
-    beforeAfter: {
-      before: "/photos/salon-3-md.jpg",
-      after: "/photos/salon-1-md.jpg",
-    },
-    heroPhoto: "/photos/salon-1.jpg",
+    heroPhoto: "/photos/products-2.jpg",
   },
   {
     slug: "clip-in",
@@ -358,10 +338,6 @@ export const services: Service[] = [
       "Clip onto pre-styled hair, not freshly washed",
       "Treat heat-styling exactly as you would your own hair",
     ],
-    beforeAfter: {
-      before: "/photos/products-4-md.jpg",
-      after: "/photos/detail-1-md.jpg",
-    },
     heroPhoto: "/photos/detail-1.jpg",
   },
 ];
