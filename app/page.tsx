@@ -329,7 +329,7 @@ export default async function HomePage() {
           <ScrollStagger className="md:col-span-8" stagger={0.06} distance={12}>
             <dl className="divide-y divide-white/10 border-y border-white/10">
               {faqs.map((f) => (
-                <details key={f.q} className="group py-6 first:pt-0 last:pb-0">
+                <details key={f.q} className="group py-6">
                   <summary className="flex cursor-pointer items-baseline justify-between gap-4 list-none">
                     <dt className="font-serif text-lg leading-tight text-[#f6e9ec] md:text-xl">
                       {f.q}
