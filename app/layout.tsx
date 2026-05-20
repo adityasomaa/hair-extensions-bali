@@ -5,6 +5,7 @@ import { brand } from "@/lib/content";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
+import PageTransitionLoader from "@/components/loaders/PageTransitionLoader";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -47,6 +48,7 @@ export default function RootLayout({
       className={`${inter.variable} ${playfair.variable} ${caveat.variable} antialiased`}
     >
       <body className="min-h-screen bg-[#0e0b09] text-[#f6e9ec]">
+        <PageTransitionLoader />
         <SmoothScroll>
           <Nav />
           <main>{children}</main>
