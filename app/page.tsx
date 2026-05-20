@@ -57,9 +57,9 @@ export default async function HomePage() {
             </ScrollReveal>
             <ScrollReveal delay={2} duration={0.8}>
               <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#c2b3b8] md:text-xl">
-                Transformation is in the details. International-quality hair, six
-                expert application methods, and warm Balinese hospitality —
-                quietly perfected since day one.
+                Hair extensions in Bali, based in Kerobokan. Specialising in
+                keratin bond, nano ring, micro ring, weft, tape-in, and clip-in
+                extensions — 100% real human hair, expertly applied.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={2.15} duration={0.7}>
@@ -90,15 +90,15 @@ export default async function HomePage() {
                   </dd>
                 </div>
                 <div>
-                  <dt className="text-[#ffb6c1]">Lasts up to</dt>
+                  <dt className="text-[#ffb6c1]">Experience</dt>
                   <dd className="mt-1.5 font-serif text-2xl text-[#f6e9ec] normal-case tracking-normal">
-                    9 months
+                    3+ years
                   </dd>
                 </div>
                 <div>
-                  <dt className="text-[#ffb6c1]">Located</dt>
+                  <dt className="text-[#ffb6c1]">Satisfied clients</dt>
                   <dd className="mt-1.5 font-serif text-2xl text-[#f6e9ec] normal-case tracking-normal">
-                    Kerobokan
+                    500+
                   </dd>
                 </div>
               </dl>
