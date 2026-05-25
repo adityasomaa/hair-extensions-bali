@@ -218,9 +218,16 @@ export default async function HomePage() {
             </ScrollReveal>
             <ScrollReveal delay={2} duration={0.8}>
               <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#c2b3b8] md:text-xl">
-                Hair extensions in Bali, based in Kerobokan. Specialising in
-                keratin bond, nano ring, micro ring, weft, tape-in, and clip-in
-                extensions — 100% real human hair, expertly applied.
+                Bali&rsquo;s largest hair extension shop, in the heart of
+                Kerobokan. 100+ shades on display — Remy and Indonesian-grade
+                real human hair — installed using six expert methods: keratin
+                bond, nano ring, micro ring, weft, tape-in, and clip-in.
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={2.05} duration={0.8}>
+              <p className="mt-4 max-w-xl text-base italic leading-relaxed text-[#ffb6c1] md:text-lg">
+                Extensions only — no cuts, colour, or styling. Walk-in or by
+                appointment.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={2.15} duration={0.7}>
