@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import LoaderLuxe from "@/components/loaders/LoaderLuxe";
 import FaqList from "@/components/FaqList";
+import VideoLoop from "@/components/VideoLoop";
 import {
   ScrollReveal,
   ScrollStagger,
@@ -23,22 +24,166 @@ import {
   aboutCopy,
   services,
   valueProps,
+  shopFeatures,
   faqs,
+  heroVideoDisplay,
   formatIDR,
 } from "@/lib/content";
 import { getReviews } from "@/lib/reviews";
 
+// Schema.org JSON-LD — HairSalon + FAQPage. Helps Google Rich Results,
+// Knowledge Graph, and AI assistants (ChatGPT, Claude, Perplexity, Gemini)
+// answer queries like "where to buy hair extensions in Bali" with our data.
+function buildJsonLd(reviews: { rating: number; quote: string; name: string }[]) {
+  const siteUrl = "https://thehairextensionsbali.com";
+  const ratingsCount = reviews.length;
+  const ratingsAvg =
+    ratingsCount > 0
+      ? reviews.reduce((sum, r) => sum + r.rating, 0) / ratingsCount
+      : 5;
+
+  return [
+    // HairSalon — primary business entity
+    {
+      "@context": "https://schema.org",
+      "@type": "HairSalon",
+      "@id": `${siteUrl}#business`,
+      name: brand.name,
+      alternateName: brand.shortName,
+      description:
+        "Bali's largest hair extension shop, located in Kerobokan. 100+ shades on display, six expert application methods (keratin bond, nano ring, micro ring, weft, tape-in, clip-in), 100% real human hair including Remy and Indonesian grades. Walk-in or by appointment.",
+      url: siteUrl,
+      telephone: brand.whatsapp,
+      image: [`${siteUrl}/photos/hero-rack.jpg`, `${siteUrl}/photos/salon-1.jpg`],
+      logo: `${siteUrl}/icon.png`,
+      priceRange: brand.priceRange,
+      currenciesAccepted: "IDR",
+      paymentAccepted: "Cash, Bank Transfer, QRIS",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: brand.street,
+        addressLocality: brand.locality,
+        addressRegion: brand.region,
+        postalCode: brand.postalCode,
+        addressCountry: brand.country,
+      },
+      areaServed: [
+        { "@type": "Place", name: "Kerobokan" },
+        { "@type": "Place", name: "Seminyak" },
+        { "@type": "Place", name: "Canggu" },
+        { "@type": "Place", name: "Ubud" },
+        { "@type": "Place", name: "Bali" },
+      ],
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday",
+          ],
+          opens: brand.hoursOpens,
+          closes: brand.hoursCloses,
+        },
+      ],
+      sameAs: [brand.instagramUrl, brand.whatsappLink],
+      makesOffer: services.map((s) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: `${s.name} hair extensions`,
+          description: s.description,
+        },
+        priceCurrency: "IDR",
+        price: s.prices[0]?.amountIDR,
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          priceCurrency: "IDR",
+          price: s.prices[0]?.amountIDR,
+          unitText: s.unit,
+        },
+      })),
+      amenityFeature: brand.amenities.map((a) => ({
+        "@type": "LocationFeatureSpecification",
+        name: a,
+        value: true,
+      })),
+      aggregateRating:
+        ratingsCount > 0
+          ? {
+              "@type": "AggregateRating",
+              ratingValue: ratingsAvg.toFixed(1),
+              reviewCount: ratingsCount,
+              bestRating: 5,
+              worstRating: 1,
+            }
+          : undefined,
+      review: reviews.slice(0, 6).map((r) => ({
+        "@type": "Review",
+        author: { "@type": "Person", name: r.name },
+        reviewRating: {
+          "@type": "Rating",
+          ratingValue: r.rating,
+          bestRating: 5,
+        },
+        reviewBody: r.quote,
+      })),
+    },
+    // FAQPage — surfaces in Google FAQ rich result + AI Q&A
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "@id": `${siteUrl}#faq`,
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    },
+  ];
+}
+
 export const metadata = {
-  title: `${brand.name} — Premium Hair Extensions in Bali`,
-  description: brand.tagline,
+  title: `${brand.name} — Bali's Largest Hair Extension Shop in Kerobokan`,
+  description:
+    "Bali's largest hair extension shop, located in Kerobokan. 100+ shades on display, six expert installation methods (keratin bond, nano ring, micro ring, weft, tape-in, clip-in), 100% real human hair including Remy and Indonesian grades. Walk-in or by appointment, daily 09:00–19:00.",
+  keywords: [
+    "hair extensions bali",
+    "hair extensions kerobokan",
+    "hair extension shop bali",
+    "keratin bond bali",
+    "tape-in extensions bali",
+    "nano ring extensions bali",
+    "micro ring extensions bali",
+    "weft extensions bali",
+    "clip-in extensions bali",
+    "remy hair bali",
+    "real human hair bali",
+    "premium hair extensions seminyak",
+    "hair extensions canggu",
+  ],
 };
 
 export default async function HomePage() {
   const googleReviews = await getReviews();
+  const jsonLd = buildJsonLd(googleReviews);
 
   return (
     <>
       <LoaderLuxe />
+
+      {/* JSON-LD structured data — HairSalon + FAQPage. Helps Google Rich
+          Results, Knowledge Graph, and AI assistants quote our facts. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
 
       {/* ── 1. HERO ─────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden pt-28 md:pt-36">
@@ -109,16 +254,13 @@ export default async function HomePage() {
           <div className="relative md:col-span-5 lg:col-span-5">
             <ClipReveal delay={1.8} duration={1.4}>
               <ParallaxScroll intensity={0.18}>
-                <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
-                  <Image
-                    src="/photos/hero-rack.jpg"
-                    alt="The Hair Extensions Bali studio — wall of premium hair colors and mannequin display"
-                    fill
-                    priority
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 40vw"
-                  />
-                </div>
+                <VideoLoop
+                  src={heroVideoDisplay.src}
+                  poster={heroVideoDisplay.poster}
+                  alt={heroVideoDisplay.caption}
+                  lazy={false}
+                  className="relative aspect-[4/5] overflow-hidden rounded-sm"
+                />
               </ParallaxScroll>
             </ClipReveal>
             <div className="absolute -bottom-6 -left-6 hidden h-32 w-32 border border-[#ffb6c1]/40 md:block" aria-hidden />
@@ -180,6 +322,60 @@ export default async function HomePage() {
               </div>
             ))}
           </ScrollStagger>
+        </div>
+      </section>
+
+      {/* ── 2b. WHY VISIT US — shop positioning (largest, walk-in, etc.) ── */}
+      <section id="why-us" className="border-t border-white/5 py-24 md:py-36">
+        <div className="mx-auto max-w-7xl px-6">
+          <ScrollReveal className="mb-16 max-w-3xl">
+            <p className="mb-5 text-[11px] uppercase tracking-[0.28em] text-[#ffb6c1]">
+              Why visit us
+            </p>
+            <h2 className="font-serif text-4xl leading-tight md:text-5xl lg:text-6xl">
+              Bali&rsquo;s largest{" "}
+              <span className="font-script italic text-[#ffb6c1]">hair extension</span>{" "}
+              shop.
+            </h2>
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-[#c2b3b8] md:text-lg">
+              The Hair Extensions Bali is a destination, not just a salon. Walk
+              in to our Kerobokan studio to browse a wall of 100+ shades, feel
+              every texture in person, and have a premium-grade extension
+              professionally applied — all in one visit.
+            </p>
+          </ScrollReveal>
+
+          <ScrollStagger
+            className="grid gap-px overflow-hidden rounded-sm border border-white/10 bg-white/10 md:grid-cols-2"
+            stagger={0.1}
+            distance={20}
+          >
+            {shopFeatures.map((f) => (
+              <article key={f.title} className="bg-[#0e0b09] p-8 md:p-10">
+                <h3 className="font-serif text-2xl text-[#ffb6c1] md:text-3xl">
+                  {f.title}
+                </h3>
+                <p className="mt-4 text-base leading-relaxed text-[#c2b3b8]">
+                  {f.body}
+                </p>
+              </article>
+            ))}
+          </ScrollStagger>
+
+          <ScrollReveal className="mt-14 flex flex-col items-center gap-4 text-center" delay={0.1}>
+            <p className="max-w-xl text-sm leading-relaxed text-[#b5a3a8]">
+              Open Mon–Sun, 09:00–19:00 WITA. Walk in by call, or message us on
+              WhatsApp to book a consultation.
+            </p>
+            <a
+              href={brand.whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm text-[#ffb6c1] underline underline-offset-8 transition-colors hover:text-[#f6e9ec]"
+            >
+              <MessageCircle className="h-4 w-4" aria-hidden /> {brand.whatsappDisplay}
+            </a>
+          </ScrollReveal>
         </div>
       </section>
 

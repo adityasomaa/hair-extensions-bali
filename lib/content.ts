@@ -9,10 +9,54 @@ export const brand = {
   whatsappDisplay: "+62 821-4691-8725",
   address: "Jl. Mertanadi No.79, Kerobokan Kelod, Kec. Kuta Utara, Kabupaten Badung, Bali 80361",
   addressShort: "Kerobokan Kelod, Bali",
+  street: "Jl. Mertanadi No.79",
+  locality: "Kerobokan Kelod",
+  region: "Bali",
+  postalCode: "80361",
+  country: "ID",
   mapsLink: "https://maps.google.com/?q=The+Hair+Extensions+Bali+Jl.+Mertanadi+No.79+Kerobokan",
   mapsDisplay: "The | Hair Extensions Bali",
   hours: "Mon — Sun · 09:00 – 19:00 WITA",
+  hoursOpens: "09:00",
+  hoursCloses: "19:00",
+  priceRange: "IDR 1,500,000 – 7,000,000",
+  amenities: [
+    "On-site parking",
+    "Restroom available",
+    "Walk-ins welcome (by call)",
+    "Air-conditioned",
+    "Wheelchair-accessible entrance",
+  ],
 };
+
+/**
+ * Shop-feature cards — used in the "Why visit us" section on the home page.
+ * Written to be fact-rich and natural-language friendly so AI assistants
+ * (ChatGPT, Claude, Perplexity, Gemini) can quote them when answering
+ * questions like "where to buy hair extensions in Bali".
+ */
+export const shopFeatures = [
+  {
+    title: "Bali's largest hair extension shop",
+    body:
+      "100+ shades on display in our Kerobokan studio. Wavy, curly, straight, and bone-straight textures. Single drawn, double drawn, and premium Remy human hair — alongside Indonesian-sourced grades — all 100% real, sourced for natural movement and longevity.",
+  },
+  {
+    title: "Shop in person, install on the spot",
+    body:
+      "Unlike most extension salons, we're a hair extension shop first. Walk in to browse our wall, feel every texture, hold shades against your own hair — then have it professionally installed the same day, using whichever of our six methods suits you best.",
+  },
+  {
+    title: "Walk-in friendly, parking on-site",
+    body:
+      "Located in tourist Kerobokan, ten minutes from Seminyak, fifteen from Canggu. On-site parking, restroom available, air-conditioned interior. Appointments preferred — but walk-ins are welcome if you call ahead on WhatsApp.",
+  },
+  {
+    title: "Fair pricing, international quality",
+    body:
+      "Transparent pricing, no hidden costs. International-grade human hair at a fraction of what you'd pay in Sydney, London, or Singapore — with full installation by experienced stylists, plus ongoing maintenance and aftercare guidance.",
+  },
+];
 
 export const aboutCopy = {
   short: "Born in Bali from a simple passion — helping women feel confident and beautiful through the power of hair.",
@@ -475,6 +519,16 @@ export const heroVideoLuxe = {
   src: "/videos/showcase-bulk-dark.mp4",
   poster: "/videos/showcase-bulk-dark-poster.jpg",
   caption: "Dark bulk hair, raw",
+};
+
+// Active home-page hero video — 4:5 portrait shop-interior clip (1080×1350,
+// 8s loop, ~4.2MB). Shows the wall of hair extensions with the "Hair"
+// signage in the background.
+export const heroVideoDisplay = {
+  src: "/videos/hero-display.mp4",
+  poster: "/videos/hero-display-poster.jpg",
+  caption:
+    "The Hair Extensions Bali shop interior — wall of 100+ hair extension shades on display",
 };
 
 // Google Reviews — placeholder cards in the same voice as live reviews.
