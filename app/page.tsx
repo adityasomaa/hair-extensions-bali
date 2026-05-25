@@ -227,7 +227,7 @@ export default async function HomePage() {
             <ScrollReveal delay={2.05} duration={0.8}>
               <p className="mt-4 max-w-xl text-base italic leading-relaxed text-[#ffb6c1] md:text-lg">
                 Extensions only — no cuts, colour, or styling. Walk-in or by
-                appointment.
+                appointment, with on-site parking and restroom.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={2.15} duration={0.7}>
