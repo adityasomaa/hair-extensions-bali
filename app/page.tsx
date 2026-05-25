@@ -8,6 +8,12 @@ import {
   ArrowRight,
   MapPin,
   Clock,
+  Store,
+  Eye,
+  DoorOpen,
+  BadgeCheck,
+  Scissors,
+  type LucideIcon,
 } from "lucide-react";
 import LoaderLuxe from "@/components/loaders/LoaderLuxe";
 import FaqList from "@/components/FaqList";
@@ -25,10 +31,19 @@ import {
   services,
   valueProps,
   shopFeatures,
+  specialisationNotice,
   faqs,
   heroVideoDisplay,
   formatIDR,
 } from "@/lib/content";
+
+// Map icon names (string in content.ts) → lucide-react component
+const shopFeatureIcons: Record<string, LucideIcon> = {
+  Store,
+  Eye,
+  DoorOpen,
+  BadgeCheck,
+};
 import { getReviews } from "@/lib/reviews";
 
 // Schema.org JSON-LD — HairSalon + FAQPage. Helps Google Rich Results,
@@ -51,7 +66,7 @@ function buildJsonLd(reviews: { rating: number; quote: string; name: string }[])
       name: brand.name,
       alternateName: brand.shortName,
       description:
-        "Bali's largest hair extension shop, located in Kerobokan. 100+ shades on display, six expert application methods (keratin bond, nano ring, micro ring, weft, tape-in, clip-in), 100% real human hair including Remy and Indonesian grades. Walk-in or by appointment.",
+        "Bali's largest hair extension shop, located in Kerobokan. We specialise in hair extensions only — no cuts, colour, or styling. 100+ shades on display, six expert application methods (keratin bond, nano ring, micro ring, weft, tape-in, clip-in), 100% real human hair including Remy and Indonesian grades. Walk-in or by appointment.",
       url: siteUrl,
       telephone: brand.whatsapp,
       image: [`${siteUrl}/photos/hero-rack.jpg`, `${siteUrl}/photos/salon-1.jpg`],
@@ -150,7 +165,7 @@ function buildJsonLd(reviews: { rating: number; quote: string; name: string }[])
 export const metadata = {
   title: `${brand.name} — Bali's Largest Hair Extension Shop in Kerobokan`,
   description:
-    "Bali's largest hair extension shop, located in Kerobokan. 100+ shades on display, six expert installation methods (keratin bond, nano ring, micro ring, weft, tape-in, clip-in), 100% real human hair including Remy and Indonesian grades. Walk-in or by appointment, daily 09:00–19:00.",
+    "Bali's largest hair extension shop, located in Kerobokan. We specialise in extensions only — no cuts, colour, or styling. 100+ shades on display, six expert installation methods (keratin bond, nano ring, micro ring, weft, tape-in, clip-in), 100% real human hair including Remy and Indonesian grades. Walk-in or by appointment, daily 09:00–19:00.",
   keywords: [
     "hair extensions bali",
     "hair extensions kerobokan",
@@ -328,7 +343,7 @@ export default async function HomePage() {
       {/* ── 2b. WHY VISIT US — shop positioning (largest, walk-in, etc.) ── */}
       <section id="why-us" className="border-t border-white/5 py-24 md:py-36">
         <div className="mx-auto max-w-7xl px-6">
-          <ScrollReveal className="mb-16 max-w-3xl">
+          <ScrollReveal className="mb-12 max-w-3xl">
             <p className="mb-5 text-[11px] uppercase tracking-[0.28em] text-[#ffb6c1]">
               Why visit us
             </p>
@@ -345,21 +360,57 @@ export default async function HomePage() {
             </p>
           </ScrollReveal>
 
+          {/* Specialisation callout — prominent banner so visitors don't
+              walk in expecting cuts/colour/styling. The owner reports
+              this confusion happens often. */}
+          <ScrollReveal>
+            <aside
+              role="note"
+              className="mb-14 flex items-start gap-5 rounded-sm border border-[#ffb6c1]/30 border-l-2 border-l-[#ffb6c1] bg-[#ffb6c1]/[0.06] p-6 md:gap-6 md:p-8"
+            >
+              <div className="relative flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full border border-[#ffb6c1]/40 bg-[#ffb6c1]/10">
+                <Scissors className="h-5 w-5 text-[#ffb6c1]" aria-hidden />
+                {/* Diagonal slash through scissors to signal "we don't do this" */}
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute left-1/2 top-1/2 h-px w-9 origin-center -translate-x-1/2 -translate-y-1/2 rotate-45 bg-[#ffb6c1]"
+                />
+              </div>
+              <div className="min-w-0 flex-1">
+                <p className="text-[11px] uppercase tracking-[0.28em] text-[#ffb6c1]">
+                  {specialisationNotice.eyebrow}
+                </p>
+                <p className="mt-2 font-serif text-xl text-[#f6e9ec] md:text-2xl">
+                  {specialisationNotice.title}
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-[#c2b3b8] md:text-base">
+                  {specialisationNotice.body}
+                </p>
+              </div>
+            </aside>
+          </ScrollReveal>
+
           <ScrollStagger
             className="grid gap-px overflow-hidden rounded-sm border border-white/10 bg-white/10 md:grid-cols-2"
             stagger={0.1}
             distance={20}
           >
-            {shopFeatures.map((f) => (
-              <article key={f.title} className="bg-[#0e0b09] p-8 md:p-10">
-                <h3 className="font-serif text-2xl text-[#ffb6c1] md:text-3xl">
-                  {f.title}
-                </h3>
-                <p className="mt-4 text-base leading-relaxed text-[#c2b3b8]">
-                  {f.body}
-                </p>
-              </article>
-            ))}
+            {shopFeatures.map((f) => {
+              const Icon = shopFeatureIcons[f.icon] ?? Sparkles;
+              return (
+                <article key={f.title} className="bg-[#0e0b09] p-8 md:p-10">
+                  <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full border border-[#ffb6c1]/40 bg-[#ffb6c1]/10">
+                    <Icon className="h-5 w-5 text-[#ffb6c1]" aria-hidden />
+                  </div>
+                  <h3 className="font-serif text-2xl text-[#ffb6c1] md:text-3xl">
+                    {f.title}
+                  </h3>
+                  <p className="mt-4 text-base leading-relaxed text-[#c2b3b8]">
+                    {f.body}
+                  </p>
+                </article>
+              );
+            })}
           </ScrollStagger>
 
           <ScrollReveal className="mt-14 flex flex-col items-center gap-4 text-center" delay={0.1}>

@@ -30,28 +30,47 @@ export const brand = {
 };
 
 /**
+ * Specialisation notice — surfaced as a prominent callout above the
+ * shop-feature cards. The owner reports constant requests from walk-ins
+ * for cuts/colour/styling. We don't do those. This needs to be the
+ * first thing a visitor reads after "Why visit us".
+ */
+export const specialisationNotice = {
+  eyebrow: "Heads up — we specialise",
+  title: "Extensions only — no cuts, no colour, no styling.",
+  body:
+    "We sell and install premium hair extensions — that's all we do, all day. For cuts, colour, or styling, please visit your favourite stylist; come to us for world-class hair and expert fitting.",
+};
+
+/**
  * Shop-feature cards — used in the "Why visit us" section on the home page.
  * Written to be fact-rich and natural-language friendly so AI assistants
  * (ChatGPT, Claude, Perplexity, Gemini) can quote them when answering
  * questions like "where to buy hair extensions in Bali".
+ *
+ * `icon` is a lucide-react component name; mapped to JSX in page.tsx.
  */
 export const shopFeatures = [
   {
+    icon: "Store",
     title: "Bali's largest hair extension shop",
     body:
       "100+ shades on display in our Kerobokan studio. Wavy, curly, straight, and bone-straight textures. Single drawn, double drawn, and premium Remy human hair — alongside Indonesian-sourced grades — all 100% real, sourced for natural movement and longevity.",
   },
   {
+    icon: "Eye",
     title: "Shop in person, install on the spot",
     body:
       "Unlike most extension salons, we're a hair extension shop first. Walk in to browse our wall, feel every texture, hold shades against your own hair — then have it professionally installed the same day, using whichever of our six methods suits you best.",
   },
   {
+    icon: "DoorOpen",
     title: "Walk-in friendly, parking on-site",
     body:
       "Located in tourist Kerobokan, ten minutes from Seminyak, fifteen from Canggu. On-site parking, restroom available, air-conditioned interior. Appointments preferred — but walk-ins are welcome if you call ahead on WhatsApp.",
   },
   {
+    icon: "BadgeCheck",
     title: "Fair pricing, international quality",
     body:
       "Transparent pricing, no hidden costs. International-grade human hair at a fraction of what you'd pay in Sydney, London, or Singapore — with full installation by experienced stylists, plus ongoing maintenance and aftercare guidance.",
@@ -434,6 +453,10 @@ export const testimonials = [
 ];
 
 export const faqs = [
+  {
+    q: "Do you offer hair styling, cuts, or colour?",
+    a: "No — we specialise in hair extensions only. We sell, fit, and maintain extensions; we don't do cuts, colour, blow-dries, or styling services. For those, we recommend visiting a salon you already know and love. Come to us for world-class hair and expert installation.",
+  },
   {
     q: "How long do extensions last?",
     a: "It depends on the method. Tape-ins and rings last 6 – 12 weeks before repositioning, keratin bonds 3 – 4 months. With proper care, the same hair can be reused for up to 6 – 9 months — sometimes longer.",
