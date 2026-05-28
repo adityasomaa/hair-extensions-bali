@@ -1,7 +1,8 @@
 export const brand = {
   name: "The Hair Extensions Bali",
   shortName: "Hair Extensions Bali",
-  tagline: "Premium hair extensions, expertly applied in the heart of Bali.",
+  tagline:
+    "Bali's largest hair extension shop. Premium real human hair, expertly fitted in Kerobokan. Extensions only — no cuts, colour, or styling.",
   instagram: "hairextensionsbali",
   instagramUrl: "https://instagram.com/hairextensionsbali",
   whatsapp: "+6282146918725",
@@ -34,12 +35,17 @@ export const brand = {
  * shop-feature cards. The owner reports constant requests from walk-ins
  * for cuts/colour/styling. We don't do those. This needs to be the
  * first thing a visitor reads after "Why visit us".
+ *
+ * Body delivered in both English and Bahasa Indonesia, since walk-in
+ * confusion happens in both languages.
  */
 export const specialisationNotice = {
-  eyebrow: "Heads up — we specialise",
+  eyebrow: "Heads up — we specialise · Khusus extension",
   title: "Extensions only — no cuts, no colour, no styling.",
   body:
     "We sell and install premium hair extensions — that's all we do, all day. For cuts, colour, or styling, please visit your favourite stylist; come to us for world-class hair and expert fitting.",
+  bodyId:
+    "Kami toko rambut, bukan salon. Kami khusus jual dan pasang hair extension — tidak melayani potong, cat, atau styling rambut.",
 };
 
 /**
@@ -55,13 +61,13 @@ export const shopFeatures = [
     icon: "Store",
     title: "Bali's largest hair extension shop",
     body:
-      "100+ shades on display in our Kerobokan studio. Wavy, curly, straight, and bone-straight textures. Single drawn, double drawn, and premium Remy human hair — alongside Indonesian-sourced grades — all 100% real, sourced for natural movement and longevity.",
+      "100+ shades on display in our Kerobokan hair shop. Wavy, curly, straight, and bone-straight textures. Single drawn, double drawn, premium Remy hair, and Indonesian-sourced human hair — all 100% real, sourced for natural movement and longevity. Always Indonesian hair in stock, alongside international grades.",
   },
   {
     icon: "Eye",
     title: "Shop in person, install on the spot",
     body:
-      "Unlike most extension salons, we're a hair extension shop first. Walk in to browse our wall, feel every texture, hold shades against your own hair — then have it professionally installed the same day, using whichever of our six methods suits you best.",
+      "Unlike most extension salons, we're a hair shop first. Walk in to browse the wall, feel every texture, hold shades against your own hair — then have your chosen extension professionally installed the same day, using whichever of our six methods suits you best.",
   },
   {
     icon: "DoorOpen",
@@ -71,9 +77,9 @@ export const shopFeatures = [
   },
   {
     icon: "BadgeCheck",
-    title: "Fair pricing, international quality",
+    title: "Fair pricing, transparent rates",
     body:
-      "Transparent pricing, no hidden costs. International-grade human hair at a fraction of what you'd pay in Sydney, London, or Singapore — with full installation by experienced stylists, plus ongoing maintenance and aftercare guidance.",
+      "Every price published upfront on our website — no hidden costs, no \"DM for price\" games. International-grade human hair at a fraction of what you'd pay in Sydney, London, or Singapore, with full installation included and ongoing maintenance support.",
   },
 ];
 
@@ -165,7 +171,7 @@ export const services: Service[] = [
       "Always sleep with hair loosely tied + silk pillowcase",
       "Avoid direct heat on the bonds — keep iron 2 cm below",
     ],
-    heroPhoto: "/photos/detail-4.jpg",
+    heroPhoto: "/photos/before-after/keratin-bond-detail.jpg",
   },
   {
     slug: "nano-ring",
@@ -261,7 +267,7 @@ export const services: Service[] = [
       "Avoid silicone leave-ins (can slip the bonds)",
       "Refit every 8 – 10 weeks as natural hair grows",
     ],
-    heroPhoto: "/photos/detail-2.jpg",
+    heroPhoto: "/photos/before-after/micro-ring-detail.jpg",
   },
   {
     slug: "weft",
@@ -310,7 +316,11 @@ export const services: Service[] = [
       "Sleep with hair in a low ponytail or loose braid",
       "Schedule repositioning every 6 – 8 weeks",
     ],
-    heroPhoto: "/photos/products-1.jpg",
+    heroPhoto: "/photos/before-after/weft-installation.jpg",
+    beforeAfter: {
+      before: "/photos/before-after/weft-before.jpg",
+      after: "/photos/before-after/weft-after.jpg",
+    },
   },
   {
     slug: "tape-in",
@@ -452,34 +462,155 @@ export const testimonials = [
   },
 ];
 
-export const faqs = [
+/**
+ * FAQ answer can be either a flat string (simple Q&A) or a structured
+ * answer with intro + per-method items + outro. The structured form
+ * renders as a labelled list — easier to scan than a long paragraph
+ * (per client feedback: "jangan dalam bentuk kalimat, breakdown per
+ * bagian dengan spasi per kalimat").
+ */
+export type FaqAnswer =
+  | string
+  | {
+      intro?: string;
+      items?: { label: string; body: string }[];
+      outro?: string;
+    };
+
+export type Faq = { q: string; a: FaqAnswer };
+
+export const faqs: Faq[] = [
   {
     q: "Do you offer hair styling, cuts, or colour?",
-    a: "No — we specialise in hair extensions only. We sell, fit, and maintain extensions; we don't do cuts, colour, blow-dries, or styling services. For those, we recommend visiting a salon you already know and love. Come to us for world-class hair and expert installation.",
+    a: "No — we specialise in hair extensions only. We sell, fit, and maintain extensions; we don't do cuts, colour, blow-dries, or styling services. Kami toko rambut, bukan salon. For cuts or colour, please visit a salon you already trust; come to us for world-class hair and expert installation.",
   },
   {
-    q: "How long do extensions last?",
-    a: "It depends on the method. Tape-ins and rings last 6 – 12 weeks before repositioning, keratin bonds 3 – 4 months. With proper care, the same hair can be reused for up to 6 – 9 months — sometimes longer.",
+    q: "How long do hair extensions last?",
+    a: {
+      intro:
+        "Wear time before repositioning, assuming no tangling and proper aftercare:",
+      items: [
+        { label: "Keratin Bond", body: "2 – 4 months" },
+        { label: "Nano Ring", body: "~ 2 months" },
+        { label: "Micro Ring", body: "~ 2 months" },
+        { label: "Tape-In", body: "~ 2 months" },
+        { label: "Weft", body: "~ 2 months" },
+        {
+          label: "Clip-In",
+          body: "Reusable for 6 – 12 months — you put them on and off yourself",
+        },
+      ],
+      outro:
+        "The hair itself can be reused for 6 – 9 months across multiple repositionings with proper care.",
+    },
   },
   {
-    q: "Will it damage my natural hair?",
-    a: "Not when applied correctly. Methods like nano ring and micro ring use no heat, no glue, and no chemicals. Keratin bonds use the same protein your hair is made of. Clip-ins and tape-ins are non-damaging when removed properly.",
+    q: "Will hair extensions damage my natural hair?",
+    a: {
+      intro: "It depends on the method and your hair's strength. Honestly:",
+      items: [
+        {
+          label: "Keratin Bond",
+          body: "Higher risk if your natural hair isn't strong enough — fusion bonds put more stress on the root.",
+        },
+        {
+          label: "Nano Ring",
+          body: "Less damaging than keratin bond. Risk still depends on whether your natural hair is healthy.",
+        },
+        {
+          label: "Tape-In",
+          body: "Low damage while worn. Most damage cases happen during removal — needs the correct technique.",
+        },
+        {
+          label: "Weft",
+          body: "Very low damage — installed in only 3 – 5 horizontal lines, not all over your head.",
+        },
+        {
+          label: "Micro Ring",
+          body: "Similar to nano ring — minimal damage when applied and removed by a trained stylist.",
+        },
+        {
+          label: "Clip-In",
+          body: "Zero damage — temporary, you put them on and off yourself.",
+        },
+      ],
+      outro:
+        "Send us a photo on WhatsApp first; we'll honestly tell you which method (if any) suits your hair.",
+    },
   },
   {
     q: "Which method is right for me?",
-    a: "We match the method to your hair type and lifestyle. Fine hair: nano ring or tape-in. Medium-thick hair: keratin bond, micro ring, or weft. Need it temporary? Clip-in. Message us on WhatsApp and we'll guide you.",
+    a: {
+      intro:
+        "Method selection depends mostly on your natural hair density. General guide:",
+      items: [
+        {
+          label: "Fine hair",
+          body: "Keratin Bond — lightweight, blends seamlessly without adding weight.",
+        },
+        {
+          label: "Medium to thick hair",
+          body: "Tape-In, Weft, or Nano Ring — these methods carry more volume comfortably.",
+        },
+        {
+          label: "Temporary (events, travel, trying it out)",
+          body: "Clip-In — no commitment, removable anytime.",
+        },
+      ],
+      outro:
+        "Not sure? Send us a photo of your natural hair on WhatsApp — we'll guide you.",
+    },
   },
   {
-    q: "Do you use 100% real human hair?",
-    a: "Yes — international-quality single drawn, double drawn, and premium-grade human hair. It can be styled, dyed, and cared for like your own.",
+    q: "Do you use 100% real human hair? Is it Remy?",
+    a: {
+      intro: "Yes — 100% real human hair, no synthetic blends:",
+      items: [
+        { label: "Single Drawn", body: "Standard premium human hair." },
+        {
+          label: "Double Drawn",
+          body: "Thicker from root to tip, more volume per strand.",
+        },
+        {
+          label: "Premium Remy",
+          body: "Cuticle-aligned for the longest lifespan and most natural movement.",
+        },
+        {
+          label: "Indonesian-sourced hair",
+          body: "Native to the region, well-suited to South-East Asian hair types and tropical climate. Always in stock.",
+        },
+      ],
+      outro:
+        "All grades can be styled, dyed, and cared for like your own hair.",
+    },
   },
   {
     q: "How long does an appointment take?",
-    a: "Roughly 1 hour per 100 strands for ring and bond methods. Tape-ins under 1.5 hours. Wefts take about a day for a full installation.",
+    a: {
+      intro: "Appointment duration by method:",
+      items: [
+        {
+          label: "Keratin Bond / Nano Ring / Micro Ring",
+          body: "~ 1 hour per 100 strands.",
+        },
+        {
+          label: "Tape-In",
+          body: "Under 1.5 hours for a full head.",
+        },
+        {
+          label: "Weft",
+          body: "About a day for a full installation.",
+        },
+        {
+          label: "Clip-In",
+          body: "Walk out same visit — no installation needed.",
+        },
+      ],
+    },
   },
   {
     q: "How do I book?",
-    a: "Message us directly on WhatsApp. We'll discuss your hair, recommend a method, confirm pricing, and book you in.",
+    a: "Message us on WhatsApp at +62 821-4691-8725. Send a photo of your natural hair so we can recommend the right method and quote you the full price before you visit. Open Mon – Sun, 09:00 – 19:00 WITA. Walk-ins welcome if you call ahead.",
   },
 ];
 

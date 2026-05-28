@@ -2,7 +2,62 @@
 
 import { useState } from "react";
 
-type FaqItem = { q: string; a: string };
+type FaqAnswer =
+  | string
+  | {
+      intro?: string;
+      items?: { label: string; body: string }[];
+      outro?: string;
+    };
+
+type FaqItem = { q: string; a: FaqAnswer };
+
+/**
+ * Renders the structured FAQ answer. Plain strings render as a single
+ * paragraph; structured answers render as intro → labelled list → outro
+ * so each method/point is scannable on its own line.
+ */
+function Answer({ a }: { a: FaqAnswer }) {
+  if (typeof a === "string") {
+    return (
+      <p className="text-sm leading-relaxed text-[#c2b3b8] md:text-base">{a}</p>
+    );
+  }
+
+  return (
+    <div className="space-y-5">
+      {a.intro && (
+        <p className="text-sm leading-relaxed text-[#c2b3b8] md:text-base">
+          {a.intro}
+        </p>
+      )}
+
+      {a.items && a.items.length > 0 && (
+        <dl className="space-y-3 border-l border-[#ffb6c1]/25 pl-5">
+          {a.items.map((item) => (
+            <div
+              key={item.label}
+              className="grid gap-1 md:grid-cols-[10rem_1fr] md:gap-5"
+            >
+              <dt className="text-sm font-medium text-[#f6e9ec] md:text-base">
+                {item.label}
+              </dt>
+              <dd className="text-sm leading-relaxed text-[#c2b3b8] md:text-base">
+                {item.body}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      )}
+
+      {a.outro && (
+        <p className="text-sm leading-relaxed text-[#c2b3b8] md:text-base">
+          {a.outro}
+        </p>
+      )}
+    </div>
+  );
+}
 
 /**
  * Animated FAQ accordion.
@@ -54,13 +109,13 @@ export default function FaqList({ items }: { items: FaqItem[] }) {
               style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
             >
               <div className="overflow-hidden">
-                <p
-                  className={`mt-3 max-w-2xl text-sm leading-relaxed text-[#c2b3b8] md:text-base transition-opacity duration-300 ease-out ${
+                <div
+                  className={`mt-4 max-w-2xl transition-opacity duration-300 ease-out ${
                     isOpen ? "opacity-100 delay-200" : "opacity-0"
                   }`}
                 >
-                  {f.a}
-                </p>
+                  <Answer a={f.a} />
+                </div>
               </div>
             </div>
           </div>

@@ -46,6 +46,17 @@ const shopFeatureIcons: Record<string, LucideIcon> = {
 };
 import { getReviews } from "@/lib/reviews";
 
+// Flatten a structured FAQ answer to plain text for the JSON-LD payload.
+// (Schema.org Answer.text wants a single string, not a list.)
+function answerToText(a: (typeof faqs)[number]["a"]): string {
+  if (typeof a === "string") return a;
+  const lines: string[] = [];
+  if (a.intro) lines.push(a.intro);
+  if (a.items) for (const i of a.items) lines.push(`${i.label}: ${i.body}`);
+  if (a.outro) lines.push(a.outro);
+  return lines.join("\n\n");
+}
+
 // Schema.org JSON-LD — HairSalon + FAQPage. Helps Google Rich Results,
 // Knowledge Graph, and AI assistants (ChatGPT, Claude, Perplexity, Gemini)
 // answer queries like "where to buy hair extensions in Bali" with our data.
@@ -66,7 +77,7 @@ function buildJsonLd(reviews: { rating: number; quote: string; name: string }[])
       name: brand.name,
       alternateName: brand.shortName,
       description:
-        "Bali's largest hair extension shop, located in Kerobokan. We specialise in hair extensions only — no cuts, colour, or styling. 100+ shades on display, six expert application methods (keratin bond, nano ring, micro ring, weft, tape-in, clip-in), 100% real human hair including Remy and Indonesian grades. Walk-in or by appointment.",
+        "Bali's largest hair extension shop, located in Kerobokan (kami toko rambut, bukan salon). We specialise in hair extensions only — no cuts, colour, or styling. 100+ shades on display, six expert application methods (keratin bond, nano ring, micro ring, weft, tape-in, clip-in), 100% real human hair including Remy and Indonesian-sourced grades. Transparent published pricing, walk-in or by appointment.",
       url: siteUrl,
       telephone: brand.whatsapp,
       image: [`${siteUrl}/photos/hero-rack.jpg`, `${siteUrl}/photos/salon-1.jpg`],
@@ -156,7 +167,7 @@ function buildJsonLd(reviews: { rating: number; quote: string; name: string }[])
       mainEntity: faqs.map((f) => ({
         "@type": "Question",
         name: f.q,
-        acceptedAnswer: { "@type": "Answer", text: f.a },
+        acceptedAnswer: { "@type": "Answer", text: answerToText(f.a) },
       })),
     },
   ];
@@ -165,11 +176,14 @@ function buildJsonLd(reviews: { rating: number; quote: string; name: string }[])
 export const metadata = {
   title: `${brand.name} — Bali's Largest Hair Extension Shop in Kerobokan`,
   description:
-    "Bali's largest hair extension shop, located in Kerobokan. We specialise in extensions only — no cuts, colour, or styling. 100+ shades on display, six expert installation methods (keratin bond, nano ring, micro ring, weft, tape-in, clip-in), 100% real human hair including Remy and Indonesian grades. Walk-in or by appointment, daily 09:00–19:00.",
+    "Bali's largest hair extension shop in Kerobokan. Kami toko rambut, bukan salon — we specialise in hair extensions only, no cuts/colour/styling. 100+ shades on display, six expert installation methods (keratin bond, nano ring, micro ring, weft, tape-in, clip-in), 100% real human hair: Single Drawn, Double Drawn, Premium Remy, and Indonesian-sourced. Transparent published pricing. Walk-in or by appointment, daily 09:00–19:00 WITA.",
   keywords: [
+    "hair shop bali",
+    "hair extension shop bali",
     "hair extensions bali",
     "hair extensions kerobokan",
-    "hair extension shop bali",
+    "toko rambut bali",
+    "toko hair extension bali",
     "keratin bond bali",
     "tape-in extensions bali",
     "nano ring extensions bali",
@@ -177,9 +191,13 @@ export const metadata = {
     "weft extensions bali",
     "clip-in extensions bali",
     "remy hair bali",
+    "indonesian hair extensions",
     "real human hair bali",
-    "premium hair extensions seminyak",
+    "hair extensions seminyak",
     "hair extensions canggu",
+    "hair extensions ubud",
+    "where to buy hair extensions bali",
+    "bali largest hair extension shop",
   ],
 };
 
@@ -392,6 +410,12 @@ export default async function HomePage() {
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-[#c2b3b8] md:text-base">
                   {specialisationNotice.body}
+                </p>
+                <p
+                  lang="id"
+                  className="mt-3 border-t border-[#ffb6c1]/15 pt-3 text-sm italic leading-relaxed text-[#d8c8cd] md:text-base"
+                >
+                  {specialisationNotice.bodyId}
                 </p>
               </div>
             </aside>
