@@ -35,6 +35,14 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
+  verification: {
+    // Bing Webmaster Tools site verification — proves we own this domain
+    // so Bing (and ChatGPT, which uses Bing for live web search) can
+    // index our content and surface us in AI answers.
+    other: {
+      "msvalidate.01": "DFBB7F42F864C6D1D8F74B9E5AC28C50",
+    },
+  },
 };
 
 export default function RootLayout({
