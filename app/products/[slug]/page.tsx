@@ -114,9 +114,11 @@ export default async function ServiceDetailPage({
               <h2 className="font-serif text-3xl leading-tight md:text-5xl">
                 The transformation
               </h2>
-              <p className="mt-3 text-sm text-[#ab9aa1] italic">
-                Photo placeholders — real before/after photos coming soon.
-              </p>
+              {!service.beforeAfter.real && (
+                <p className="mt-3 text-sm text-[#ab9aa1] italic">
+                  Sample visual — real client before/after photos coming soon.
+                </p>
+              )}
             </ScrollReveal>
 
             <BeforeAfter

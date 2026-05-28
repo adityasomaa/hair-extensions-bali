@@ -116,8 +116,9 @@ export type Service = {
   idealHairType?: string[];
   /** Aftercare tips specific to this method */
   aftercare?: string[];
-  /** Before / after photo paths (placeholders for now) */
-  beforeAfter?: { before: string; after: string };
+  /** Before / after photo paths. `real: true` flags an actual client pair
+   *  (suppresses the "placeholders coming soon" disclaimer on the page). */
+  beforeAfter?: { before: string; after: string; real?: boolean };
   /** Hero / detail page image */
   heroPhoto?: string;
 };
@@ -172,6 +173,10 @@ export const services: Service[] = [
       "Avoid direct heat on the bonds — keep iron 2 cm below",
     ],
     heroPhoto: "/photos/before-after/keratin-bond-detail.jpg",
+    beforeAfter: {
+      before: "/photos/detail-2-md.jpg",
+      after: "/photos/before-after/keratin-bond-detail.jpg",
+    },
   },
   {
     slug: "nano-ring",
@@ -223,6 +228,10 @@ export const services: Service[] = [
       "Schedule a refit every 8 – 12 weeks as natural hair grows",
     ],
     heroPhoto: "/photos/products-5.jpg",
+    beforeAfter: {
+      before: "/photos/detail-1-md.jpg",
+      after: "/photos/products-5-md.jpg",
+    },
   },
   {
     slug: "micro-ring",
@@ -270,6 +279,10 @@ export const services: Service[] = [
       "Refit every 8 – 10 weeks as natural hair grows",
     ],
     heroPhoto: "/photos/before-after/micro-ring-detail.jpg",
+    beforeAfter: {
+      before: "/photos/products-3-md.jpg",
+      after: "/photos/before-after/micro-ring-detail.jpg",
+    },
   },
   {
     slug: "weft",
@@ -323,6 +336,7 @@ export const services: Service[] = [
     beforeAfter: {
       before: "/photos/before-after/weft-before.jpg",
       after: "/photos/before-after/weft-after.jpg",
+      real: true,
     },
   },
   {
@@ -370,6 +384,10 @@ export const services: Service[] = [
       "Schedule a refit every 6 – 8 weeks for fresh tapes",
     ],
     heroPhoto: "/photos/products-2.jpg",
+    beforeAfter: {
+      before: "/photos/salon-3-md.jpg",
+      after: "/photos/detail-3-md.jpg",
+    },
   },
   {
     slug: "clip-in",
@@ -415,6 +433,10 @@ export const services: Service[] = [
       "Treat heat-styling exactly as you would your own hair",
     ],
     heroPhoto: "/photos/detail-1.jpg",
+    beforeAfter: {
+      before: "/photos/products-4-md.jpg",
+      after: "/photos/detail-1-md.jpg",
+    },
   },
 ];
 

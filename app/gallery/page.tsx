@@ -15,10 +15,14 @@ const filters = [
 
 type Filter = (typeof filters)[number]["value"];
 
-const aspectClass: Record<NonNullable<GalleryItem["aspect"]>, string> = {
-  wide: "md:col-span-2 aspect-[3/2]",
-  tall: "md:row-span-2 aspect-[3/4] md:aspect-[3/5]",
-  square: "aspect-square",
+// Approx aspect-ratio dimensions used by next/image to reserve layout
+// space before the real image loads. CSS keeps `height:auto`, so the
+// rendered image always falls back to the photo's natural ratio — no
+// cropping, no letterboxing. These numbers only affect pre-load CLS.
+const aspectDims: Record<NonNullable<GalleryItem["aspect"]>, [number, number]> = {
+  wide:   [1600, 1067], // 3:2 landscape
+  tall:   [800, 1200],  // 2:3 portrait
+  square: [1000, 1000],
 };
 
 export default function GalleryPage() {
@@ -87,37 +91,39 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* Grid */}
+      {/* Grid — CSS columns masonry, photos shown whole at natural aspect */}
       <section className="pb-24 md:pb-32">
         <div className="mx-auto max-w-7xl px-6">
           <ScrollStagger
-            className="grid auto-rows-[14rem] grid-cols-2 gap-3 md:grid-cols-4 md:auto-rows-[16rem] md:gap-4"
+            className="columns-1 gap-3 sm:columns-2 md:gap-4 lg:columns-3 xl:columns-4"
             selector=":scope > figure"
-            stagger={0.06}
-            distance={16}
+            stagger={0.05}
+            distance={14}
           >
-            {filtered.map((item, i) => (
-              <figure
-                key={`${item.src}-${i}`}
-                className={`relative overflow-hidden rounded-sm bg-[#0a0807] ${
-                  aspectClass[item.aspect ?? "square"]
-                } [grid-row:auto] [&:has(.tall)]:row-span-2`}
-              >
-                <Image
-                  src={item.src}
-                  alt={item.alt}
-                  fill
-                  className="object-cover transition-transform duration-700 hover:scale-105"
-                  sizes="(max-width: 768px) 50vw, 25vw"
-                />
-                <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0a0807]/85 to-transparent p-4 opacity-0 transition-opacity hover:opacity-100">
-                  <span className="text-[10px] uppercase tracking-[0.22em] text-[#ffb6c1]">
-                    {item.category}
-                  </span>
-                  <p className="mt-1 text-sm text-[#f6e9ec]">{item.alt}</p>
-                </figcaption>
-              </figure>
-            ))}
+            {filtered.map((item, i) => {
+              const [w, h] = aspectDims[item.aspect ?? "square"];
+              return (
+                <figure
+                  key={`${item.src}-${i}`}
+                  className="group relative mb-3 break-inside-avoid overflow-hidden rounded-sm bg-[#0a0807] md:mb-4"
+                >
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    width={w}
+                    height={h}
+                    className="block h-auto w-full transition-transform duration-700 group-hover:scale-[1.02]"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                  />
+                  <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0a0807]/85 to-transparent p-4 opacity-0 transition-opacity group-hover:opacity-100">
+                    <span className="text-[10px] uppercase tracking-[0.22em] text-[#ffb6c1]">
+                      {item.category}
+                    </span>
+                    <p className="mt-1 text-sm text-[#f6e9ec]">{item.alt}</p>
+                  </figcaption>
+                </figure>
+              );
+            })}
           </ScrollStagger>
 
           {filtered.length === 0 && (
