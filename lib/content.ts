@@ -216,6 +216,7 @@ export const services: Service[] = [
       "Best on healthy, not heavily-bleached hair",
     ],
     aftercare: [
+      "Wait 48 hours before first wash — let the rings settle",
       "Avoid hair masks at the roots (oils slip the rings)",
       "Brush gently from tips up — never tug the ring band",
       "Sleep with hair tied in a low loose braid",
@@ -262,6 +263,7 @@ export const services: Service[] = [
       "Anyone preferring a no-heat method",
     ],
     aftercare: [
+      "Wait 48 hours before first wash — let the rings settle",
       "Hair masks fine — but keep them mid-length to ends only",
       "Brush gently with a loop brush, tips first",
       "Avoid silicone leave-ins (can slip the bonds)",
@@ -311,6 +313,7 @@ export const services: Service[] = [
       "Not ideal for very fine or fragile hair",
     ],
     aftercare: [
+      "Wait 48 hours before first wash — let the wefts settle",
       "Keep the cornrow base clean — wash carefully every 5 – 7 days",
       "Use a wide-tooth comb on the lengths only",
       "Sleep with hair in a low ponytail or loose braid",
@@ -582,6 +585,29 @@ export const faqs: Faq[] = [
       ],
       outro:
         "All grades can be styled, dyed, and cared for like your own hair.",
+    },
+  },
+  {
+    q: "When can I wash my hair after installation?",
+    a: {
+      intro:
+        "Always wait at least 48 hours before the first wash — bonds need time to cure and rings/tapes need to settle. After that:",
+      items: [
+        {
+          label: "Keratin Bond / Tape-In",
+          body: "Sulfate-free, alcohol-free shampoo only. No oils, masks, or conditioner near the bond/tape line.",
+        },
+        {
+          label: "Nano Ring / Micro Ring / Weft",
+          body: "Wash carefully around the attachment line; keep masks and oils on the lengths only.",
+        },
+        {
+          label: "Clip-In",
+          body: "Wash only when visibly soiled — over-washing shortens the life of the wefts.",
+        },
+      ],
+      outro:
+        "We send you a personalised aftercare guide after every appointment.",
     },
   },
   {
