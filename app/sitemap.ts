@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { services } from "@/lib/content";
+import { blogPosts } from "@/lib/blog-posts";
 
 const BASE = "https://thehairextensionsbali.com";
 
@@ -9,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: `${BASE}/`,         lastModified: now, changeFrequency: "monthly", priority: 1.0 },
     { url: `${BASE}/products`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/blog`,     lastModified: now, changeFrequency: "weekly",  priority: 0.8 },
     { url: `${BASE}/tips`,     lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/gallery`,  lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/book`,     lastModified: now, changeFrequency: "monthly", priority: 0.9 },
@@ -21,5 +23,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticRoutes, ...serviceRoutes];
+  const blogRoutes: MetadataRoute.Sitemap = blogPosts.map((p) => ({
+    url: `${BASE}/blog/${p.slug}`,
+    lastModified: new Date(p.updatedAt),
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
+  return [...staticRoutes, ...serviceRoutes, ...blogRoutes];
 }

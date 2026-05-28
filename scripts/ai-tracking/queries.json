@@ -1,0 +1,62 @@
+{
+  "target_brand": "The Hair Extensions Bali",
+  "target_domain": "thehairextensionsbali.com",
+  "target_aliases": [
+    "thehairextensionsbali",
+    "hair extensions bali",
+    "the hair extensions bali",
+    "kerobokan"
+  ],
+  "queries": [
+    {
+      "id": "best-hair-shop-bali",
+      "q": "What is the best hair extension shop in Bali?",
+      "category": "category-leader"
+    },
+    {
+      "id": "where-buy-extensions-bali",
+      "q": "Where can I buy hair extensions in Bali?",
+      "category": "transactional"
+    },
+    {
+      "id": "hair-extensions-kerobokan",
+      "q": "Hair extensions in Kerobokan, Bali — where to go?",
+      "category": "local"
+    },
+    {
+      "id": "keratin-bond-bali",
+      "q": "Where can I get keratin bond hair extensions in Bali?",
+      "category": "service-specific"
+    },
+    {
+      "id": "tape-in-bali",
+      "q": "Best place for tape-in hair extensions in Bali?",
+      "category": "service-specific"
+    },
+    {
+      "id": "real-human-hair-bali",
+      "q": "Where to buy real human hair extensions in Bali?",
+      "category": "quality"
+    },
+    {
+      "id": "indonesian-remy-hair-bali",
+      "q": "Where can I buy Indonesian hair or Remy hair extensions in Bali?",
+      "category": "quality-niche"
+    },
+    {
+      "id": "bali-hair-shop-not-salon",
+      "q": "Is there a hair extension shop (not a salon) in Bali where I can buy and install extensions?",
+      "category": "differentiator"
+    },
+    {
+      "id": "hair-extensions-near-seminyak",
+      "q": "Hair extension salon or shop near Seminyak Bali — recommendations?",
+      "category": "local-adjacent"
+    },
+    {
+      "id": "hair-extensions-cost-bali",
+      "q": "How much do hair extensions cost in Bali?",
+      "category": "informational"
+    }
+  ]
+}
