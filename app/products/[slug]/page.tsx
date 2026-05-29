@@ -16,6 +16,7 @@ import {
   AccentLine,
 } from "@/components/animations-gsap";
 import BeforeAfter from "@/components/BeforeAfter";
+import BeforeAfterPlaceholder from "@/components/BeforeAfterPlaceholder";
 import { brand, services, serviceBySlug, formatIDR } from "@/lib/content";
 
 export function generateStaticParams() {
@@ -104,31 +105,28 @@ export default async function ServiceDetailPage({
       </section>
 
       {/* ── BEFORE / AFTER ────────────────────────────────────────────── */}
-      {service.beforeAfter && (
-        <section className="py-24 md:py-32">
-          <div className="mx-auto max-w-7xl px-6">
-            <ScrollReveal className="mb-12 max-w-2xl">
-              <p className="mb-4 text-[11px] uppercase tracking-[0.28em] text-[#ffb6c1]">
-                Before · After
-              </p>
-              <h2 className="font-serif text-3xl leading-tight md:text-5xl">
-                The transformation
-              </h2>
-              {!service.beforeAfter.real && (
-                <p className="mt-3 text-sm text-[#ab9aa1] italic">
-                  Sample visual — real client before/after photos coming soon.
-                </p>
-              )}
-            </ScrollReveal>
+      <section className="py-24 md:py-32">
+        <div className="mx-auto max-w-7xl px-6">
+          <ScrollReveal className="mb-12 max-w-2xl">
+            <p className="mb-4 text-[11px] uppercase tracking-[0.28em] text-[#ffb6c1]">
+              Before · After
+            </p>
+            <h2 className="font-serif text-3xl leading-tight md:text-5xl">
+              The transformation
+            </h2>
+          </ScrollReveal>
 
+          {service.beforeAfter?.real ? (
             <BeforeAfter
               before={service.beforeAfter.before}
               after={service.beforeAfter.after}
               alt={`${service.name} before and after`}
             />
-          </div>
-        </section>
-      )}
+          ) : (
+            <BeforeAfterPlaceholder serviceName={service.name} />
+          )}
+        </div>
+      </section>
 
       {/* ── DETAIL: 2-column ─────────────────────────────────────────── */}
       <section className="border-t border-white/5 bg-[#0a0807] py-24 md:py-32">

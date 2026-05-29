@@ -173,10 +173,6 @@ export const services: Service[] = [
       "Avoid direct heat on the bonds — keep iron 2 cm below",
     ],
     heroPhoto: "/photos/before-after/keratin-bond-detail.jpg",
-    beforeAfter: {
-      before: "/photos/detail-2-md.jpg",
-      after: "/photos/before-after/keratin-bond-detail.jpg",
-    },
   },
   {
     slug: "nano-ring",
@@ -228,10 +224,6 @@ export const services: Service[] = [
       "Schedule a refit every 8 – 12 weeks as natural hair grows",
     ],
     heroPhoto: "/photos/products-5.jpg",
-    beforeAfter: {
-      before: "/photos/detail-1-md.jpg",
-      after: "/photos/products-5-md.jpg",
-    },
   },
   {
     slug: "micro-ring",
@@ -279,10 +271,6 @@ export const services: Service[] = [
       "Refit every 8 – 10 weeks as natural hair grows",
     ],
     heroPhoto: "/photos/before-after/micro-ring-detail.jpg",
-    beforeAfter: {
-      before: "/photos/products-3-md.jpg",
-      after: "/photos/before-after/micro-ring-detail.jpg",
-    },
   },
   {
     slug: "weft",
@@ -384,10 +372,6 @@ export const services: Service[] = [
       "Schedule a refit every 6 – 8 weeks for fresh tapes",
     ],
     heroPhoto: "/photos/products-2.jpg",
-    beforeAfter: {
-      before: "/photos/salon-3-md.jpg",
-      after: "/photos/detail-3-md.jpg",
-    },
   },
   {
     slug: "clip-in",
@@ -433,10 +417,6 @@ export const services: Service[] = [
       "Treat heat-styling exactly as you would your own hair",
     ],
     heroPhoto: "/photos/detail-1.jpg",
-    beforeAfter: {
-      before: "/photos/products-4-md.jpg",
-      after: "/photos/detail-1-md.jpg",
-    },
   },
 ];
 
@@ -953,12 +933,19 @@ export const tips: Tip[] = [
 export type GalleryItem = {
   src: string;
   alt: string;
-  category: "transformations" | "products" | "studio";
+  category: "before-after" | "products" | "studio";
   /** Wider aspect (3:2) for hero rows; square (1:1) is default */
   aspect?: "square" | "wide" | "tall";
 };
 
 export const gallery: GalleryItem[] = [
+  // Before & After — real client photos
+  { src: "/photos/before-after/weft-before.jpg", alt: "Client before — natural black bob, ready for weft installation", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/weft-after.jpg", alt: "Same client after — long flowing extensions, Weft installation", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/weft-installation.jpg", alt: "Weft installation top view — horizontal tracks sewn in", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin-bond-detail.jpg", alt: "Keratin Bond extensions — installed close-up", category: "before-after" },
+  { src: "/photos/before-after/micro-ring-detail.jpg", alt: "Micro Ring extensions — installed close-up", category: "before-after" },
+  { src: "/photos/before-after/unknown-blonde-result.jpg", alt: "Long blonde extensions — finished result, salon chair", category: "before-after", aspect: "tall" },
   // Studio
   { src: "/photos/salon-1-md.jpg", alt: "Studio interior — wide salon view", category: "studio", aspect: "wide" },
   { src: "/photos/salon-2-md.jpg", alt: "Studio corridor", category: "studio", aspect: "wide" },
@@ -972,9 +959,4 @@ export const gallery: GalleryItem[] = [
   { src: "/photos/products-5-md.jpg", alt: "Single rack closeup", category: "products" },
   { src: "/photos/products-6-md.jpg", alt: "Single rack texture", category: "products" },
   { src: "/photos/hero-rack-md.jpg", alt: "Wig display rack vertical", category: "products", aspect: "tall" },
-  // Transformations (placeholder — using detail/process shots until real before/after photos arrive)
-  { src: "/photos/detail-1-md.jpg", alt: "Clip-in extensions detail", category: "transformations" },
-  { src: "/photos/detail-2-md.jpg", alt: "Hair type comparison", category: "transformations" },
-  { src: "/photos/detail-3-md.jpg", alt: "Styling tool with hair", category: "transformations" },
-  { src: "/photos/detail-4-md.jpg", alt: "Styling closeup", category: "transformations" },
 ];

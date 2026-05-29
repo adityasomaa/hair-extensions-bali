@@ -8,7 +8,7 @@ import { brand, gallery, type GalleryItem } from "@/lib/content";
 
 const filters = [
   { value: "all", label: "All work" },
-  { value: "transformations", label: "Transformations" },
+  { value: "before-after", label: "Before & After" },
   { value: "products", label: "Products & color" },
   { value: "studio", label: "Studio" },
 ] as const;
