@@ -96,13 +96,13 @@ export default function BookingForm({ services }: Props) {
           required
           value={hairType}
           onChange={(e) => setHairType(e.target.value)}
-          className="mt-2 w-full rounded-sm border border-white/10 bg-[#0e0b09] px-4 py-3 text-[#f6e9ec] focus:border-[#ffb6c1] focus:outline-none focus:ring-1 focus:ring-[#ffb6c1]"
+          className="mt-2 w-full appearance-none rounded-sm border border-white/10 bg-[#0e0b09] bg-[url('data:image/svg+xml;utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22%23ffb6c1%22%20stroke-width=%222%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%3E%3Cpolyline%20points=%226%209%2012%2015%2018%209%22/%3E%3C/svg%3E')] bg-[length:1.1rem_1.1rem] bg-[position:right_1rem_center] bg-no-repeat px-4 py-3 pr-12 text-[#f6e9ec] focus:border-[#ffb6c1] focus:outline-none focus:ring-1 focus:ring-[#ffb6c1] [color-scheme:dark]"
         >
-          <option value="" disabled>
+          <option value="" disabled style={{ backgroundColor: "#0e0b09", color: "#ab9aa1" }}>
             Select your hair type
           </option>
           {HAIR_TYPES.map((h) => (
-            <option key={h.value} value={h.value}>
+            <option key={h.value} value={h.value} style={{ backgroundColor: "#0e0b09", color: "#f6e9ec" }}>
               {h.label}
             </option>
           ))}
@@ -121,11 +121,13 @@ export default function BookingForm({ services }: Props) {
           id="service"
           value={serviceSlug}
           onChange={(e) => setServiceSlug(e.target.value)}
-          className="mt-2 w-full rounded-sm border border-white/10 bg-[#0e0b09] px-4 py-3 text-[#f6e9ec] focus:border-[#ffb6c1] focus:outline-none focus:ring-1 focus:ring-[#ffb6c1]"
+          className="mt-2 w-full appearance-none rounded-sm border border-white/10 bg-[#0e0b09] bg-[url('data:image/svg+xml;utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22%23ffb6c1%22%20stroke-width=%222%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%3E%3Cpolyline%20points=%226%209%2012%2015%2018%209%22/%3E%3C/svg%3E')] bg-[length:1.1rem_1.1rem] bg-[position:right_1rem_center] bg-no-repeat px-4 py-3 pr-12 text-[#f6e9ec] focus:border-[#ffb6c1] focus:outline-none focus:ring-1 focus:ring-[#ffb6c1] [color-scheme:dark]"
         >
-          <option value="not-sure">Not sure yet — recommend something</option>
+          <option value="not-sure" style={{ backgroundColor: "#0e0b09", color: "#f6e9ec" }}>
+            Not sure yet — recommend something
+          </option>
           {services.map((s) => (
-            <option key={s.slug} value={s.slug}>
+            <option key={s.slug} value={s.slug} style={{ backgroundColor: "#0e0b09", color: "#f6e9ec" }}>
               {s.name}
             </option>
           ))}
@@ -146,7 +148,7 @@ export default function BookingForm({ services }: Props) {
           min={today}
           value={date}
           onChange={(e) => setDate(e.target.value)}
-          className="mt-2 w-full rounded-sm border border-white/10 bg-[#0e0b09] px-4 py-3 text-[#f6e9ec] focus:border-[#ffb6c1] focus:outline-none focus:ring-1 focus:ring-[#ffb6c1] [color-scheme:dark]"
+          className="mt-2 w-full rounded-sm border border-white/10 bg-[#0e0b09] px-4 py-3 text-[#f6e9ec] accent-[#ffb6c1] focus:border-[#ffb6c1] focus:outline-none focus:ring-1 focus:ring-[#ffb6c1] [color-scheme:dark] [&::-webkit-calendar-picker-indicator]:cursor-pointer [&::-webkit-calendar-picker-indicator]:opacity-60 hover:[&::-webkit-calendar-picker-indicator]:opacity-100 [&::-webkit-calendar-picker-indicator]:invert"
         />
       </div>
 

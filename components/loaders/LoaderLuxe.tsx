@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 
-const MIN_MS = 1500;
+const MIN_MS = 800;
 
 export default function LoaderLuxe() {
   const [visible, setVisible] = useState(true);

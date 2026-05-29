@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MapPin, MessageCircle, Clock } from "lucide-react";
+import { MapPin, MessageCircle, Clock, ArrowUpRight } from "lucide-react";
 import { InstagramIcon as Instagram } from "@/components/icons";
 import { brand } from "@/lib/content";
 
@@ -32,7 +32,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16 md:py-20">
         <div className="grid gap-12 md:grid-cols-12 md:gap-10">
           {/* Brand */}
-          <div className="md:col-span-5">
+          <div className="md:col-span-4">
             <Link href="/" className="inline-flex flex-col leading-none">
               <span className="font-script text-3xl text-[#ffb6c1] -mb-1">The</span>
               <span className="font-serif text-lg tracking-[0.32em] uppercase text-[#f6e9ec]">
@@ -104,12 +104,17 @@ export default function Footer() {
           ))}
 
           {/* Book CTA */}
-          <div className="md:col-span-1 md:flex md:flex-col md:items-end md:justify-end">
+          <div className="md:col-span-2 md:flex md:flex-col md:items-stretch md:justify-end">
             <Link
               href="/book"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#ffb6c1] px-6 py-3.5 text-sm font-medium text-[#0e0b09] transition-all hover:bg-[#ffc9d2] md:w-auto"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#ffb6c1] px-7 py-4 text-sm font-medium text-[#0e0b09] transition-all hover:bg-[#ffc9d2]"
             >
-              Book →
+              <MessageCircle className="h-4 w-4" aria-hidden />
+              Book a consultation
+              <ArrowUpRight
+                className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                aria-hidden
+              />
             </Link>
           </div>
         </div>

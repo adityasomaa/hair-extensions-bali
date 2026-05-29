@@ -222,19 +222,19 @@ export default async function HomePage() {
       <section className="relative overflow-hidden pt-28 md:pt-36">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-12 md:grid-cols-12 md:gap-16 md:py-20 lg:py-28">
           <div className="md:col-span-7 lg:col-span-7">
-            <ScrollReveal delay={1.6} duration={0.7}>
+            <ScrollReveal delay={0.1} duration={0.5}>
               <p className="mb-6 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.28em] text-[#ffb6c1]">
                 <Sparkles className="h-3 w-3" aria-hidden /> Premium hair extensions in Bali
               </p>
             </ScrollReveal>
-            <ScrollReveal delay={1.7} duration={1} distance={36}>
+            <ScrollReveal delay={0.2} duration={0.7} distance={24}>
               <h1 className="font-serif text-[2.7rem] leading-[1.05] tracking-tight md:text-7xl lg:text-[5.4rem]">
                 <span className="font-script text-[#ffb6c1]">The</span>{" "}
                 <span className="block">Hair Extensions</span>
                 <span className="block italic font-script text-[#ffb6c1] mt-1">Bali</span>
               </h1>
             </ScrollReveal>
-            <ScrollReveal delay={2} duration={0.8}>
+            <ScrollReveal delay={0.35} duration={0.6}>
               <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#c2b3b8] md:text-xl">
                 Bali&rsquo;s largest hair extension shop, in the heart of
                 Kerobokan. 100+ shades on display — Remy and Indonesian-grade
@@ -242,13 +242,13 @@ export default async function HomePage() {
                 bond, nano ring, micro ring, weft, tape-in, and clip-in.
               </p>
             </ScrollReveal>
-            <ScrollReveal delay={2.05} duration={0.8}>
+            <ScrollReveal delay={0.4} duration={0.6}>
               <p className="mt-4 max-w-xl text-base italic leading-relaxed text-[#ffb6c1] md:text-lg">
                 Extensions only — no cuts, colour, or styling. Walk-in or by
                 appointment, with on-site parking and restroom.
               </p>
             </ScrollReveal>
-            <ScrollReveal delay={2.15} duration={0.7}>
+            <ScrollReveal delay={0.5} duration={0.5}>
               <div className="mt-10 flex flex-wrap items-center gap-4">
                 <Link
                   href="/book"
@@ -267,7 +267,7 @@ export default async function HomePage() {
               </div>
             </ScrollReveal>
 
-            <ScrollReveal delay={2.3} duration={0.7}>
+            <ScrollReveal delay={0.6} duration={0.5}>
               <dl className="mt-14 grid grid-cols-3 gap-6 border-t border-white/10 pt-8 text-[11px] uppercase tracking-[0.18em] text-[#ab9aa1]">
                 <div>
                   <dt className="text-[#ffb6c1]">Methods</dt>
@@ -292,7 +292,7 @@ export default async function HomePage() {
           </div>
 
           <div className="relative md:col-span-5 lg:col-span-5">
-            <ClipReveal delay={1.8} duration={1.4}>
+            <ClipReveal delay={0.3} duration={1}>
               <ParallaxScroll intensity={0.18}>
                 <VideoLoop
                   src={heroVideoDisplay.src}

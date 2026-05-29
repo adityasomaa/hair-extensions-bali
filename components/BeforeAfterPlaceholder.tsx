@@ -50,7 +50,7 @@ export default function BeforeAfterPlaceholder({
         <div className="my-6 h-px w-16 bg-[#ffb6c1]" />
 
         <p className="text-sm italic leading-relaxed text-[#c2b3b8] md:text-base">
-          {serviceName} before &amp; after photos
+          {`${serviceName} before & after photos`}
           <br />
           coming soon
         </p>
