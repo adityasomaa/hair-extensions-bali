@@ -11,22 +11,34 @@ export default function LoaderLuxe() {
 
   useEffect(() => {
     const start = performance.now();
+    let cancelled = false;
+
     const finish = () => {
+      if (cancelled) return;
       const elapsed = performance.now() - start;
       const wait = Math.max(0, MIN_MS - elapsed);
-      window.setTimeout(() => setVisible(false), wait);
+      window.setTimeout(() => {
+        if (!cancelled) setVisible(false);
+      }, wait);
     };
 
-    if (document.readyState === "complete") {
-      finish();
+    // Hide as soon as fonts are ready (so the brand mark animates in
+    // crisp), NOT on window.load — that waits for the 4.2MB hero video
+    // and made the loader hang on slow first loads. A hard cap of
+    // MAX_MS guarantees the loader never lingers regardless.
+    const MAX_MS = 1800;
+    const hardCap = window.setTimeout(finish, MAX_MS);
+
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(finish);
     } else {
-      window.addEventListener("load", finish, { once: true });
-      const fallback = window.setTimeout(finish, 3500);
-      return () => {
-        window.removeEventListener("load", finish);
-        window.clearTimeout(fallback);
-      };
+      finish();
     }
+
+    return () => {
+      cancelled = true;
+      window.clearTimeout(hardCap);
+    };
   }, []);
 
   useEffect(() => {

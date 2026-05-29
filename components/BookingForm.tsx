@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { ArrowUpRight, MessageCircle } from "lucide-react";
 import { brand, type Service } from "@/lib/content";
 import CustomSelect from "@/components/CustomSelect";
+import CustomDatePicker from "@/components/CustomDatePicker";
 
 const HAIR_TYPES = [
   { value: "fine", label: "Fine / thin" },
@@ -130,21 +131,12 @@ export default function BookingForm({ services }: Props) {
         >
           Preferred date <span className="text-[#ab9aa1] normal-case tracking-normal">(optional)</span>
         </label>
-        <input
+        <CustomDatePicker
           id="date"
-          type="date"
-          min={today}
           value={date}
-          onChange={(e) => setDate(e.target.value)}
-          onClick={(e) => {
-            // Make the whole field surface clickable to open the picker,
-            // not just the small calendar icon on the right.
-            const el = e.currentTarget as HTMLInputElement & {
-              showPicker?: () => void;
-            };
-            if (typeof el.showPicker === "function") el.showPicker();
-          }}
-          className="mt-2 w-full cursor-pointer rounded-sm border border-white/10 bg-[#0e0b09] px-4 py-3 text-[#f6e9ec] accent-[#ffb6c1] focus:border-[#ffb6c1] focus:outline-none focus:ring-1 focus:ring-[#ffb6c1] [color-scheme:dark] [&::-webkit-calendar-picker-indicator]:cursor-pointer"
+          onChange={setDate}
+          min={today}
+          placeholder="Select a date"
         />
       </div>
 

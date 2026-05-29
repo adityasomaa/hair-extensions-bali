@@ -153,7 +153,8 @@ export default function CustomSelect({
         <div
           ref={listRef}
           role="listbox"
-          className="absolute left-0 right-0 top-full z-20 mt-1 max-h-72 overflow-auto rounded-sm border border-[#ffb6c1]/30 bg-[#0e0b09] py-1 shadow-2xl shadow-black/50"
+          data-lenis-prevent
+          className="absolute left-0 right-0 top-full z-20 mt-1 max-h-72 overflow-auto overscroll-contain rounded-sm border border-[#ffb6c1]/30 bg-[#0e0b09] py-1 shadow-2xl shadow-black/50"
         >
           {placeholderIsOption && !selected && (
             <div className="px-4 py-2 text-xs italic text-[#ab9aa1]">
