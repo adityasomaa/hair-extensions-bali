@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display, Caveat } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { brand } from "@/lib/content";
 import Nav from "@/components/Nav";
@@ -56,6 +57,21 @@ export default function RootLayout({
       className={`${inter.variable} ${playfair.variable} ${caveat.variable} antialiased`}
     >
       <body className="min-h-screen bg-[#0e0b09] text-[#f6e9ec]">
+        {/* Google tag (gtag.js) — Google Ads conversion tracking. Loaded
+            via next/script afterInteractive so it never blocks paint. */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-16655338849"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-gtag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-16655338849');
+          `}
+        </Script>
+
         <PageTransitionLoader />
         <SmoothScroll>
           <Nav />
