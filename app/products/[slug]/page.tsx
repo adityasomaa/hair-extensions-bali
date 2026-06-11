@@ -223,6 +223,54 @@ export default async function ServiceDetailPage({
                       {service.unit}
                       {service.minPurchase ? ` · ${service.minPurchase}` : ""}
                     </p>
+                    <p className="mt-2 text-[10px] uppercase tracking-[0.2em] text-[#ab9aa1]">
+                      Wavy stock · straight &amp; curly +200,000 IDR/100 g
+                    </p>
+
+                    {service.promoBundles && (
+                      <div className="mt-6 border-t border-white/10 pt-5">
+                        <p className="text-[11px] uppercase tracking-[0.28em] text-[#ffb6c1]">
+                          Bundle promo
+                        </p>
+                        <ul className="mt-4 space-y-2.5">
+                          {service.promoBundles.map((p) => (
+                            <li
+                              key={p.label}
+                              className="flex items-baseline justify-between gap-3"
+                            >
+                              <span className="text-sm text-[#b5a3a8]">{p.label}</span>
+                              <span className="font-serif text-base text-[#f6e9ec]">
+                                {formatIDR(p.amountIDR)}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {service.premiumLengths && (
+                      <div className="mt-6 border-t border-white/10 pt-5">
+                        <p className="text-[11px] uppercase tracking-[0.28em] text-[#ffb6c1]">
+                          Premium · by length
+                        </p>
+                        <ul className="mt-4 space-y-2.5">
+                          {service.premiumLengths.map((p) => (
+                            <li
+                              key={p.label}
+                              className="flex items-baseline justify-between gap-3"
+                            >
+                              <span className="text-sm text-[#b5a3a8]">{p.label}</span>
+                              <span className="font-serif text-base text-[#f6e9ec]">
+                                {formatIDR(p.amountIDR)}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                        <p className="mt-3 text-[10px] uppercase tracking-[0.2em] text-[#ab9aa1]">
+                          No discount on premium lengths
+                        </p>
+                      </div>
+                    )}
 
                     <dl className="mt-7 space-y-5 border-t border-white/10 pt-5 text-sm">
                       <div>
@@ -257,6 +305,48 @@ export default async function ServiceDetailPage({
                     </Link>
                   </div>
                 </ScrollReveal>
+
+                {/* Maintenance / service menu */}
+                {service.maintenance && (
+                  <ScrollReveal direction="left" delay={0.05}>
+                    <div className="mt-6 rounded-sm border border-white/10 p-7">
+                      <p className="text-[11px] uppercase tracking-[0.28em] text-[#ffb6c1]">
+                        Maintenance service
+                      </p>
+                      {service.maintenance.rows.some((r) => r.outside) && (
+                        <div className="mt-4 flex items-baseline justify-end gap-6 text-[9px] uppercase tracking-[0.18em] text-[#ab9aa1]">
+                          <span>Our hair</span>
+                          <span>Outside hair</span>
+                        </div>
+                      )}
+                      <ul className="mt-3 space-y-2.5">
+                        {service.maintenance.rows.map((r) => (
+                          <li
+                            key={r.label}
+                            className="flex items-baseline justify-between gap-3 text-sm"
+                          >
+                            <span className="flex-1 text-[#b5a3a8]">{r.label}</span>
+                            <span className="font-serif text-[#f6e9ec]">{r.ours}</span>
+                            {r.outside && (
+                              <span className="w-20 text-right font-serif text-[#d8c8cd]">
+                                {r.outside}
+                              </span>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                      {service.maintenance.notes && (
+                        <ul className="mt-4 space-y-1.5 border-t border-white/10 pt-4">
+                          {service.maintenance.notes.map((n) => (
+                            <li key={n} className="text-xs leading-relaxed text-[#ab9aa1]">
+                              {n}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  </ScrollReveal>
+                )}
 
                 {/* Tips card */}
                 {service.idealHairType && (

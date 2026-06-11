@@ -77,7 +77,7 @@ function buildJsonLd(reviews: { rating: number; quote: string; name: string }[])
       name: brand.name,
       alternateName: brand.shortName,
       description:
-        "Bali's largest hair extension shop, located in Kerobokan (kami toko rambut, bukan salon). We specialise in hair extensions only — no cuts, colour, or styling. 100+ shades on display, six expert application methods (keratin bond, nano ring, micro ring, weft, tape-in, clip-in), 100% real human hair including Remy and Indonesian-sourced grades. Transparent published pricing, walk-in or by appointment.",
+        "Bali's largest hair extension shop, located in Kerobokan (kami toko rambut, bukan salon). We specialise in hair extensions only — no cuts, colour, or styling. 100+ shades on display, seven expert application methods (keratin bond, nano ring, micro ring, weft, tape-in, halo hair, clip-in), 100% real human hair including Remy and Indonesian-sourced grades. Transparent published pricing, walk-in or by appointment.",
       url: siteUrl,
       telephone: brand.whatsapp,
       image: [`${siteUrl}/photos/hero-rack.jpg`, `${siteUrl}/photos/salon-1.jpg`],
@@ -176,7 +176,7 @@ function buildJsonLd(reviews: { rating: number; quote: string; name: string }[])
 export const metadata = {
   title: `${brand.name} — Bali's Largest Hair Extension Shop in Kerobokan`,
   description:
-    "Bali's largest hair extension shop in Kerobokan. Kami toko rambut, bukan salon — we specialise in hair extensions only, no cuts/colour/styling. 100+ shades on display, six expert installation methods (keratin bond, nano ring, micro ring, weft, tape-in, clip-in), 100% real human hair: Single Drawn, Double Drawn, Premium Remy, and Indonesian-sourced. Transparent published pricing. Walk-in or by appointment, daily 09:00–19:00 WITA.",
+    "Bali's largest hair extension shop in Kerobokan. Kami toko rambut, bukan salon — we specialise in hair extensions only, no cuts/colour/styling. 100+ shades on display, seven expert installation methods (keratin bond, nano ring, micro ring, weft, tape-in, halo hair, clip-in), 100% real human hair: Single Drawn, Double Drawn, Premium Remy, and Indonesian-sourced. Transparent published pricing. Walk-in or by appointment, daily 09:00–19:00 WITA.",
   keywords: [
     "hair shop bali",
     "hair extension shop bali",
@@ -238,8 +238,9 @@ export default async function HomePage() {
               <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#c2b3b8] md:text-xl">
                 Bali&rsquo;s largest hair extension shop, in the heart of
                 Kerobokan. 100+ shades on display — Remy and Indonesian-grade
-                real human hair — installed using six expert methods: keratin
-                bond, nano ring, micro ring, weft, tape-in, and clip-in.
+                real human hair — installed using seven expert methods: keratin
+                bond, nano ring, micro ring, weft, tape-in, halo hair, and
+                clip-in.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.4} duration={0.6}>
@@ -313,7 +314,7 @@ export default async function HomePage() {
       <div className="overflow-hidden border-y border-white/5 bg-[#0a0807] py-5">
         <div className="flex animate-[marquee_35s_linear_infinite] gap-12 whitespace-nowrap font-serif text-[#ab9aa1] text-xl tracking-wide">
           {Array.from({ length: 4 }).flatMap((_, i) =>
-            ["Keratin Bond", "Nano Ring", "Micro Ring", "Weft", "Tape-In", "Clip-In", "—"].map(
+            ["Keratin Bond", "Nano Ring", "Micro Ring", "Weft", "Tape-In", "Halo Hair", "Clip-In", "—"].map(
               (s, j) => (
                 <span key={`${i}-${j}`} className="italic">
                   {s}
@@ -470,7 +471,7 @@ export default async function HomePage() {
                 Our services
               </p>
               <h2 className="font-serif text-4xl leading-tight md:text-5xl lg:text-6xl">
-                Six methods, one obsession with the{" "}
+                Seven methods, one obsession with the{" "}
                 <span className="font-script italic text-[#ffb6c1]">natural</span> finish.
               </h2>
             </div>

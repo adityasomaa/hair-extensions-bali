@@ -6,7 +6,7 @@ import { brand, services, formatIDR } from "@/lib/content";
 export const metadata = {
   title: `Services & Pricing — ${brand.name}`,
   description:
-    "Six expert hair-extension methods, all with 100% real human hair. Keratin Bond, Nano Ring, Micro Ring, Weft, Tape-In, Clip-In.",
+    "Seven expert hair-extension methods, all with 100% real human hair. Keratin Bond, Nano Ring, Micro Ring, Weft, Tape-In, Halo Hair, Clip-In.",
 };
 
 export default function ProductsPage() {
@@ -19,7 +19,7 @@ export default function ProductsPage() {
               Services & investment
             </p>
             <h1 className="font-serif text-5xl leading-[1.05] md:text-7xl lg:text-[5.4rem]">
-              Six methods, one obsession with the{" "}
+              Seven methods, one obsession with the{" "}
               <span className="font-script italic text-[#ffb6c1]">natural</span> finish.
             </h1>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#c2b3b8]">

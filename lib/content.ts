@@ -20,7 +20,7 @@ export const brand = {
   hours: "Mon — Sun · 09:00 – 19:00 WITA",
   hoursOpens: "09:00",
   hoursCloses: "19:00",
-  priceRange: "IDR 1,500,000 – 7,000,000",
+  priceRange: "IDR 1,900,000 – 8,000,000",
   amenities: [
     "On-site parking",
     "Restroom available",
@@ -67,7 +67,7 @@ export const shopFeatures = [
     icon: "Eye",
     title: "Shop in person, install on the spot",
     body:
-      "Unlike most extension salons, we're a hair shop first. Walk in to browse the wall, feel every texture, hold shades against your own hair — then have your chosen extension professionally installed the same day, using whichever of our six methods suits you best.",
+      "Unlike most extension salons, we're a hair shop first. Walk in to browse the wall, feel every texture, hold shades against your own hair — then have your chosen extension professionally installed the same day, using whichever of our seven methods suits you best.",
   },
   {
     icon: "DoorOpen",
@@ -107,6 +107,16 @@ export type Service = {
   prices: { label: string; amountIDR: number }[];
   unit: string;
   minPurchase?: string;
+  /** Bundle promo pricing (e.g. "Single 150 g" at a package rate) */
+  promoBundles?: { label: string; amountIDR: number }[];
+  /** Premium grade priced by length (keratin glue premium) */
+  premiumLengths?: { label: string; amountIDR: number }[];
+  /** Maintenance / service menu (remove, reposition, new glue, …).
+   *  `ours` = price with hair bought from us, `outside` = outside hair. */
+  maintenance?: {
+    rows: { label: string; ours: string; outside?: string }[];
+    notes?: string[];
+  };
   highlights: string[];
   /** Material composition — what the extension is physically made of */
   materials?: string[];
@@ -143,10 +153,34 @@ export const services: Service[] = [
     prices: [
       { label: "Single Drawn", amountIDR: 3_500_000 },
       { label: "Double Drawn", amountIDR: 4_500_000 },
-      { label: "Premium", amountIDR: 7_000_000 },
     ],
     unit: "per 100 g",
-    minPurchase: "Min. purchase 10 g",
+    minPurchase: "Min. buy 1 tag (20 pcs ±10 g) · install 4,000 IDR/strand",
+    promoBundles: [
+      { label: "Single 100 g", amountIDR: 3_500_000 },
+      { label: "Single 200 g", amountIDR: 4_800_000 },
+      { label: "Double 100 g", amountIDR: 4_500_000 },
+      { label: "Double 150 g", amountIDR: 5_800_000 },
+      { label: "Double 200 g", amountIDR: 6_800_000 },
+    ],
+    premiumLengths: [
+      { label: "Premium 40 cm", amountIDR: 5_000_000 },
+      { label: "Premium 50 cm", amountIDR: 6_000_000 },
+      { label: "Premium 60 cm", amountIDR: 7_000_000 },
+      { label: "Premium 70 cm", amountIDR: 8_000_000 },
+    ],
+    maintenance: {
+      rows: [
+        { label: "Remove (per strand)", ours: "4,000", outside: "8,000" },
+        { label: "Install (per strand)", ours: "6,000", outside: "10,000" },
+        { label: "New glue (per strand)", ours: "6,000", outside: "8,000" },
+      ],
+      notes: [
+        "Minimum service 50 strands",
+        "Standard turnaround 2 days · 1-day express 20,000 IDR/strand",
+        "No warranty for installations using glue not provided by us",
+      ],
+    },
     highlights: ["Seamless blend", "Heat-stylable", "Very natural look"],
     materials: [
       "100% real human hair (single / double / premium drawn)",
@@ -192,11 +226,27 @@ export const services: Service[] = [
       "Reusable, cost-effective extensions",
     ],
     prices: [
-      { label: "Single Drawn", amountIDR: 2_500_000 },
-      { label: "Double Drawn", amountIDR: 3_500_000 },
+      { label: "Single Drawn", amountIDR: 3_500_000 },
+      { label: "Double Drawn", amountIDR: 4_500_000 },
     ],
     unit: "per 100 g",
-    minPurchase: "Min. purchase 10 g",
+    minPurchase: "Min. buy 1 tag (50 pcs ±53 g) · free install",
+    promoBundles: [
+      { label: "Single 100 g", amountIDR: 2_800_000 },
+      { label: "Single 150 g", amountIDR: 4_000_000 },
+      { label: "Single 200 g", amountIDR: 5_000_000 },
+      { label: "Double 100 g", amountIDR: 3_500_000 },
+      { label: "Double 150 g", amountIDR: 4_800_000 },
+      { label: "Double 200 g", amountIDR: 5_800_000 },
+    ],
+    maintenance: {
+      rows: [
+        { label: "Remove (per strand)", ours: "5,000", outside: "5,000" },
+        { label: "Install (per strand)", ours: "5,000", outside: "10,000" },
+        { label: "New glue (per strand)", ours: "10,000", outside: "20,000" },
+      ],
+      notes: ["Minimum service 50 strands"],
+    },
     highlights: ["No heat · no glue", "Almost invisible", "Reusable"],
     materials: [
       "100% real human hair (single / double drawn)",
@@ -290,10 +340,31 @@ export const services: Service[] = [
       "Long-term wear",
     ],
     prices: [
-      { label: "Single Drawn", amountIDR: 2_600_000 },
-      { label: "Double Drawn", amountIDR: 3_500_000 },
+      { label: "Single Drawn", amountIDR: 3_500_000 },
+      { label: "Double Drawn", amountIDR: 4_500_000 },
+      { label: "Weft Premium", amountIDR: 5_500_000 },
     ],
     unit: "per 100 g",
+    minPurchase: "Min. buy 50 g · free install",
+    promoBundles: [
+      { label: "Single 100 g", amountIDR: 3_500_000 },
+      { label: "Single 150 g", amountIDR: 4_800_000 },
+      { label: "Single 200 g", amountIDR: 5_800_000 },
+      { label: "Double 100 g", amountIDR: 4_500_000 },
+      { label: "Double 150 g", amountIDR: 6_200_000 },
+      { label: "Double 200 g", amountIDR: 7_200_000 },
+    ],
+    maintenance: {
+      rows: [
+        { label: "Reposition 1 row", ours: "400,000" },
+        { label: "Reposition 2 rows", ours: "750,000" },
+        { label: "Reposition 3 rows", ours: "900,000" },
+        { label: "Reposition 4 rows", ours: "1,100,000" },
+        { label: "Reposition 5 rows", ours: "1,150,000" },
+        { label: "Remove only · 1 row", ours: "200,000" },
+        { label: "Remove only · 2–5 rows", ours: "350,000" },
+      ],
+    },
     highlights: ["Dramatic volume", "Fewer bonds", "Long-term wear"],
     materials: [
       "100% real human hair (single / double drawn)",
@@ -344,8 +415,27 @@ export const services: Service[] = [
       "Highlights, lowlights, or fullness",
       "Comfortable everyday wear",
     ],
-    prices: [{ label: "Single Drawn", amountIDR: 2_500_000 }],
-    unit: "per 100 g · 40 pcs / 20 pairs",
+    prices: [
+      { label: "Single Drawn", amountIDR: 3_500_000 },
+      { label: "Double Drawn", amountIDR: 4_500_000 },
+    ],
+    unit: "per 100 g",
+    minPurchase: "Min. buy 1 tag (5 pairs / 10 pcs ±30 g) · install 20,000 IDR/pair",
+    promoBundles: [
+      { label: "Single 100 g", amountIDR: 2_800_000 },
+      { label: "Single 150 g", amountIDR: 3_800_000 },
+      { label: "Single 200 g", amountIDR: 4_800_000 },
+      { label: "Double 100 g", amountIDR: 3_800_000 },
+      { label: "Double 150 g", amountIDR: 5_800_000 },
+      { label: "Double 200 g", amountIDR: 6_800_000 },
+    ],
+    maintenance: {
+      rows: [
+        { label: "Install (per pair)", ours: "25,000" },
+        { label: "New glue (per pair)", ours: "25,000" },
+      ],
+      notes: ["Minimum service 20 pcs / 10 pairs"],
+    },
     highlights: ["Lightweight", "Quick install", "Lies flat"],
     materials: [
       "100% real human hair (single drawn, flat-weft format)",
@@ -374,6 +464,62 @@ export const services: Service[] = [
     heroPhoto: "/photos/products-2.jpg",
   },
   {
+    slug: "halo-hair",
+    name: "Halo Hair",
+    tagline: "A hidden wire, instant volume — zero attachment",
+    description:
+      "A weft mounted on an invisible wire that sits like a halo under your top layer of hair. On in seconds, off in seconds — no clips, no glue, no commitment.",
+    longDescription:
+      "Halo hair is the gentlest extension there is: a single curved weft mounted on a thin, invisible wire that rests on your head like a halo, hidden under your own top layer of hair. Nothing attaches to your natural hair — no rings, no glue, no clips pulling at the roots. You put it on in seconds in front of a mirror and lift it off just as fast. Because there is zero attachment, it's the one method that suits even very fine, fragile, or thinning hair. Cared for properly, a halo set lasts 6 – 12 months and can be styled, dyed, and reused like your own hair.",
+    durationLabel: "DIY · seconds to wear",
+    lasts: "6 – 12 months with proper care",
+    bestFor: [
+      "Very fine, fragile, or thinning hair",
+      "Anyone avoiding attachments completely",
+      "Daily on/off flexibility",
+      "First-timers testing extensions",
+    ],
+    prices: [
+      { label: "Single Drawn", amountIDR: 3_500_000 },
+      { label: "Double Drawn", amountIDR: 4_500_000 },
+    ],
+    unit: "per 100 g",
+    minPurchase: "Min. buy 50 g · no installation needed",
+    promoBundles: [
+      { label: "Single 100 g", amountIDR: 2_800_000 },
+      { label: "Single 150 g", amountIDR: 4_000_000 },
+      { label: "Single 200 g", amountIDR: 5_000_000 },
+      { label: "Double 100 g", amountIDR: 4_500_000 },
+      { label: "Double 150 g", amountIDR: 6_200_000 },
+      { label: "Double 200 g", amountIDR: 7_200_000 },
+    ],
+    highlights: ["Zero attachment", "On/off in seconds", "Gentlest method"],
+    materials: [
+      "100% real human hair, hand-sewn weft",
+      "Invisible nylon wire, adjustable sizing",
+      "Soft weft base for scalp comfort",
+    ],
+    whatsIncluded: [
+      "Free WhatsApp color match before your visit",
+      "Wire sized to your head at the shop",
+      "Fitting demo — wear it confidently before you leave",
+      "Personalised care guide",
+    ],
+    idealHairType: [
+      "Fine to medium density",
+      "Fragile or thinning hair that can't hold attachments",
+      "Anyone wanting daily flexibility",
+      "Clients hesitant about permanent methods",
+    ],
+    aftercare: [
+      "Take the halo off before sleeping and showering",
+      "Wash only when visibly soiled — over-washing shortens life",
+      "Brush gently from tips up before storing",
+      "Store flat or on a hanger to keep the weft shape",
+    ],
+    heroPhoto: "/photos/products-6.jpg",
+  },
+  {
     slug: "clip-in",
     name: "Clip-In",
     tagline: "On-demand length and volume — no commitment",
@@ -389,8 +535,20 @@ export const services: Service[] = [
       "No glue, no heat, no chemicals",
       "Affordable styling freedom",
     ],
-    prices: [{ label: "Custom quote", amountIDR: 0 }],
-    unit: "Quoted per set",
+    prices: [
+      { label: "Single Drawn", amountIDR: 3_500_000 },
+      { label: "Double Drawn", amountIDR: 4_500_000 },
+    ],
+    unit: "per 100 g",
+    minPurchase: "Min. buy 50 g · free install (clips fitted)",
+    promoBundles: [
+      { label: "Single 100 g", amountIDR: 3_500_000 },
+      { label: "Single 150 g", amountIDR: 4_800_000 },
+      { label: "Single 200 g", amountIDR: 5_800_000 },
+      { label: "Double 100 g", amountIDR: 4_500_000 },
+      { label: "Double 150 g", amountIDR: 6_200_000 },
+      { label: "Double 200 g", amountIDR: 7_200_000 },
+    ],
     highlights: ["DIY · zero damage", "Wear when needed", "Styling freedom"],
     materials: [
       "100% real human hair, hand-sewn weft",
@@ -501,6 +659,10 @@ export const faqs: Faq[] = [
         { label: "Tape-In", body: "~ 2 months" },
         { label: "Weft", body: "~ 2 months" },
         {
+          label: "Halo Hair",
+          body: "Reusable for 6 – 12 months — a wire-mounted weft you wear and remove yourself",
+        },
+        {
           label: "Clip-In",
           body: "Reusable for 6 – 12 months — you put them on and off yourself",
         },
@@ -535,6 +697,10 @@ export const faqs: Faq[] = [
           body: "Similar to nano ring — minimal damage when applied and removed by a trained stylist.",
         },
         {
+          label: "Halo Hair",
+          body: "Zero damage — nothing attaches to your hair at all, the wire rests on your head.",
+        },
+        {
           label: "Clip-In",
           body: "Zero damage — temporary, you put them on and off yourself.",
         },
@@ -559,7 +725,11 @@ export const faqs: Faq[] = [
         },
         {
           label: "Temporary (events, travel, trying it out)",
-          body: "Clip-In — no commitment, removable anytime.",
+          body: "Clip-In or Halo Hair — no commitment, removable anytime.",
+        },
+        {
+          label: "Very fragile or thinning hair",
+          body: "Halo Hair — zero attachment, nothing pulls on your natural hair.",
         },
       ],
       outro:
@@ -630,7 +800,7 @@ export const faqs: Faq[] = [
           body: "About a day for a full installation.",
         },
         {
-          label: "Clip-In",
+          label: "Halo Hair / Clip-In",
           body: "Walk out same visit — no installation needed.",
         },
       ],
