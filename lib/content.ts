@@ -1112,6 +1112,8 @@ export const gallery: GalleryItem[] = [
   // Before & After — real client photos
   { src: "/photos/before-after/weft-before.jpg", alt: "Client before — natural black bob, ready for weft installation", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/weft-after.jpg", alt: "Same client after — long flowing extensions, Weft installation", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/weft2-before.jpg", alt: "Client before — short mahogany bob at the styling chair", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/weft2-after.jpg", alt: "Same client after — long dark wavy extensions, full transformation", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/weft-installation.jpg", alt: "Weft installation top view — horizontal tracks sewn in", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/keratin-bond-detail.jpg", alt: "Keratin Bond extensions — installed close-up", category: "before-after" },
   { src: "/photos/before-after/micro-ring-detail.jpg", alt: "Micro Ring extensions — installed close-up", category: "before-after" },
