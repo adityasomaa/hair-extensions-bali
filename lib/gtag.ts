@@ -10,6 +10,9 @@ export const ADS_ID = "AW-16655338849";
 /** Conversion label for "Contact (1)" (Click-type conversion action). */
 export const CONTACT_SEND_TO = "AW-16655338849/EC-ICIrOhL0cEOGa8YU-";
 
+/** Conversion label for the booking-form submit conversion action. */
+export const BOOKING_SEND_TO = "AW-16655338849/zfY_CLKztr0cEOGa8YU-";
+
 declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
@@ -26,4 +29,20 @@ export function reportContactConversion() {
   if (typeof window === "undefined") return;
   if (typeof window.gtag !== "function") return;
   window.gtag("event", "conversion", { send_to: CONTACT_SEND_TO });
+}
+
+/**
+ * Report a Booking conversion — fired ONLY when the booking form is
+ * successfully submitted (validation passed, WhatsApp handoff opened).
+ * Higher-intent than a plain Contact click, tracked with a nominal
+ * value per Google Ads setup.
+ */
+export function reportBookingConversion() {
+  if (typeof window === "undefined") return;
+  if (typeof window.gtag !== "function") return;
+  window.gtag("event", "conversion", {
+    send_to: BOOKING_SEND_TO,
+    value: 1.0,
+    currency: "IDR",
+  });
 }
