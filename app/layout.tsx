@@ -7,6 +7,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
 import PageTransitionLoader from "@/components/loaders/PageTransitionLoader";
+import ConversionTracker from "@/components/ConversionTracker";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -72,6 +73,7 @@ export default function RootLayout({
           `}
         </Script>
 
+        <ConversionTracker />
         <PageTransitionLoader />
         <SmoothScroll>
           <Nav />

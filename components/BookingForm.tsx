@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { ArrowUpRight, MessageCircle } from "lucide-react";
 import { brand, type Service } from "@/lib/content";
+import { reportContactConversion } from "@/lib/gtag";
 import CustomSelect from "@/components/CustomSelect";
 import CustomDatePicker from "@/components/CustomDatePicker";
 
@@ -53,6 +54,10 @@ export default function BookingForm({ services }: Props) {
 
     const text = lines.join("\n");
     const url = `https://wa.me/${brand.whatsapp.replace(/\D/g, "")}?text=${encodeURIComponent(text)}`;
+
+    // Google Ads "Contact" conversion — the form opens WhatsApp via
+    // window.open (no <a> click), so the global tracker can't see it.
+    reportContactConversion();
 
     // Open WhatsApp in new tab
     window.open(url, "_blank", "noopener,noreferrer");
