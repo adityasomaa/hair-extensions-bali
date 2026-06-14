@@ -20,6 +20,13 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: true,
       },
+      {
+        // Micro Ring discontinued — point the old (indexed) URL at the
+        // closest equivalent so it doesn't 404 for search/AI crawlers.
+        source: "/products/micro-ring",
+        destination: "/products/nano-ring",
+        permanent: true,
+      },
     ];
   },
 };

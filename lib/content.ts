@@ -20,7 +20,7 @@ export const brand = {
   hours: "Mon — Sun · 09:00 – 19:00 WITA",
   hoursOpens: "09:00",
   hoursCloses: "19:00",
-  priceRange: "IDR 1,900,000 – 8,000,000",
+  priceRange: "IDR 2,800,000 – 8,000,000",
   amenities: [
     "On-site parking",
     "Restroom available",
@@ -67,7 +67,7 @@ export const shopFeatures = [
     icon: "Eye",
     title: "Shop in person, install on the spot",
     body:
-      "Unlike most extension salons, we're a hair shop first. Walk in to browse the wall, feel every texture, hold shades against your own hair — then have your chosen extension professionally installed the same day, using whichever of our seven methods suits you best.",
+      "Unlike most extension salons, we're a hair shop first. Walk in to browse the wall, feel every texture, hold shades against your own hair — then have your chosen extension professionally installed the same day, using whichever of our six methods suits you best.",
   },
   {
     icon: "DoorOpen",
@@ -213,9 +213,9 @@ export const services: Service[] = [
     name: "Nano Ring",
     tagline: "Tiny, discreet, the gentlest method on natural hair",
     description:
-      "A semi-permanent, no-heat, no-glue method using rings about 90% smaller than micro rings. One of the safest methods for natural hair.",
+      "A semi-permanent, no-heat, no-glue method using the smallest rings available — about 90% smaller than a standard ring. One of the safest methods for natural hair.",
     longDescription:
-      "Nano rings are the smallest attachment we use — roughly 90% smaller than a standard micro ring, virtually invisible against the scalp. Each strand is threaded through a silicone-lined metal ring and clamped closed with a precision plier. No heat. No glue. No chemicals. The silicone protects your natural hair from the metal, and the tiny size makes nano rings the gentlest semi-permanent method available — particularly suited to fine or thin hair that struggles with heavier methods.",
+      "Nano rings are the smallest attachment we use — roughly 90% smaller than a standard ring, virtually invisible against the scalp. Each strand is threaded through a silicone-lined metal ring and clamped closed with a precision plier. No heat. No glue. No chemicals. The silicone protects your natural hair from the metal, and the tiny size makes nano rings the gentlest semi-permanent method available — particularly suited to fine or thin hair that struggles with heavier methods.",
     durationLabel: "1 hour per 100 strands",
     lasts: "8 – 12 weeks",
     reusable: "Reusable for 6 – 9 months",
@@ -274,53 +274,6 @@ export const services: Service[] = [
       "Schedule a refit every 8 – 12 weeks as natural hair grows",
     ],
     heroPhoto: "/photos/products-5.jpg",
-  },
-  {
-    slug: "micro-ring",
-    name: "Micro Ring",
-    tagline: "Strand-by-strand precision, no heat or chemicals",
-    description:
-      "Also called micro bead or i-tip extensions. Small silicone-lined metal rings secure each strand — no glue, no heat, no damage.",
-    longDescription:
-      "Micro rings (i-tip or micro bead extensions) sit between nano rings and wefts in size and strength. Each strand passes through a small silicone-lined metal ring that's clamped tight against your natural hair. The silicone lining protects your hair from the metal, and the secure hold makes micro rings ideal for medium-to-thick hair that needs a little more grip than a nano ring can provide. Like nanos, they use no heat, glue, or chemicals — and the rings + hair are reusable for months with a simple refit.",
-    durationLabel: "1 hour per 100 strands",
-    lasts: "8 – 10 weeks",
-    reusable: "Reusable for 6 – 9 months",
-    bestFor: [
-      "Medium to thick hair",
-      "Highlights or full-head application",
-      "Versatile styling — ponytails, curls, braids",
-      "Reusable, cost-effective extensions",
-    ],
-    prices: [{ label: "Single Drawn", amountIDR: 1_900_000 }],
-    unit: "per 100 g",
-    highlights: ["Secure hold", "No heat · no glue", "Customizable"],
-    materials: [
-      "100% real human hair (single drawn, i-tip pre-bonded)",
-      "Silicone-lined micro metal rings (~3 mm)",
-      "Threading hook + clamping plier",
-    ],
-    whatsIncluded: [
-      "Free WhatsApp color match before your visit",
-      "Full installation in our Kerobokan studio",
-      "Custom placement — highlights or full-head",
-      "Trim and style after install",
-      "Personalised aftercare guide",
-    ],
-    idealHairType: [
-      "Medium to thick density",
-      "Healthy hair without heavy chemical damage",
-      "Clients who want versatile styling (updos, braids)",
-      "Anyone preferring a no-heat method",
-    ],
-    aftercare: [
-      "Wait 48 hours before first wash — let the rings settle",
-      "Hair masks fine — but keep them mid-length to ends only",
-      "Brush gently with a loop brush, tips first",
-      "Avoid silicone leave-ins (can slip the bonds)",
-      "Refit every 8 – 10 weeks as natural hair grows",
-    ],
-    heroPhoto: "/photos/before-after/micro-ring-detail.jpg",
   },
   {
     slug: "weft",
@@ -655,7 +608,6 @@ export const faqs: Faq[] = [
       items: [
         { label: "Keratin Bond", body: "2 – 4 months" },
         { label: "Nano Ring", body: "~ 2 months" },
-        { label: "Micro Ring", body: "~ 2 months" },
         { label: "Tape-In", body: "~ 2 months" },
         { label: "Weft", body: "~ 2 months" },
         {
@@ -691,10 +643,6 @@ export const faqs: Faq[] = [
         {
           label: "Weft",
           body: "Very low damage — installed in only 3 – 5 horizontal lines, not all over your head.",
-        },
-        {
-          label: "Micro Ring",
-          body: "Similar to nano ring — minimal damage when applied and removed by a trained stylist.",
         },
         {
           label: "Halo Hair",
@@ -770,7 +718,7 @@ export const faqs: Faq[] = [
           body: "Sulfate-free, alcohol-free shampoo only. No oils, masks, or conditioner near the bond/tape line.",
         },
         {
-          label: "Nano Ring / Micro Ring / Weft",
+          label: "Nano Ring / Weft",
           body: "Wash carefully around the attachment line; keep masks and oils on the lengths only.",
         },
         {
@@ -788,7 +736,7 @@ export const faqs: Faq[] = [
       intro: "Appointment duration by method:",
       items: [
         {
-          label: "Keratin Bond / Nano Ring / Micro Ring",
+          label: "Keratin Bond / Nano Ring",
           body: "~ 1 hour per 100 strands.",
         },
         {
@@ -932,7 +880,7 @@ export const googleReviews: GoogleReview[] = [
       "Honestly the best decision I made on my Bali trip. The team listened to exactly what I wanted and delivered. My hair feels healthier than before.",
     name: "Léa",
     location: "Visiting from Paris",
-    service: "Micro Ring",
+    service: "Nano Ring",
     when: "1 month ago",
   },
   {
@@ -984,7 +932,7 @@ export const tips: Tip[] = [
     photo: "/photos/detail-3-md.jpg",
     tag: "Aftercare",
     body: [
-      "If you've just left the studio with a fresh install — keratin bond, nano ring, micro ring, or tape-in — the single most important rule is to wait 48 hours before the first wash. Your bonds need time to fully cure (keratin) or settle (rings, tapes), and washing too early is the most common reason extensions slip in week one.",
+      "If you've just left the studio with a fresh install — keratin bond, nano ring, weft, or tape-in — the single most important rule is to wait 48 hours before the first wash. Your bonds need time to fully cure (keratin) or settle (rings, tapes), and washing too early is the most common reason extensions slip in week one.",
       "After that 48-hour window, the rules are simple but unforgiving. Use a sulfate-free, alcohol-free shampoo — sulfates strip the oils that keep the bonds flexible, and alcohol dehydrates the hair shaft. We hand out a recommended product list at every appointment; ignore the celebrity endorsements and stick to what's on the list.",
       "Water temperature should be lukewarm, never hot. Hot water expands the hair cuticle and lifts colour faster, which means your match drifts and your install starts looking patchy by week three. Lukewarm rinse, cool finish — every time.",
       "Brushing technique matters more than people think. Always brush with a loop or paddle brush, starting at the very tips and working up section by section. Never tug. Never brush from the root down. The brush should never catch on the attachment point — if it does, slow down and untangle by hand.",
@@ -1028,7 +976,7 @@ export const tips: Tip[] = [
     body: [
       "Your natural hair grows ~1 – 1.5 cm per month. As it grows, the attachment point moves further from the scalp — eventually too far to look or feel natural.",
       "Tape-ins: 6 – 8 weeks. The tapes start to drift visible around week six.",
-      "Nano / micro rings: 8 – 10 weeks. The rings stay in place; we just slide them up.",
+      "Nano rings: 8 – 10 weeks. The rings stay in place; we just slide them up.",
       "Keratin bonds: 3 – 4 months. The longest-lasting method, and the slowest refit cycle.",
       "Wefts: 6 – 8 weeks for repositioning. The cornrow base needs to be redone.",
       "WhatsApp us a photo of the current install when you're around the right week. We'll tell you immediately whether it's time.",
@@ -1053,14 +1001,14 @@ export const tips: Tip[] = [
     slug: "choosing-the-right-method",
     title: "Choosing the right method for your hair",
     excerpt:
-      "Fine hair → nano or tape. Medium-thick → bond or micro. Need it temporary → clip-in. Need volume fast → weft.",
+      "Fine hair → nano or tape. Medium-thick → bond or weft. Need it temporary → clip-in or halo. Need volume fast → weft.",
     readingMinutes: 4,
     photo: "/photos/products-2-md.jpg",
     tag: "Choosing",
     body: [
       "The right method is the one that matches your hair density, lifestyle, and timeline. Here's the short version:",
       "Fine or thin hair: nano ring or tape-in. Both are gentle and lie flat. Avoid heavier methods that can stress fragile hair.",
-      "Medium-to-thick hair: keratin bond, micro ring, or weft. Your hair has the density to hold the attachment without strain. Pick by lifestyle — bonds for low-maintenance, micros for versatile styling, wefts for dramatic transformations.",
+      "Medium-to-thick hair: keratin bond, nano ring, or weft. Your hair has the density to hold the attachment without strain. Pick by lifestyle — bonds for low-maintenance, nano rings for versatile styling, wefts for dramatic transformations.",
       "Need it temporary: clip-in. Wear when you want, remove when you don't. Zero damage.",
       "Need volume fast: weft. One full-day appointment, dramatic transformation, brides and special-event clients only.",
       "Still unsure? WhatsApp us a photo of your hair (front, back, side — natural light, no styling). We'll match you to a method in five minutes.",
@@ -1077,7 +1025,7 @@ export const tips: Tip[] = [
       "Salt water won't damage the bonds, but it will dry out the hair. Rinse with fresh water immediately after the ocean and apply a leave-in conditioner mid-length to ends.",
       "Chlorine is harsher than salt water. If you're swimming in pools regularly, wet your hair with fresh water before the pool — saturated hair absorbs less chlorine. After the pool, rinse and condition.",
       "Direct tropical sun fades colour faster than anywhere else. Tie hair up under a wide-brimmed hat between 11 AM and 3 PM. Yes, your hair colour really does drift if you don't.",
-      "Airport security: the metal detector will not flag micro / nano rings (they're too small). Some scanners detect tape backing — rare. If asked, just say 'hair extensions' — they're entirely common in international travel.",
+      "Airport security: the metal detector will not flag nano rings (they're too small). Some scanners detect tape backing — rare. If asked, just say 'hair extensions' — they're entirely common in international travel.",
       "For carry-on, pack: silk pillowcase, sulfate-free shampoo (decanted into <100 ml bottles), wide-tooth comb, leave-in conditioner. That's the entire travel kit.",
     ],
   },
@@ -1116,7 +1064,7 @@ export const gallery: GalleryItem[] = [
   { src: "/photos/before-after/weft2-after.jpg", alt: "Same client after — long dark wavy extensions, full transformation", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/weft-installation.jpg", alt: "Weft installation top view — horizontal tracks sewn in", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/keratin-bond-detail.jpg", alt: "Keratin Bond extensions — installed close-up", category: "before-after" },
-  { src: "/photos/before-after/micro-ring-detail.jpg", alt: "Micro Ring extensions — installed close-up", category: "before-after" },
+  { src: "/photos/before-after/micro-ring-detail.jpg", alt: "Ring extensions — installed close-up", category: "before-after" },
   { src: "/photos/before-after/unknown-blonde-result.jpg", alt: "Long blonde extensions — finished result, salon chair", category: "before-after", aspect: "tall" },
   // Studio
   { src: "/photos/salon-1-md.jpg", alt: "Studio interior — wide salon view", category: "studio", aspect: "wide" },

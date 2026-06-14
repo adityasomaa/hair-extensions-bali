@@ -15,7 +15,7 @@ const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
 
 // URLs to ping. Mirrors app/sitemap.ts but inlined to keep this script
 // runnable without importing TS source.
-const SERVICE_SLUGS = ["keratin-bond", "nano-ring", "micro-ring", "weft", "tape-in", "halo-hair", "clip-in"];
+const SERVICE_SLUGS = ["keratin-bond", "nano-ring", "weft", "tape-in", "halo-hair", "clip-in"];
 const BLOG_SLUGS = [
   "hair-extensions-cost-bali-pricing-guide-2026",
   "indonesian-hair-vs-remy-hair-comparison",

@@ -18,7 +18,6 @@ const groups = [
     links: [
       { href: "/products/keratin-bond", label: "Keratin Bond" },
       { href: "/products/nano-ring", label: "Nano Ring" },
-      { href: "/products/micro-ring", label: "Micro Ring" },
       { href: "/products/weft", label: "Weft (Sew-In)" },
       { href: "/products/tape-in", label: "Tape-In" },
       { href: "/products/halo-hair", label: "Halo Hair" },
@@ -45,7 +44,7 @@ export default function Footer() {
             </Link>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-[#b5a3a8]">
               Premium hair extensions, expertly applied in the heart of Bali.
-              International-quality hair, seven methods, family feeling.
+              International-quality hair, six methods, family feeling.
             </p>
 
             <div className="mt-8 space-y-3 text-sm">
