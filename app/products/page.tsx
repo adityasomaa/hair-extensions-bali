@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight, Check, MessageCircle, X } from "lucide-react";
 import { ScrollReveal, ScrollStagger } from "@/components/animations-gsap";
 import { brand, services, formatIDR } from "@/lib/content";
 
@@ -94,6 +94,73 @@ export default function ProductsPage() {
               </Link>
             ))}
           </ScrollStagger>
+
+          {/* Comparison table — the whole range side by side, so a client can
+              answer "which one works on my hair?" without opening six pages. */}
+          <ScrollReveal className="mt-20">
+            <h2 className="font-serif text-3xl text-[#f6e9ec] md:text-4xl">
+              Compare every method
+            </h2>
+            <p className="mt-3 max-w-xl text-sm leading-relaxed text-[#b5a3a8]">
+              Which method suits your hair, how long the fitting takes, when to
+              come back, and how long the hair itself keeps.
+            </p>
+
+            <div className="mt-8 -mx-6 overflow-x-auto px-6">
+              <table className="w-full min-w-[880px] border-collapse text-sm">
+                <thead>
+                  <tr className="border-b border-white/15 text-left text-[10px] uppercase tracking-[0.18em] text-[#ab9aa1]">
+                    <th className="py-3 pr-4 font-normal">Method</th>
+                    <th className="px-3 py-3 text-center font-normal">Very short</th>
+                    <th className="px-3 py-3 text-center font-normal">Shoulder</th>
+                    <th className="px-3 py-3 text-center font-normal">Long</th>
+                    <th className="px-3 py-3 text-center font-normal">Fine / thin</th>
+                    <th className="px-3 py-3 font-normal">Fitting time</th>
+                    <th className="px-3 py-3 font-normal">Come back</th>
+                    <th className="py-3 pl-3 font-normal">Hair reusable</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {services.map((s) => (
+                    <tr key={s.slug} className="border-b border-white/[0.07]">
+                      <td className="py-4 pr-4">
+                        <Link
+                          href={`/products/${s.slug}`}
+                          className="font-serif text-base text-[#f6e9ec] underline-offset-4 hover:text-[#ffb6c1] hover:underline"
+                        >
+                          {s.name}
+                        </Link>
+                      </td>
+                      {(
+                        [
+                          s.suitability?.veryShort,
+                          s.suitability?.shoulder,
+                          s.suitability?.long,
+                          s.suitability?.thin,
+                        ] as const
+                      ).map((ok, i) => (
+                        <td key={i} className="px-3 py-4 text-center">
+                          {ok ? (
+                            <Check className="mx-auto h-4 w-4 text-[#ffb6c1]" aria-label="Yes" />
+                          ) : (
+                            <X className="mx-auto h-4 w-4 text-[#5c4f54]" aria-label="No" />
+                          )}
+                        </td>
+                      ))}
+                      <td className="px-3 py-4 text-[#d8c8cd]">{s.durationLabel}</td>
+                      <td className="px-3 py-4 text-[#d8c8cd]">{s.serviceInterval ?? "—"}</td>
+                      <td className="py-4 pl-3 text-[#d8c8cd]">{s.reusable ?? "—"}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <p className="mt-5 text-xs leading-relaxed text-[#8a7a80]">
+              Only Keratin Bond can be fitted to very short hair. Every method
+              works on fine or thin hair.
+            </p>
+          </ScrollReveal>
 
           <ScrollReveal className="mt-16 rounded-sm border border-white/10 bg-[#0a0807] p-10 text-center md:p-14">
             <h3 className="font-serif text-3xl text-[#f6e9ec] md:text-4xl">

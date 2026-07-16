@@ -12,6 +12,7 @@ import {
   Eye,
   DoorOpen,
   BadgeCheck,
+  Boxes,
   Scissors,
   type LucideIcon,
 } from "lucide-react";
@@ -43,6 +44,7 @@ const shopFeatureIcons: Record<string, LucideIcon> = {
   Eye,
   DoorOpen,
   BadgeCheck,
+  Boxes,
 };
 import { getReviews } from "@/lib/reviews";
 
@@ -277,7 +279,7 @@ export default async function HomePage() {
                 <div>
                   <dt className="text-[#ffb6c1]">Experience</dt>
                   <dd className="mt-1.5 font-serif text-2xl text-[#f6e9ec] normal-case tracking-normal">
-                    3+ years
+                    6+ years
                   </dd>
                 </div>
                 <div>

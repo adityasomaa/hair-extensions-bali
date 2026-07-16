@@ -5,9 +5,11 @@ import {
   ArrowLeft,
   ArrowRight,
   ArrowUpRight,
+  Check,
   Clock,
   MessageCircle,
   Sparkles,
+  X,
 } from "lucide-react";
 import {
   ScrollReveal,
@@ -285,10 +287,18 @@ export default async function ServiceDetailPage({
                         </dt>
                         <dd className="mt-1.5 text-[#f6e9ec]">{service.lasts}</dd>
                       </div>
+                      {service.serviceInterval && (
+                        <div>
+                          <dt className="text-[10px] uppercase tracking-[0.22em] text-[#ab9aa1]">
+                            Come back
+                          </dt>
+                          <dd className="mt-1.5 text-[#f6e9ec]">{service.serviceInterval}</dd>
+                        </div>
+                      )}
                       {service.reusable && (
                         <div>
                           <dt className="text-[10px] uppercase tracking-[0.22em] text-[#ab9aa1]">
-                            Reusable
+                            Hair reusable for
                           </dt>
                           <dd className="mt-1.5 text-[#f6e9ec]">{service.reusable}</dd>
                         </div>
@@ -344,6 +354,42 @@ export default async function ServiceDetailPage({
                           ))}
                         </ul>
                       )}
+                    </div>
+                  </ScrollReveal>
+                )}
+
+                {/* Will it work on my hair? — the first question every client asks */}
+                {service.suitability && (
+                  <ScrollReveal direction="left" delay={0.08}>
+                    <div className="mt-6 rounded-sm border border-white/10 p-7">
+                      <p className="text-[11px] uppercase tracking-[0.28em] text-[#ffb6c1]">
+                        Will it work on my hair?
+                      </p>
+                      <ul className="mt-5 space-y-3 text-sm">
+                        {(
+                          [
+                            ["Very short hair", service.suitability.veryShort],
+                            ["Shoulder-length hair", service.suitability.shoulder],
+                            ["Long hair", service.suitability.long],
+                            ["Fine / thin hair", service.suitability.thin],
+                          ] as const
+                        ).map(([label, ok]) => (
+                          <li key={label} className="flex items-center justify-between gap-3">
+                            <span className={ok ? "text-[#d8c8cd]" : "text-[#7d6d72]"}>{label}</span>
+                            {ok ? (
+                              <span className="flex items-center gap-1.5 text-[11px] uppercase tracking-[0.14em] text-[#ffb6c1]">
+                                <Check className="h-3.5 w-3.5" aria-hidden />
+                                Yes
+                              </span>
+                            ) : (
+                              <span className="flex items-center gap-1.5 text-[11px] uppercase tracking-[0.14em] text-[#7d6d72]">
+                                <X className="h-3.5 w-3.5" aria-hidden />
+                                No
+                              </span>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </ScrollReveal>
                 )}

@@ -61,7 +61,13 @@ export const shopFeatures = [
     icon: "Store",
     title: "Bali's largest hair extension shop",
     body:
-      "100+ shades on display in our Kerobokan hair shop. Wavy, curly, straight, and bone-straight textures. Single drawn, double drawn, premium Remy hair, and Indonesian-sourced human hair — all 100% real, sourced for natural movement and longevity. Always Indonesian hair in stock, alongside international grades.",
+      "100+ shades on display in our Kerobokan hair shop. Four textures ready in stock — straight, wavy, curly, and deep curly. Single drawn, double drawn, premium Remy hair, and Indonesian-sourced human hair — all 100% real, sourced for natural movement and longevity. Always Indonesian hair in stock, alongside international grades.",
+  },
+  {
+    icon: "Boxes",
+    title: "Retail and wholesale",
+    body:
+      "Buy a single set for yourself, or order at wholesale rates for your salon, studio, or store. We supply stylists and resellers across Bali and Indonesia with the same 100% real human hair we install in-house — consistent grades, consistent shades, restocked regularly. Message us on WhatsApp with the quantity you need and we'll quote you directly.",
   },
   {
     icon: "Eye",
@@ -126,6 +132,17 @@ export type Service = {
   idealHairType?: string[];
   /** Aftercare tips specific to this method */
   aftercare?: string[];
+  /** Which natural hair lengths this method can actually be fitted to.
+   *  Drives the comparison table and the per-method "Will it work on my hair?"
+   *  block — a straight answer to the question every client asks first. */
+  suitability?: {
+    veryShort: boolean;
+    shoulder: boolean;
+    long: boolean;
+    thin: boolean;
+  };
+  /** How often the client must come back for a move-up / re-fit. */
+  serviceInterval?: string;
   /** Before / after photo paths. `real: true` flags an actual client pair
    *  (suppresses the "placeholders coming soon" disclaimer on the page). */
   beforeAfter?: { before: string; after: string; real?: boolean };
@@ -144,9 +161,12 @@ export const services: Service[] = [
       "Keratin bond extensions (also called fusion or hot-fusion) are our most invisible and longest-lasting method. Each strand is attached individually using a small bead of keratin — the same natural protein your own hair is built from. Applied with a precision heat tool, the bond forms a flexible, almost weightless connection that moves with your hair, blends seamlessly with your scalp, and disappears completely once color-matched. Ideal for clients who want extensions that feel and behave like their own hair, for months at a time.",
     durationLabel: "1 hour per 100 strands",
     lasts: "3 – 4 months",
+    reusable: "8 months, or 2 re-services",
+    serviceInterval: "Every 2 – 4 months",
+    suitability: { veryShort: true, shoulder: true, long: true, thin: true },
     bestFor: [
       "Long-lasting, natural finish",
-      "Healthy medium-to-thick hair",
+      "The only method we fit to very short hair",
       "Brides, models, long vacations",
       "Heat-styling lovers",
     ],
@@ -194,17 +214,17 @@ export const services: Service[] = [
       "Personalised aftercare guide",
     ],
     idealHairType: [
-      "Medium to thick density",
+      "Works on every length, including very short hair",
+      "Fine and thin hair welcome",
       "Healthy, not over-processed",
       "Hair that can hold a small bond without breakage",
-      "Not ideal for very fine or fragile hair",
     ],
     aftercare: [
-      "Wait 48 hours before first wash",
-      "Use sulfate-free, alcohol-free shampoo",
-      "Brush from tips to roots, twice daily",
-      "Always sleep with hair loosely tied + silk pillowcase",
-      "Avoid direct heat on the bonds — keep iron 2 cm below",
+      "Wait 24 hours before your first wash",
+      "Always blow-dry after washing — never leave the bonds wet",
+      "Tie your hair up to swim, to sleep, and on the motorbike",
+      "After every wash, check between the bonds so they don't fuse together",
+      "No hair tonic and no oil-based products",
     ],
     heroPhoto: "/photos/before-after/keratin-bond-detail.jpg",
     beforeAfter: {
@@ -223,12 +243,14 @@ export const services: Service[] = [
       "Nano rings are the smallest attachment we use — roughly 90% smaller than a standard ring, virtually invisible against the scalp. Each strand is threaded through a silicone-lined metal ring and clamped closed with a precision plier. No heat. No glue. No chemicals. The silicone protects your natural hair from the metal, and the tiny size makes nano rings the gentlest semi-permanent method available — particularly suited to fine or thin hair that struggles with heavier methods.",
     durationLabel: "1 hour per 100 strands",
     lasts: "8 – 12 weeks",
-    reusable: "Reusable for 6 – 9 months",
+    reusable: "6 months, or 3 re-services",
+    serviceInterval: "Every 2 months",
+    suitability: { veryShort: false, shoulder: false, long: true, thin: true },
     bestFor: [
       "Fine or thin hair",
       "Anyone wanting the most invisible result",
       "People avoiding heat or chemicals",
-      "Reusable, cost-effective extensions",
+      "Long hair — needs length to hide the rings",
     ],
     prices: [
       { label: "Single Drawn", amountIDR: 3_500_000 },
@@ -269,14 +291,14 @@ export const services: Service[] = [
       "Fine to medium density",
       "Anyone with thin or fragile hair",
       "Clients avoiding heat / glue",
-      "Best on healthy, not heavily-bleached hair",
+      "Needs long hair — not suitable for short or shoulder-length",
     ],
     aftercare: [
-      "Wait 48 hours before first wash — let the rings settle",
-      "Avoid hair masks at the roots (oils slip the rings)",
-      "Brush gently from tips up — never tug the ring band",
-      "Sleep with hair tied in a low loose braid",
-      "Schedule a refit every 8 – 12 weeks as natural hair grows",
+      "Wait 24 hours before your first wash",
+      "Always blow-dry after washing — never leave the rings wet",
+      "Tie your hair up to swim, to sleep, and on the motorbike",
+      "After every wash, check between the rings so they don't fuse together",
+      "No hair tonic and no oil-based products",
     ],
     heroPhoto: "/photos/products-5.jpg",
   },
@@ -288,14 +310,16 @@ export const services: Service[] = [
       "Long strips of hair sewn or beaded onto your natural hair. Adds dramatic volume and length quickly with fewer attachment points.",
     longDescription:
       "A weft is a long strip of hair sewn at the top, ready to be stitched or beaded onto a horizontal cornrow of your natural hair. Because each weft covers a wide area, you get dramatic volume and length with far fewer attachment points than strand-by-strand methods. That makes wefts the fastest way to a full transformation — and the strongest method for clients who want long-term, high-impact wear: brides, performers, content creators, and anyone preparing for a major event.",
-    durationLabel: "Approx. 1 day full installation",
+    durationLabel: "2 hours for 100 – 200 g",
     lasts: "6 – 8 weeks before repositioning",
-    reusable: "Reusable for 6 – 9 months",
+    reusable: "1 year, or 6 re-services",
+    serviceInterval: "Every 2 months",
+    suitability: { veryShort: false, shoulder: false, long: true, thin: true },
     bestFor: [
-      "Medium to thick hair",
       "Maximum volume & length",
+      "The easiest method to live with — wash and style freely",
       "Brides, performers, special events",
-      "Long-term wear",
+      "Long hair, including fine or thin hair",
     ],
     prices: [
       { label: "Single Drawn", amountIDR: 3_500_000 },
@@ -337,17 +361,17 @@ export const services: Service[] = [
       "Personalised aftercare guide",
     ],
     idealHairType: [
-      "Medium to thick density",
+      "Fine, medium, or thick density — all welcome",
       "Healthy, strong natural hair (the cornrow holds the weft)",
       "Clients wanting maximum volume in one session",
-      "Not ideal for very fine or fragile hair",
+      "Needs long hair — not suitable for short or shoulder-length",
     ],
     aftercare: [
-      "Wait 48 hours before first wash — let the wefts settle",
-      "Keep the cornrow base clean — wash carefully every 5 – 7 days",
-      "Use a wide-tooth comb on the lengths only",
-      "Sleep with hair in a low ponytail or loose braid",
-      "Schedule repositioning every 6 – 8 weeks",
+      "No waiting — you can wash your hair the same day it's fitted",
+      "No need to blow-dry; air-drying is fine",
+      "Use any products you like, including oils and tonic",
+      "Our easiest method to live with — no bonds to keep apart",
+      "Come back for repositioning every 2 months",
     ],
     heroPhoto: "/photos/before-after/weft-installation.jpg",
     beforeAfter: {
@@ -364,14 +388,16 @@ export const services: Service[] = [
       "Thin, flat wefts pre-taped with medical-grade adhesive. The stylist sandwiches a thin section of your natural hair between two tape wefts.",
     longDescription:
       "Tape-ins are pre-cut, flat wefts of hair backed with a medical-grade hypoallergenic adhesive — the same family used for sensitive-skin medical tape. The stylist sandwiches a thin section of your natural hair between two tape wefts so the adhesive bonds top-to-top, leaving the section nearly invisible. Because the wefts lie flat against your scalp, tape-ins are the most comfortable everyday-wear option, the fastest to install, and the easiest to remove cleanly with the right oil-based releaser.",
-    durationLabel: "Under 1.5 hours full head",
+    durationLabel: "30 minutes per 20 pieces",
     lasts: "6 – 8 weeks before repositioning",
-    reusable: "Reusable 3 – 4 times (6 – 8 months total)",
+    reusable: "1 year, or 6 re-services",
+    serviceInterval: "Every 2 months",
+    suitability: { veryShort: false, shoulder: false, long: true, thin: true },
     bestFor: [
-      "Fine to medium hair",
-      "Anyone wanting a quick application",
+      "Anyone wanting the quickest application",
       "Highlights, lowlights, or fullness",
       "Comfortable everyday wear",
+      "Long hair, including fine or thin hair",
     ],
     prices: [
       { label: "Single Drawn", amountIDR: 3_500_000 },
@@ -411,13 +437,14 @@ export const services: Service[] = [
       "Fine to medium density",
       "Healthy hair without heavy oils at the scalp",
       "Anyone wanting a fast install",
-      "Clients who prefer a flat, flush look",
+      "Needs long hair — not suitable for short or shoulder-length",
     ],
     aftercare: [
-      "No oils, masks, or conditioner near the tape line",
-      "Wait 48 hours before first wash",
-      "Sulfate-free shampoo only",
-      "Schedule a refit every 6 – 8 weeks for fresh tapes",
+      "Wait 24 hours before your first wash",
+      "Always blow-dry after washing — never leave the tapes wet",
+      "Tie your hair up to swim, to sleep, and on the motorbike",
+      "No hair tonic and no oil-based products",
+      "Unlike keratin bonds, there's nothing to check between — the tapes sit flat",
     ],
     heroPhoto: "/photos/products-2.jpg",
   },
@@ -429,13 +456,16 @@ export const services: Service[] = [
       "A weft mounted on an invisible wire that sits like a halo under your top layer of hair. On in seconds, off in seconds — no clips, no glue, no commitment.",
     longDescription:
       "Halo hair is the gentlest extension there is: a single curved weft mounted on a thin, invisible wire that rests on your head like a halo, hidden under your own top layer of hair. Nothing attaches to your natural hair — no rings, no glue, no clips pulling at the roots. You put it on in seconds in front of a mirror and lift it off just as fast. Because there is zero attachment, it's the one method that suits even very fine, fragile, or thinning hair. Cared for properly, a halo set lasts 6 – 12 months and can be styled, dyed, and reused like your own hair.",
-    durationLabel: "DIY · seconds to wear",
+    durationLabel: "15 minutes",
     lasts: "6 – 12 months with proper care",
+    reusable: "1 – 2 years",
+    serviceInterval: "Semi-permanent — no refit appointments",
+    suitability: { veryShort: false, shoulder: false, long: true, thin: true },
     bestFor: [
-      "Very fine, fragile, or thinning hair",
+      "Fine, fragile, or thinning hair",
       "Anyone avoiding attachments completely",
       "Daily on/off flexibility",
-      "First-timers testing extensions",
+      "Long hair — needs length to hide the wire",
     ],
     prices: [
       { label: "Single Drawn", amountIDR: 3_500_000 },
@@ -467,12 +497,13 @@ export const services: Service[] = [
       "Fine to medium density",
       "Fragile or thinning hair that can't hold attachments",
       "Anyone wanting daily flexibility",
-      "Clients hesitant about permanent methods",
+      "Needs long hair — not suitable for short or shoulder-length",
     ],
     aftercare: [
-      "Take the halo off before sleeping and showering",
-      "Wash only when visibly soiled — over-washing shortens life",
-      "Brush gently from tips up before storing",
+      "No restrictions — nothing is bonded to your hair",
+      "Wash whenever you like, no waiting period",
+      "No need to blow-dry; air-drying is fine",
+      "Use any products you like, including oils and tonic",
       "Store flat or on a hanger to keep the weft shape",
     ],
     heroPhoto: "/photos/products-6.jpg",
@@ -485,13 +516,16 @@ export const services: Service[] = [
       "Temporary wefts with small clips sewn on. Apply or remove yourself in minutes — perfect for events, photo shoots, or experimenting.",
     longDescription:
       "Clip-ins are temporary wefts with small pressure-sensitive clips sewn along the top edge. You snap them onto sections of your natural hair in minutes — no stylist, no chemicals, no commitment. Perfect for weddings, photoshoots, vacations, or anyone wanting to test extension length and color before committing to a permanent method. Cared for properly, a single set lasts 6 – 12 months and can be styled, dyed, and reused as often as you like.",
-    durationLabel: "DIY · minutes to apply",
+    durationLabel: "15 minutes",
     lasts: "6 – 12 months with proper care",
+    reusable: "1 – 2 years",
+    serviceInterval: "Semi-permanent — no refit appointments",
+    suitability: { veryShort: false, shoulder: false, long: true, thin: true },
     bestFor: [
       "Events, parties, special occasions",
       "Experimenting with length or color",
       "No glue, no heat, no chemicals",
-      "Affordable styling freedom",
+      "Long hair, including fine or thin hair",
     ],
     prices: [
       { label: "Single Drawn", amountIDR: 3_500_000 },
@@ -521,16 +555,17 @@ export const services: Service[] = [
       "Carry pouch",
     ],
     idealHairType: [
-      "Any hair type — fine to thick",
+      "Fine to thick density — all welcome",
       "Anyone wanting a temporary boost",
       "Travelers / event guests / brides",
-      "Clients hesitant about permanent methods",
+      "Needs long hair — not suitable for short or shoulder-length",
     ],
     aftercare: [
-      "Wash only when visibly soiled — over-washing shortens life",
+      "No restrictions — nothing is bonded to your hair",
+      "Wash whenever you like, no waiting period",
+      "No need to blow-dry; air-drying is fine",
+      "Use any products you like, including oils and tonic",
       "Always brush out before storing in the carry pouch",
-      "Clip onto pre-styled hair, not freshly washed",
-      "Treat heat-styling exactly as you would your own hair",
     ],
     heroPhoto: "/photos/detail-1.jpg",
   },
@@ -543,7 +578,7 @@ export function serviceBySlug(slug: string): Service | undefined {
 export const valueProps = [
   {
     title: "100% Real Human Hair",
-    body: "International-grade single, double drawn, and premium hair — sourced for longevity and natural movement.",
+    body: "International-grade single, double drawn, and premium hair — sourced for longevity and natural movement. Four textures ready in stock: straight, wavy, curly, and deep curly.",
   },
   {
     title: "Six Application Methods",
