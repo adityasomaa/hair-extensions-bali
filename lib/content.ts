@@ -301,6 +301,11 @@ export const services: Service[] = [
       "No hair tonic and no oil-based products",
     ],
     heroPhoto: "/photos/products-5.jpg",
+    beforeAfter: {
+      before: "/photos/before-after/nano1-before.jpg",
+      after: "/photos/before-after/nano1-after.jpg",
+      real: true,
+    },
   },
   {
     slug: "weft",
@@ -447,6 +452,11 @@ export const services: Service[] = [
       "Unlike keratin bonds, there's nothing to check between — the tapes sit flat",
     ],
     heroPhoto: "/photos/products-2.jpg",
+    beforeAfter: {
+      before: "/photos/before-after/tape1-before.jpg",
+      after: "/photos/before-after/tape1-after.jpg",
+      real: true,
+    },
   },
   {
     slug: "halo-hair",
@@ -1098,6 +1108,16 @@ export type GalleryItem = {
 
 export const gallery: GalleryItem[] = [
   // Before & After — real client photos
+  { src: "/photos/before-after/nano1-before.jpg", alt: "Client before — fine platinum blonde hair with thin, breaking ends", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/nano1-after.jpg", alt: "Same client after — thick platinum blonde length, Nano Ring premium 100 g", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/nano2-before.jpg", alt: "Client before — mid-length copper brown hair, thinning through the ends", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/nano2-after.jpg", alt: "Same client after — long copper waves with full body, Nano Ring double drawn 100 g", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/nano3-before.jpg", alt: "Client before — shoulder-length natural dark curls", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/nano3-after.jpg", alt: "Same client after — long dark curls, Nano Ring curly 100 g", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/tape1-before.jpg", alt: "Client before — long dark hair tapering to thin ends", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/tape1-after.jpg", alt: "Same client after — thick glossy dark length, Tape-In 200 g double drawn", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin6-before.jpg", alt: "Client before — blonde hair with fine, tapering ends", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin6-after.jpg", alt: "Same client after — full blonde waves, Keratin Bond 200 g single drawn", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/weft-before.jpg", alt: "Client before — natural black bob, ready for weft installation", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/weft-after.jpg", alt: "Same client after — long flowing extensions, Weft installation", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/weft2-before.jpg", alt: "Client before — short mahogany bob at the styling chair", category: "before-after", aspect: "tall" },
