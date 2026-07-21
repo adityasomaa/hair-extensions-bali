@@ -226,7 +226,9 @@ export const services: Service[] = [
       "After every wash, check between the bonds so they don't fuse together",
       "No hair tonic and no oil-based products",
     ],
-    heroPhoto: "/photos/before-after/keratin-bond-detail.jpg",
+    // The close-up shows the bonds themselves, which is what a client is
+    // really asking about when they ask whether extensions are visible.
+    heroPhoto: "/photos/before-after/keratin-bond-detail-4.jpg",
     beforeAfter: {
       before: "/photos/before-after/keratin1-before.jpg",
       after: "/photos/before-after/keratin1-after.jpg",
@@ -1108,6 +1110,11 @@ export type GalleryItem = {
 
 export const gallery: GalleryItem[] = [
   // Before & After — real client photos
+  { src: "/photos/before-after/keratin7-before.jpg", alt: "Client before — dark brown hair to mid-back with thinning ends", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin7-after.jpg", alt: "Same client after — long dark brown waves with full body, Keratin Bond", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin8-before.jpg", alt: "Client before — chin-length dark brown bob", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin8-after.jpg", alt: "Same client after — long brown waves past the waist, Keratin Bond", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin-result-black-wavy.jpg", alt: "Finished Keratin Bond result — long glossy black waves", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/nano1-before.jpg", alt: "Client before — fine platinum blonde hair with thin, breaking ends", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/nano1-after.jpg", alt: "Same client after — thick platinum blonde length, Nano Ring premium 100 g", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/nano2-before.jpg", alt: "Client before — mid-length copper brown hair, thinning through the ends", category: "before-after", aspect: "tall" },
@@ -1146,6 +1153,12 @@ export const gallery: GalleryItem[] = [
   { src: "/photos/salon-3-md.jpg", alt: "Studio front entrance", category: "studio" },
   { src: "/photos/hero-salon-md.jpg", alt: "All About Hair wall", category: "studio", aspect: "wide" },
   // Products
+  // Bond craftsmanship — close-ups of an actual Keratin Bond fitting. These
+  // answer "will it show?" better than any copy can, so they sit with the
+  // product shots rather than the transformations.
+  { src: "/photos/before-after/keratin-bond-detail-4.jpg", alt: "Close-up of Keratin Bond attachments — individual strands bonded at the root", category: "products", aspect: "tall" },
+  { src: "/photos/before-after/keratin-bond-detail-3.jpg", alt: "Row of Keratin Bond attachments across a sectioned parting", category: "products", aspect: "tall" },
+  { src: "/photos/before-after/keratin-bond-detail-2.jpg", alt: "Keratin Bond installation in progress, hair sectioned and clipped", category: "products", aspect: "tall" },
   { src: "/photos/products-1-md.jpg", alt: "Display rack with hair extensions", category: "products", aspect: "tall" },
   { src: "/photos/products-2-md.jpg", alt: "Color comparison row", category: "products", aspect: "wide" },
   { src: "/photos/products-3-md.jpg", alt: "Color storage with mannequins", category: "products" },
