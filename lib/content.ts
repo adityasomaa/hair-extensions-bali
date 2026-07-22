@@ -229,9 +229,12 @@ export const services: Service[] = [
     // The close-up shows the bonds themselves, which is what a client is
     // really asking about when they ask whether extensions are visible.
     heroPhoto: "/photos/before-after/keratin-bond-detail-4.jpg",
+    // This pair starts from cropped hair above the shoulders — the shortest
+    // we have on file. It is the evidence for the "only method we fit to very
+    // short hair" claim made further up this page.
     beforeAfter: {
-      before: "/photos/before-after/keratin1-before.jpg",
-      after: "/photos/before-after/keratin1-after.jpg",
+      before: "/photos/before-after/keratin9-before.jpg",
+      after: "/photos/before-after/keratin9-after.jpg",
       real: true,
     },
   },
@@ -1110,6 +1113,8 @@ export type GalleryItem = {
 
 export const gallery: GalleryItem[] = [
   // Before & After — real client photos
+  { src: "/photos/before-after/keratin9-before.jpg", alt: "Client before — short cropped blonde hair above the shoulders", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin9-after.jpg", alt: "Same client after — platinum blonde down past the waist, Keratin Bond 200 g single drawn", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/nano4-before.jpg", alt: "Client before — chin-length dark brown bob", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/nano4-after.jpg", alt: "Same client after — long brown waves past the waist, Nano Ring 150 g double drawn", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/weft5-before.jpg", alt: "Client before — dark brown hair to mid-back with thinning ends", category: "before-after", aspect: "tall" },
