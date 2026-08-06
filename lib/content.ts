@@ -148,6 +148,11 @@ export type Service = {
   beforeAfter?: { before: string; after: string; real?: boolean };
   /** Hero / detail page image */
   heroPhoto?: string;
+  /** Designed method card (brand lockup, before/after, product detail,
+   *  why-choose band) exported from design/wip/social-pack-a. Two crops:
+   *  `wide` for desktop, `tall` for phones, where the wide one would be
+   *  too small to read. */
+  methodCard?: { wide: string; tall: string };
 };
 
 export const services: Service[] = [
@@ -229,6 +234,10 @@ export const services: Service[] = [
     // The close-up shows the bonds themselves, which is what a client is
     // really asking about when they ask whether extensions are visible.
     heroPhoto: "/photos/before-after/keratin-bond-detail-4.jpg",
+    methodCard: {
+      wide: "/photos/method-cards/keratin-bond-wide.jpg",
+      tall: "/photos/method-cards/keratin-bond-tall.jpg",
+    },
     // This pair starts from cropped hair above the shoulders — the shortest
     // we have on file. It is the evidence for the "only method we fit to very
     // short hair" claim made further up this page.
@@ -306,6 +315,10 @@ export const services: Service[] = [
       "No hair tonic and no oil-based products",
     ],
     heroPhoto: "/photos/products/nano-ring-tips.jpg",
+    methodCard: {
+      wide: "/photos/method-cards/nano-ring-wide.jpg",
+      tall: "/photos/method-cards/nano-ring-tall.jpg",
+    },
     beforeAfter: {
       before: "/photos/before-after/nano1-before.jpg",
       after: "/photos/before-after/nano1-after.jpg",
@@ -384,6 +397,10 @@ export const services: Service[] = [
       "Come back for repositioning every 2 months",
     ],
     heroPhoto: "/photos/before-after/weft-installation.jpg",
+    methodCard: {
+      wide: "/photos/method-cards/weft-hair-wide.jpg",
+      tall: "/photos/method-cards/weft-hair-tall.jpg",
+    },
     beforeAfter: {
       before: "/photos/before-after/weft-before.jpg",
       after: "/photos/before-after/weft-after.jpg",
@@ -457,6 +474,10 @@ export const services: Service[] = [
       "Unlike keratin bonds, there's nothing to check between — the tapes sit flat",
     ],
     heroPhoto: "/photos/products/tape-in-wefts.jpg",
+    methodCard: {
+      wide: "/photos/method-cards/tape-in-wide.jpg",
+      tall: "/photos/method-cards/tape-in-tall.jpg",
+    },
     beforeAfter: {
       before: "/photos/before-after/tape1-before.jpg",
       after: "/photos/before-after/tape1-after.jpg",
@@ -583,6 +604,10 @@ export const services: Service[] = [
       "Always brush out before storing in the carry pouch",
     ],
     heroPhoto: "/photos/products/clip-in-set.jpg",
+    methodCard: {
+      wide: "/photos/method-cards/clip-in-wide.jpg",
+      tall: "/photos/method-cards/clip-in-tall.jpg",
+    },
   },
 ];
 

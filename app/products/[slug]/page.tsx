@@ -118,7 +118,28 @@ export default async function ServiceDetailPage({
             </h2>
           </ScrollReveal>
 
-          {service.beforeAfter?.real ? (
+          {service.methodCard ? (
+            /* Two crops of the same card. The wide one is unreadable at
+               phone widths, so phones get the 4:5 export instead. */
+            <ClipReveal>
+              <Image
+                src={service.methodCard.wide}
+                alt={`${service.name} — before and after with product detail`}
+                width={1920}
+                height={1080}
+                sizes="100vw"
+                className="hidden w-full rounded-sm md:block"
+              />
+              <Image
+                src={service.methodCard.tall}
+                alt={`${service.name} — before and after with product detail`}
+                width={1080}
+                height={1350}
+                sizes="100vw"
+                className="w-full rounded-sm md:hidden"
+              />
+            </ClipReveal>
+          ) : service.beforeAfter?.real ? (
             <BeforeAfter
               before={service.beforeAfter.before}
               after={service.beforeAfter.after}
