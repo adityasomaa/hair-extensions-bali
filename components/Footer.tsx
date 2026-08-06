@@ -122,6 +122,17 @@ export default function Footer() {
         <div className="mt-14 flex flex-col items-start justify-between gap-3 border-t border-white/5 pt-8 text-xs text-[#ab9aa1] md:flex-row md:items-center">
           <p>© {new Date().getFullYear()} {brand.name}. All rights reserved.</p>
           <p className="italic">By appointment only · Kerobokan, Bali</p>
+          <p>
+            Made by{" "}
+            <a
+              href="https://onyxcreative.asia"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#d8c8cd] transition-colors hover:text-[#ffb6c1]"
+            >
+              Onyx Creative Asia
+            </a>
+          </p>
         </div>
       </div>
     </footer>
