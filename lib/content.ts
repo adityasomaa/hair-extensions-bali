@@ -305,7 +305,7 @@ export const services: Service[] = [
       "After every wash, check between the rings so they don't fuse together",
       "No hair tonic and no oil-based products",
     ],
-    heroPhoto: "/photos/products-5.jpg",
+    heroPhoto: "/photos/products/nano-ring-tips.jpg",
     beforeAfter: {
       before: "/photos/before-after/nano1-before.jpg",
       after: "/photos/before-after/nano1-after.jpg",
@@ -456,7 +456,7 @@ export const services: Service[] = [
       "No hair tonic and no oil-based products",
       "Unlike keratin bonds, there's nothing to check between — the tapes sit flat",
     ],
-    heroPhoto: "/photos/products-2.jpg",
+    heroPhoto: "/photos/products/tape-in-wefts.jpg",
     beforeAfter: {
       before: "/photos/before-after/tape1-before.jpg",
       after: "/photos/before-after/tape1-after.jpg",
@@ -582,7 +582,7 @@ export const services: Service[] = [
       "Use any products you like, including oils and tonic",
       "Always brush out before storing in the carry pouch",
     ],
-    heroPhoto: "/photos/detail-1.jpg",
+    heroPhoto: "/photos/products/clip-in-set.jpg",
   },
 ];
 
@@ -1126,6 +1126,8 @@ export const gallery: GalleryItem[] = [
   { src: "/photos/before-after/nano2-after.jpg", alt: "Same client after — long copper waves with full body, Nano Ring double drawn 100 g", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/nano3-before.jpg", alt: "Client before — shoulder-length natural dark curls", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/nano3-after.jpg", alt: "Same client after — long dark curls, Nano Ring curly 100 g", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/nano5-before.jpg", alt: "Client before — shoulder-length golden blonde, fine through the ends", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/nano5-after.jpg", alt: "Same client after — long golden blonde beach waves, Nano Ring", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/tape1-before.jpg", alt: "Client before — long dark hair tapering to thin ends", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/tape1-after.jpg", alt: "Same client after — thick glossy dark length, Tape-In 200 g double drawn", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/keratin6-before.jpg", alt: "Client before — blonde hair with fine, tapering ends", category: "before-after", aspect: "tall" },
@@ -1164,6 +1166,24 @@ export const gallery: GalleryItem[] = [
   { src: "/photos/before-after/keratin-bond-detail-4.jpg", alt: "Close-up of Keratin Bond attachments — individual strands bonded at the root, 150 g double drawn", category: "products", aspect: "tall" },
   { src: "/photos/before-after/keratin-bond-detail-3.jpg", alt: "Row of Keratin Bond attachments across a sectioned parting", category: "products", aspect: "tall" },
   { src: "/photos/before-after/keratin-bond-detail-2.jpg", alt: "Keratin Bond installation in progress, hair sectioned and clipped", category: "products", aspect: "tall" },
+  // Studio product photography, one set per method. Shot against plain
+  // backgrounds so the attachment itself is legible — these carry the
+  // "what am I actually buying?" part of the page.
+  { src: "/photos/products/keratin-bond-tips.jpg", alt: "Keratin Bond tips fanned out, flat keratin ends on individual strands", category: "products", aspect: "tall" },
+  { src: "/photos/products/keratin-bond-applied.jpg", alt: "A single Keratin Bond fitted at the root, held between fingertips", category: "products" },
+  { src: "/photos/products/keratin-bond-strands.jpg", alt: "Keratin Bond strands held in the hand beside loose keratin granules", category: "products", aspect: "tall" },
+  { src: "/photos/products/keratin-studio-bench.jpg", alt: "Studio bench — hair drawn across a hackle board during preparation", category: "products", aspect: "tall" },
+  { src: "/photos/products/nano-ring-tips.jpg", alt: "Nano Ring tips — bundles of individually tipped strands", category: "products" },
+  { src: "/photos/products/nano-ring-applied.jpg", alt: "Nano Rings fitted in a row along a sectioned parting", category: "products", aspect: "tall" },
+  { src: "/photos/products/nano-ring-shades.jpg", alt: "Nano Ring beads and tipped strands across the full shade range", category: "products" },
+  { src: "/photos/products/nano-ring-beads.jpg", alt: "Micro beads in black and blonde, laid out on straight dark hair", category: "products", aspect: "tall" },
+  { src: "/photos/products/tape-in-wefts.jpg", alt: "Tape-In wefts stacked in three shades on a stone surface", category: "products", aspect: "tall" },
+  { src: "/photos/products/tape-in-applied.jpg", alt: "Tape-In weft sandwiched at the root of dark hair", category: "products", aspect: "tall" },
+  { src: "/photos/products/weft-hair-macro.jpg", alt: "Hand-tied weft close-up — fine seam running along the top edge", category: "products", aspect: "tall" },
+  { src: "/photos/products/weft-applied.jpg", alt: "Weft sewn into a curved track around the crown", category: "products", aspect: "tall" },
+  { src: "/photos/products/weft-rows.jpg", alt: "Weft rows fitted through the back, shown from two angles", category: "products", aspect: "tall" },
+  { src: "/photos/products/clip-in-set.jpg", alt: "Clip-In set in three shades — black, brown and blonde wefts", category: "products", aspect: "tall" },
+  { src: "/photos/products/clip-in-applied.jpg", alt: "A Clip-In weft being clipped into a sectioned parting", category: "products" },
   { src: "/photos/products-1-md.jpg", alt: "Display rack with hair extensions", category: "products", aspect: "tall" },
   { src: "/photos/products-2-md.jpg", alt: "Color comparison row", category: "products", aspect: "wide" },
   { src: "/photos/products-3-md.jpg", alt: "Color storage with mannequins", category: "products" },
