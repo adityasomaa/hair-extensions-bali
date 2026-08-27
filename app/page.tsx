@@ -45,6 +45,7 @@ const shopFeatureIcons: Record<string, LucideIcon> = {
   DoorOpen,
   BadgeCheck,
   Boxes,
+  Scissors,
 };
 import { getReviews } from "@/lib/reviews";
 

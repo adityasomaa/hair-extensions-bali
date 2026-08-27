@@ -61,7 +61,13 @@ export const shopFeatures = [
     icon: "Store",
     title: "Bali's largest hair extension shop",
     body:
-      "100+ shades on display in our Kerobokan hair shop. Four textures ready in stock — straight, wavy, curly, and deep curly. Single drawn, double drawn, premium Remy hair, and Indonesian-sourced human hair — all 100% real, sourced for natural movement and longevity. Always Indonesian hair in stock, alongside international grades.",
+      "100+ shades on display in our Kerobokan hair shop. Our stock is wavy texture. Single drawn, double drawn, premium Remy hair, and Indonesian-sourced human hair — all 100% real, sourced for natural movement and longevity. Always Indonesian hair in stock, alongside international grades.",
+  },
+  {
+    icon: "Scissors",
+    title: "Straight hair is made to order",
+    body:
+      "Because our stock is wavy, a straight set is straightened for you with a keratin treatment: 200,000 IDR per 100 g, paid in full upfront. Allow three days for the process. We can finish it in a single day if you are short on time, but the hair must not be washed for three days afterwards.",
   },
   {
     icon: "Boxes",
@@ -618,7 +624,7 @@ export function serviceBySlug(slug: string): Service | undefined {
 export const valueProps = [
   {
     title: "100% Real Human Hair",
-    body: "International-grade single, double drawn, and premium hair — sourced for longevity and natural movement. Four textures ready in stock: straight, wavy, curly, and deep curly.",
+    body: "International-grade single, double drawn, and premium hair — sourced for longevity and natural movement. Our stock is wavy texture; straight is straightened to order.",
   },
   {
     title: "Six Application Methods",
