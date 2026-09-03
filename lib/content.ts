@@ -1146,6 +1146,13 @@ export const gallery: GalleryItem[] = [
   // Before & After — real client photos
   // August 2026 batch, straight from the studio's WhatsApp drops.
   // Newest first so the gallery opens on the most recent work.
+  // Early September 2026 drop.
+  { src: "/photos/before-after/weft7-before.jpg", alt: "Client before — blonde hair to the shoulders, fine through the ends", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/weft7-after.jpg", alt: "Same client after — long blonde waves with full body, Weft double 150 g", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/weft8-before.jpg", alt: "Client before — straight blonde hair to mid-back", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/weft8-after.jpg", alt: "Same client after — long blonde waves, Weft double 150 g", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin16-before.jpg", alt: "Client before — blonde hair to the shoulders", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin16-after.jpg", alt: "Same client after — long blonde waves past the waist, Keratin Bond double 200 g", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/weft6-before.jpg", alt: "Client before — blonde wavy hair to the shoulders", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/weft6-after.jpg", alt: "Same client after — long blonde beach waves, Weft 200 g", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/nano8-before.jpg", alt: "Client before — dark brown hair tapering through the ends", category: "before-after", aspect: "tall" },
