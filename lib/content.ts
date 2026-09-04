@@ -1147,6 +1147,16 @@ export const gallery: GalleryItem[] = [
   // August 2026 batch, straight from the studio's WhatsApp drops.
   // Newest first so the gallery opens on the most recent work.
   // Early September 2026 drop.
+  { src: "/photos/before-after/keratin17-before.jpg", alt: "Client before — very short cropped dark hair", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin17-after.jpg", alt: "Same client after — long dark curls past the waist, Keratin Bond double 200 g", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin18-before.jpg", alt: "Client before — straight black hair to the shoulders", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin18-after.jpg", alt: "Same client after — long black waves, Keratin Bond double 200 g", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin19-before.jpg", alt: "Client before — blonde hair to the shoulders", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin19-after.jpg", alt: "Same client after — long blonde waves, Keratin Bond double 150 g", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/nano10-before.jpg", alt: "Client before — dark hair cut to the shoulders", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/nano10-after.jpg", alt: "Same client after — long dark waves, Nano Ring 150 g", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/weft9-before.jpg", alt: "Client before — blonde bob with grown-out roots", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/weft9-after.jpg", alt: "Same client after — long blonde length, Weft double 150 g", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/weft7-before.jpg", alt: "Client before — blonde hair to the shoulders, fine through the ends", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/weft7-after.jpg", alt: "Same client after — long blonde waves with full body, Weft double 150 g", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/weft8-before.jpg", alt: "Client before — straight blonde hair to mid-back", category: "before-after", aspect: "tall" },
