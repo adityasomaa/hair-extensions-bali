@@ -1147,6 +1147,8 @@ export const gallery: GalleryItem[] = [
   // August 2026 batch, straight from the studio's WhatsApp drops.
   // Newest first so the gallery opens on the most recent work.
   // Early September 2026 drop.
+  { src: "/photos/before-after/keratin20-before.jpg", alt: "Client before — blonde hair straight to mid-back, thin through the ends", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin20-after.jpg", alt: "Same client after — long blonde waves past the waist, Keratin Bond single 200 g", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/keratin17-before.jpg", alt: "Client before — very short cropped dark hair", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/keratin17-after.jpg", alt: "Same client after — long dark curls past the waist, Keratin Bond double 200 g", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/keratin18-before.jpg", alt: "Client before — straight black hair to the shoulders", category: "before-after", aspect: "tall" },
