@@ -1146,6 +1146,19 @@ export const gallery: GalleryItem[] = [
   // Before & After — real client photos
   // August 2026 batch, straight from the studio's WhatsApp drops.
   // Newest first so the gallery opens on the most recent work.
+  // 28 September 2026 drop. The studio sent these without stating the
+  // method or weight, so the alt text describes the change only.
+  { src: "/photos/before-after/result1-before.jpg", alt: "Client before — highlighted brown hair cut to the shoulders", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/result1-after.jpg", alt: "Same client after — long highlighted waves well past the chest", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/result2-before.jpg", alt: "Client before — dark hair to mid-back, dry through the ends", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/result2-after.jpg", alt: "Same client after — long dark waves, smooth from root to tip", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/result3-before.jpg", alt: "Client before — blonde ombre with grown-out roots, to the shoulder blades", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/result3-after.jpg", alt: "Same client after — long blonde waves with the ombre carried through", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/result4-before.jpg", alt: "Client before — blonde hair to mid-back, fine through the ends", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/result4-after.jpg", alt: "Same client after — blonde length past the waist, thick to the ends", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/result5-before.jpg", alt: "Client before — blonde waves to mid-back", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/result5-after.jpg", alt: "Same client after — fuller blonde waves past the waist", category: "before-after", aspect: "tall" },
+
   // Late September 2026 drop.
   { src: "/photos/before-after/keratin21-before.jpg", alt: "Client before — dark brown hair, straight to mid-back", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/keratin21-after.jpg", alt: "Same client after — long dark brown length past the waist, Keratin Bond double 100 g", category: "before-after", aspect: "tall" },
