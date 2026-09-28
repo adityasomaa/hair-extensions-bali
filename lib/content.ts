@@ -1146,6 +1146,14 @@ export const gallery: GalleryItem[] = [
   // Before & After — real client photos
   // August 2026 batch, straight from the studio's WhatsApp drops.
   // Newest first so the gallery opens on the most recent work.
+  // Late September 2026 drop.
+  { src: "/photos/before-after/keratin21-before.jpg", alt: "Client before — dark brown hair, straight to mid-back", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin21-after.jpg", alt: "Same client after — long dark brown length past the waist, Keratin Bond double 100 g", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin22-before.jpg", alt: "Client before — black hair with lighter grown-out ends, to mid-back", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin22-after.jpg", alt: "Same client after — long black waves, Keratin Bond double 150 g", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin23-before.jpg", alt: "Client before — auburn hair to the shoulders, dry through the ends", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin23-after.jpg", alt: "Same client after — long ginger waves, Keratin Bond double 150 g", category: "before-after", aspect: "tall" },
+
   // Early September 2026 drop.
   { src: "/photos/before-after/keratin20-before.jpg", alt: "Client before — blonde hair straight to mid-back, thin through the ends", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/keratin20-after.jpg", alt: "Same client after — long blonde waves past the waist, Keratin Bond single 200 g", category: "before-after", aspect: "tall" },
