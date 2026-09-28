@@ -1146,6 +1146,13 @@ export const gallery: GalleryItem[] = [
   // Before & After — real client photos
   // August 2026 batch, straight from the studio's WhatsApp drops.
   // Newest first so the gallery opens on the most recent work.
+  // 27 September 2026 drop — Nano Ring pair. Both frames read as finished
+  // looks at a glance; scale-normalising the two shots against head width
+  // showed the second is both longer and full to the ends, so the direction
+  // is settled.
+  { src: "/photos/before-after/nano11-before.jpg", alt: "Client before — platinum blonde hair to mid-back, tapering thin through the ends", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/nano11-after.jpg", alt: "Same client after — platinum blonde length past the waist, full to the ends, Nano Ring double 100 g", category: "before-after", aspect: "tall" },
+
   // 28 September 2026 drop. The studio sent these without stating the
   // method or weight, so the alt text describes the change only.
   { src: "/photos/before-after/result1-before.jpg", alt: "Client before — highlighted brown hair cut to the shoulders", category: "before-after", aspect: "tall" },
