@@ -1146,6 +1146,13 @@ export const gallery: GalleryItem[] = [
   // Before & After — real client photos
   // August 2026 batch, straight from the studio's WhatsApp drops.
   // Newest first so the gallery opens on the most recent work.
+  // 3 October 2026 drop — two Keratin Bond pairs, both double 150 g,
+  // captioned by the studio in the group.
+  { src: "/photos/before-after/keratin24-before.jpg", alt: "Client before — dark brown hair to mid-back, thinning through the ends", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin24-after.jpg", alt: "Same client after — thick warm-brown waves past the waist, Keratin Bond double 150 g", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin25-before.jpg", alt: "Client before — dark brown bob cut to the jaw", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin25-after.jpg", alt: "Same client after — long dark waves well past the shoulder blades, Keratin Bond double 150 g", category: "before-after", aspect: "tall" },
+
   // 27 September 2026 drop — Nano Ring pair. Both frames read as finished
   // looks at a glance; scale-normalising the two shots against head width
   // showed the second is both longer and full to the ends, so the direction
