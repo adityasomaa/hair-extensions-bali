@@ -1146,6 +1146,32 @@ export const gallery: GalleryItem[] = [
   // Before & After — real client photos
   // August 2026 batch, straight from the studio's WhatsApp drops.
   // Newest first so the gallery opens on the most recent work.
+  // 13 October 2026 — sent by the studio without a method, so the alt text
+  // describes the change only.
+  { src: "/photos/before-after/result6-before.jpg", alt: "Client before — short dark curls at the jaw", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/result6-after.jpg", alt: "Same client after — long dark curls well past the shoulders", category: "before-after", aspect: "tall" },
+
+  // 12 October 2026 drop. The studio captions these "Keratin glue", which is
+  // the fusion bond the site calls Keratin Bond.
+  { src: "/photos/before-after/keratin26-before.jpg", alt: "Client before — curly blonde hair to the shoulders", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin26-after.jpg", alt: "Same client after — long blonde curls past the waist, Keratin Bond double 150 g", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/weft14-before.jpg", alt: "Client before — golden ombre hair to the shoulder blades, fine through the ends", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/weft14-after.jpg", alt: "Same client after — long golden waves, Weft double 150 g", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin27-before.jpg", alt: "Client before — dark brown waves to mid-back", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin27-after.jpg", alt: "Same client after — longer, fuller dark brown waves, Keratin Bond double 150 g", category: "before-after", aspect: "tall" },
+
+  // 7–9 October 2026 drop.
+  { src: "/photos/before-after/nano12-before.jpg", alt: "Client before — brown hair with lighter ends to mid-back", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/nano12-after.jpg", alt: "Same client after — fuller brown waves past the waist, Nano Ring single 150 g", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/weft13-before.jpg", alt: "Client before — black hair just past the shoulders", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/weft13-after.jpg", alt: "Same client after — long black waves to the waist, Weft double 200 g", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/weft12-before.jpg", alt: "Client before — black hair to mid-back, sparse through the ends", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/weft12-after.jpg", alt: "Same client after — thick black length to the waist, Weft double 150 g", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/weft11-before.jpg", alt: "Client before — dark brown hair cut to the shoulders", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/weft11-after.jpg", alt: "Same client after — long brown waves past the waist, Weft double 150 g", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/weft10-before.jpg", alt: "Client before — ash-blonde hair to the shoulders, thin through the ends", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/weft10-after.jpg", alt: "Same client after — long straight blonde past the shoulder blades, Weft double 150 g", category: "before-after", aspect: "tall" },
+
   // 3 October 2026 drop — two Keratin Bond pairs, both double 150 g,
   // captioned by the studio in the group.
   { src: "/photos/before-after/keratin24-before.jpg", alt: "Client before — dark brown hair to mid-back, thinning through the ends", category: "before-after", aspect: "tall" },
