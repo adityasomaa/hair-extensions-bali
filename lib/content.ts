@@ -1146,6 +1146,18 @@ export const gallery: GalleryItem[] = [
   // Before & After — real client photos
   // August 2026 batch, straight from the studio's WhatsApp drops.
   // Newest first so the gallery opens on the most recent work.
+  // 20 October 2026 drop — five pairs, all captioned by the studio in the group.
+  { src: "/photos/before-after/weft15-before.jpg", alt: "Client before — platinum blonde past the shoulders, thin and wispy at the ends", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/weft15-after.jpg", alt: "Same client after — long, even platinum blonde to mid-back, Weft double 100 g", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/weft16-before.jpg", alt: "Client before — dark brown waves to the shoulder blades", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/weft16-after.jpg", alt: "Same client after — long chocolate-brown waves past the chair back, Weft double 150 g", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/weft17-before.jpg", alt: "Client before — balayage waves to mid-back", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/weft17-after.jpg", alt: "Same client after — longer, fuller golden waves, Weft double 100 g", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin28-before.jpg", alt: "Client before — straight ombre hair, dark roots fading to copper ends", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin28-after.jpg", alt: "Same client after — fuller ombre length with soft waves through the ends, Keratin Bond premium 50 g", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin29-before.jpg", alt: "Client before — straight dark brown hair to mid-back", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin29-after.jpg", alt: "Same client after — long, fuller brown waves, Keratin Bond 100 g", category: "before-after", aspect: "tall" },
+
   // 13 October 2026 — sent by the studio without a method, so the alt text
   // describes the change only.
   { src: "/photos/before-after/result6-before.jpg", alt: "Client before — short dark curls at the jaw", category: "before-after", aspect: "tall" },
