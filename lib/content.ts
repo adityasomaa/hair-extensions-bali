@@ -1146,6 +1146,10 @@ export const gallery: GalleryItem[] = [
   // Before & After — real client photos
   // August 2026 batch, straight from the studio's WhatsApp drops.
   // Newest first so the gallery opens on the most recent work.
+  // 24 October 2026 — one pair, captioned "Keratin double 100gr" in the group.
+  { src: "/photos/before-after/keratin30-before.jpg", alt: "Client before — honey blonde to the shoulder blades, thin through the ends", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin30-after.jpg", alt: "Same client after — long, full blonde waves past the chair back, Keratin Bond double 100 g", category: "before-after", aspect: "tall" },
+
   // 20 October 2026 drop — five pairs, all captioned by the studio in the group.
   { src: "/photos/before-after/weft15-before.jpg", alt: "Client before — platinum blonde past the shoulders, thin and wispy at the ends", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/weft15-after.jpg", alt: "Same client after — long, even platinum blonde to mid-back, Weft double 100 g", category: "before-after", aspect: "tall" },
