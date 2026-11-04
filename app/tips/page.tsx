@@ -8,6 +8,7 @@ export const metadata = {
   title: `Tips & Care — ${brand.name}`,
   description:
     "Hair-extension aftercare, method choices, travel, and maintenance — practical guides from the team at The Hair Extensions Bali.",
+  alternates: { canonical: "/tips" },
 };
 
 const tagAccent: Record<string, string> = {

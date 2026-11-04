@@ -4,9 +4,10 @@ import { ScrollReveal, ScrollStagger } from "@/components/animations-gsap";
 import { brand, services, formatIDR } from "@/lib/content";
 
 export const metadata = {
-  title: `Services & Pricing — ${brand.name}`,
+  title: "Hair Extensions Bali Prices — Keratin, Nano Ring, Weft, Tape-In",
   description:
-    "Six expert hair-extension methods, all with 100% real human hair. Keratin Bond, Nano Ring, Weft, Tape-In, Halo Hair, Clip-In.",
+    "Published prices for all six methods: Keratin Bond, Nano Ring, Weft, Tape-In, Halo Hair and Clip-In, from IDR 2,800,000 per 100 g of 100% real human hair.",
+  alternates: { canonical: "/products" },
 };
 
 export default function ProductsPage() {
@@ -16,14 +17,15 @@ export default function ProductsPage() {
         <div className="mx-auto max-w-7xl px-6">
           <ScrollReveal className="max-w-3xl">
             <p className="mb-5 text-[11px] uppercase tracking-[0.28em] text-[#ffb6c1]">
-              Services & investment
+              Hair extension prices · Bali
             </p>
             <h1 className="font-serif text-5xl leading-[1.05] md:text-7xl lg:text-[5.4rem]">
               Six methods, one obsession with the{" "}
               <span className="font-script italic text-[#ffb6c1]">natural</span> finish.
             </h1>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#c2b3b8]">
-              Every method below uses 100% real human hair. We match the technique
+              Hair extension prices for every method we fit at our Kerobokan
+              studio. Every method below uses 100% real human hair. We match the technique
               to your hair type, lifestyle, and goals. Tap any card for the full
               breakdown — materials, what&apos;s included, ideal hair type, aftercare,
               and pricing.

@@ -9,6 +9,7 @@ export const metadata = {
   title: `Journal — ${brand.name}`,
   description:
     "Long-form guides on hair extensions in Bali — pricing, hair grades, methods comparison. Honest advice from Bali's largest hair extension shop.",
+  alternates: { canonical: "/blog" },
 };
 
 export default function BlogIndexPage() {

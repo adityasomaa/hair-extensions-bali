@@ -6,6 +6,7 @@ export const metadata = {
   title: `Privacy Policy — ${brand.name}`,
   description:
     "How The Hair Extensions Bali collects, uses, and protects the personal information of clients and website visitors.",
+  alternates: { canonical: "/privacy" },
 };
 
 const UPDATED = "9 September 2026";

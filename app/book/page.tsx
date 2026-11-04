@@ -7,9 +7,10 @@ import BookingForm from "@/components/BookingForm";
 import { brand, services } from "@/lib/content";
 
 export const metadata = {
-  title: `Book — ${brand.name}`,
+  title: `Book Hair Extensions in Bali — ${brand.name}`,
   description:
-    "Send us your details, and we'll continue the conversation on WhatsApp. We respond within an hour during studio hours.",
+    "Book your hair extension appointment in Kerobokan, Bali. Send your hair details and we reply on WhatsApp within an hour during studio hours.",
+  alternates: { canonical: "/book" },
 };
 
 export default function BookPage() {

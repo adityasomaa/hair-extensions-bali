@@ -33,9 +33,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const s = serviceBySlug(slug);
   if (!s) return { title: `Not found — ${brand.name}` };
+  const from = Math.min(...[...s.prices, ...(s.promoBundles ?? [])].map((p) => p.amountIDR));
   return {
-    title: `${s.name} — ${brand.name}`,
-    description: s.tagline,
+    title: `${s.name.replace(/ Hair$/, "")} Hair Extensions in Bali — Prices`,
+    description: `${s.tagline}. From ${formatIDR(from)} ${s.unit}, 100% real human hair, fitted at our Kerobokan studio near Seminyak and Canggu.`,
+    alternates: { canonical: `/products/${s.slug}` },
   };
 }
 
@@ -268,6 +270,31 @@ export default async function ServiceDetailPage({
                             </li>
                           ))}
                         </ul>
+                      </div>
+                    )}
+
+                    {service.limitedPromo &&
+                      new Date() <= new Date(`${service.limitedPromo.validUntil}T23:59:59+08:00`) && (
+                      <div className="mt-6 border-t border-[#ffb6c1]/30 pt-5">
+                        <p className="text-[11px] uppercase tracking-[0.28em] text-[#ffb6c1]">
+                          {service.limitedPromo.title}
+                        </p>
+                        <ul className="mt-4 space-y-2.5">
+                          {service.limitedPromo.rows.map((p) => (
+                            <li
+                              key={p.label}
+                              className="flex items-baseline justify-between gap-3"
+                            >
+                              <span className="text-sm text-[#b5a3a8]">{p.label}</span>
+                              <span className="font-serif text-base text-[#f6e9ec]">
+                                {formatIDR(p.amountIDR)}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                        <p className="mt-3 text-[10px] uppercase tracking-[0.2em] text-[#ab9aa1]">
+                          {service.limitedPromo.note}
+                        </p>
                       </div>
                     )}
 

@@ -179,7 +179,8 @@ function buildJsonLd(reviews: { rating: number; quote: string; name: string }[])
 export const metadata = {
   title: `${brand.name} — Bali's Largest Hair Extension Shop in Kerobokan`,
   description:
-    "Bali's largest hair extension shop in Kerobokan. Kami toko rambut, bukan salon — we specialise in hair extensions only, no cuts/colour/styling. 100+ shades on display, six expert installation methods (keratin bond, nano ring, weft, tape-in, halo hair, clip-in), 100% real human hair: Single Drawn, Double Drawn, Premium Remy, and Indonesian-sourced. Transparent published pricing. Walk-in or by appointment, daily 09:00–19:00 WITA.",
+    "Hair extensions in Bali: 100+ shades of 100% real human hair and six methods, fitted in Kerobokan near Seminyak and Canggu. Published prices, book on WhatsApp.",
+  alternates: { canonical: "/" },
   keywords: [
     "hair shop bali",
     "hair extension shop bali",

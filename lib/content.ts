@@ -121,6 +121,13 @@ export type Service = {
   minPurchase?: string;
   /** Bundle promo pricing (e.g. "Single 150 g" at a package rate) */
   promoBundles?: { label: string; amountIDR: number }[];
+  /** Time-limited promo, hidden once `validUntil` has passed (checked at build) */
+  limitedPromo?: {
+    title: string;
+    note: string;
+    validUntil: string;
+    rows: { label: string; amountIDR: number }[];
+  };
   /** Premium grade priced by length (keratin glue premium) */
   premiumLengths?: { label: string; amountIDR: number }[];
   /** Maintenance / service menu (remove, reposition, new glue, …).
@@ -365,6 +372,19 @@ export const services: Service[] = [
       { label: "Double 150 g", amountIDR: 6_200_000 },
       { label: "Double 200 g", amountIDR: 7_200_000 },
     ],
+    // From the studio's Weft Promo story, October 2026.
+    limitedPromo: {
+      title: "Weft promo · until 31 Dec 2026",
+      note: "Double drawn · wavy texture · 40 & 50 cm",
+      validUntil: "2026-12-31",
+      rows: [
+        { label: "Double 100 g", amountIDR: 3_900_000 },
+        { label: "Double 150 g", amountIDR: 5_500_000 },
+        { label: "Double 200 g", amountIDR: 6_900_000 },
+        { label: "Double 250 g", amountIDR: 8_300_000 },
+        { label: "Double 300 g", amountIDR: 9_600_000 },
+      ],
+    },
     maintenance: {
       rows: [
         { label: "Reposition 1 row", ours: "400,000" },

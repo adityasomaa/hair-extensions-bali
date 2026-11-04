@@ -27,6 +27,13 @@ const nextConfig: NextConfig = {
         destination: "/products/nano-ring",
         permanent: true,
       },
+      {
+        // One address for Google: www lands on the bare domain.
+        source: "/:path*",
+        has: [{ type: "host", value: "www.thehairextensionsbali.com" }],
+        destination: "https://thehairextensionsbali.com/:path*",
+        permanent: true,
+      },
     ];
   },
 };
