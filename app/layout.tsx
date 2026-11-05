@@ -36,6 +36,20 @@ export const metadata: Metadata = {
     description: brand.tagline,
     locale: "en_US",
     type: "website",
+    siteName: brand.name,
+    // Our own studio photo, so link previews and AI answers stop guessing.
+    images: [
+      {
+        url: "/photos/hero-salon-md.jpg",
+        width: 1200,
+        height: 675,
+        alt: "Reception at The Hair Extensions Bali studio in Kerobokan",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/photos/hero-salon-md.jpg"],
   },
   verification: {
     // Bing Webmaster Tools site verification — proves we own this domain
