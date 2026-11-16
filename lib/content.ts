@@ -1166,6 +1166,15 @@ export const gallery: GalleryItem[] = [
   // Before & After — real client photos
   // August 2026 batch, straight from the studio's WhatsApp drops.
   // Newest first so the gallery opens on the most recent work.
+  // 16 November 2026 — one pair, captioned "Weft Double 150gr" in the group.
+  { src: "/photos/before-after/weft20-before.jpg", alt: "Client before — straight auburn hair just past the shoulders, thin through the ends", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/weft20-after.jpg", alt: "Same client after — full copper waves past the chair back, Weft double 150 g", category: "before-after", aspect: "tall" },
+  // 14 November 2026 — two pairs, captioned "Keratin Double 100gr" and
+  // "nano ring double 100gr" in the group.
+  { src: "/photos/before-after/keratin35-before.jpg", alt: "Client before — mid-length light brown hair, wispy at the ends", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin35-after.jpg", alt: "Same client after — long caramel-brown waves down the back, Keratin Bond double 100 g", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/nano14-before.jpg", alt: "Client before — platinum blonde hair, thin and uneven below the shoulders", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/nano14-after.jpg", alt: "Same client after — thick platinum waves with a full, even hemline, Nano Ring double 100 g", category: "before-after", aspect: "tall" },
   // 6 November 2026 — one pair, captioned "Keratin Double 150gr" in the group.
   { src: "/photos/before-after/keratin34-before.jpg", alt: "Client before — fine, shoulder-length blonde hair, thin through the ends", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/keratin34-after.jpg", alt: "Same client after — long golden-blonde waves past the chair back, Keratin Bond double 150 g", category: "before-after", aspect: "tall" },
