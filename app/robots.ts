@@ -1,6 +1,10 @@
 import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
+  // The AI receptionist demo project stays out of search results.
+  if (process.env.VERCEL_PROJECT_PRODUCTION_URL?.startsWith("hair-extensions-bali-ai")) {
+    return { rules: [{ userAgent: "*", disallow: "/" }] };
+  }
   return {
     rules: [
       {

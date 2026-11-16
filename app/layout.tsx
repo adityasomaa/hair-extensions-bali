@@ -8,6 +8,10 @@ import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
 import PageTransitionLoader from "@/components/loaders/PageTransitionLoader";
 import ConversionTracker from "@/components/ConversionTracker";
+import Chat from "@/components/Chat";
+
+// The AI receptionist demo project (hair-extensions-bali-ai) never tracks conversions or gets indexed.
+const LIVE = !process.env.VERCEL_PROJECT_PRODUCTION_URL?.startsWith("hair-extensions-bali-ai");
 
 const inter = Inter({
   variable: "--font-inter",
@@ -51,6 +55,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     images: ["/photos/hero-salon-md.jpg"],
   },
+  ...(LIVE ? {} : { robots: { index: false, follow: false } }),
   verification: {
     // Bing Webmaster Tools site verification — proves we own this domain
     // so Bing (and ChatGPT, which uses Bing for live web search) can
@@ -74,26 +79,30 @@ export default function RootLayout({
       <body className="min-h-screen bg-[#0e0b09] text-[#f6e9ec]">
         {/* Google tag (gtag.js) — Google Ads conversion tracking. Loaded
             via next/script afterInteractive so it never blocks paint. */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-16655338849"
-          strategy="afterInteractive"
-        />
-        <Script id="google-ads-gtag" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-16655338849');
-          `}
-        </Script>
-
-        <ConversionTracker />
+        {LIVE && (
+          <>
+            <Script
+              src="https://www.googletagmanager.com/gtag/js?id=AW-16655338849"
+              strategy="afterInteractive"
+            />
+            <Script id="google-ads-gtag" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'AW-16655338849');
+              `}
+            </Script>
+            <ConversionTracker />
+          </>
+        )}
         <PageTransitionLoader />
         <SmoothScroll>
           <Nav />
           <main>{children}</main>
           <Footer />
         </SmoothScroll>
+        <Chat />
       </body>
     </html>
   );
