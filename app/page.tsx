@@ -449,7 +449,7 @@ export default async function HomePage() {
 
           <ScrollReveal className="mt-14 flex flex-col items-center gap-4 text-center" delay={0.1}>
             <p className="max-w-xl text-sm leading-relaxed text-[#b5a3a8]">
-              Open Mon–Sun, 09:00–19:00 WITA. Walk in by call, or message us on
+              Open Mon–Sun, 11:00–19:00 WITA. Walk in by call, or message us on
               WhatsApp to book a consultation.
             </p>
             <a

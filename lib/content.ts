@@ -17,8 +17,8 @@ export const brand = {
   country: "ID",
   mapsLink: "https://maps.google.com/?q=The+Hair+Extensions+Bali+Jl.+Mertanadi+No.79+Kerobokan",
   mapsDisplay: "The | Hair Extensions Bali",
-  hours: "Mon — Sun · 09:00 – 19:00 WITA",
-  hoursOpens: "09:00",
+  hours: "Mon — Sun · 11:00 – 19:00 WITA",
+  hoursOpens: "11:00",
   hoursCloses: "19:00",
   priceRange: "IDR 2,800,000 – 8,000,000",
   amenities: [
@@ -862,7 +862,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "How do I book?",
-    a: "Message us on WhatsApp at +62 821-4691-8725. Send a photo of your natural hair so we can recommend the right method and quote you the full price before you visit. Open Mon – Sun, 09:00 – 19:00 WITA. Walk-ins welcome if you call ahead.",
+    a: "Message us on WhatsApp at +62 821-4691-8725. Send a photo of your natural hair so we can recommend the right method and quote you the full price before you visit. Open Mon – Sun, 11:00 – 19:00 WITA. Walk-ins welcome if you call ahead.",
   },
 ];
 

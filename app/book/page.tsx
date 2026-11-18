@@ -141,7 +141,7 @@ export default function BookPage() {
                 <p className="text-[#ffb6c1]">⏱ Reply within ~1 hour</p>
                 <p className="mt-2 text-[#b5a3a8]">
                   We respond on WhatsApp during studio hours
-                  (Mon – Sun 09:00 – 19:00 WITA). Outside those hours, we&apos;ll
+                  (Mon – Sun 11:00 – 19:00 WITA). Outside those hours, we&apos;ll
                   message you back first thing the next morning.
                 </p>
               </div>
