@@ -5,9 +5,9 @@ import type { Pool } from "./shop";
 export const schedule = {
   timeZone: "Asia/Makassar",
   offset: "+08:00", // Bali (WITA) has no daylight saving
-  // Appointments can start every half hour from 09:00.
-  starts: Array.from({ length: 20 }, (_, i) => `${String(9 + Math.floor(i / 2)).padStart(2, "0")}:${i % 2 ? "30" : "00"}`),
-  // Closing time by weekday (0 = Sunday); missing = closed. Open every day 09:00–19:00 WITA.
+  // Appointments can start every half hour from 11:00 (last start 18:30).
+  starts: Array.from({ length: 16 }, (_, i) => `${String(11 + Math.floor(i / 2)).padStart(2, "0")}:${i % 2 ? "30" : "00"}`),
+  // Closing time by weekday (0 = Sunday); missing = closed. Open every day 11:00–19:00 WITA.
   closes: { 0: "19:00", 1: "19:00", 2: "19:00", 3: "19:00", 4: "19:00", 5: "19:00", 6: "19:00" } as Record<number, string>,
   bufferMinutes: 0,
   // Each id can take one booking at a time: two stylists (placeholder).
