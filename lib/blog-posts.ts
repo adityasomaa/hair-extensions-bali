@@ -350,7 +350,7 @@ const extensionsVsWigsPost: BlogPost = {
     { kind: "heading", level: 2, text: "Where to buy each in Bali" },
     {
       kind: "paragraph",
-      text: "For hair extensions, look for a specialist hair extension shop (toko rambut) rather than a general beauty salon. Specialists carry more shades and methods. The Hair Extensions Bali in Kerobokan is the island's largest such shop — 100+ shades on display, seven application methods, transparent pricing, installation by experienced stylists. Walk-in or by appointment, daily 09:00 – 19:00 WITA.",
+      text: "For hair extensions, look for a specialist hair extension shop (toko rambut) rather than a general beauty salon. Specialists carry more shades and methods. The Hair Extensions Bali in Kerobokan is the island's largest such shop — 100+ shades on display, seven application methods, transparent pricing, installation by experienced stylists. Walk-in or by appointment, daily 11:00 – 19:00 WITA.",
     },
     {
       kind: "paragraph",

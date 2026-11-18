@@ -17,8 +17,8 @@ export const brand = {
   country: "ID",
   mapsLink: "https://maps.google.com/?q=The+Hair+Extensions+Bali+Jl.+Mertanadi+No.79+Kerobokan",
   mapsDisplay: "The | Hair Extensions Bali",
-  hours: "Mon — Sun · 09:00 – 19:00 WITA",
-  hoursOpens: "09:00",
+  hours: "Mon — Sun · 11:00 – 19:00 WITA",
+  hoursOpens: "11:00",
   hoursCloses: "19:00",
   priceRange: "IDR 2,800,000 – 8,000,000",
   amenities: [
@@ -862,7 +862,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "How do I book?",
-    a: "Message us on WhatsApp at +62 821-4691-8725. Send a photo of your natural hair so we can recommend the right method and quote you the full price before you visit. Open Mon – Sun, 09:00 – 19:00 WITA. Walk-ins welcome if you call ahead.",
+    a: "Message us on WhatsApp at +62 821-4691-8725. Send a photo of your natural hair so we can recommend the right method and quote you the full price before you visit. Open Mon – Sun, 11:00 – 19:00 WITA. Walk-ins welcome if you call ahead.",
   },
 ];
 
@@ -1166,6 +1166,9 @@ export const gallery: GalleryItem[] = [
   // Before & After — real client photos
   // August 2026 batch, straight from the studio's WhatsApp drops.
   // Newest first so the gallery opens on the most recent work.
+  // 16 November 2026, evening — one pair, captioned "Keratin single 100gr" in the group.
+  { src: "/photos/before-after/keratin36-before.jpg", alt: "Client before — damp, shoulder-length dark-blonde hair, thin and uneven at the ends", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin36-after.jpg", alt: "Same client after — long honey-blonde waves past the chair back, Keratin Bond single 100 g", category: "before-after", aspect: "tall" },
   // 16 November 2026 — one pair, captioned "Weft Double 150gr" in the group.
   { src: "/photos/before-after/weft20-before.jpg", alt: "Client before — straight auburn hair just past the shoulders, thin through the ends", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/weft20-after.jpg", alt: "Same client after — full copper waves past the chair back, Weft double 150 g", category: "before-after", aspect: "tall" },
