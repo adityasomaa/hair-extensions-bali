@@ -1,7 +1,7 @@
 import { randomBytes } from "node:crypto";
-import { del, list, put } from "@vercel/blob";
+import { del, get, list, put } from "@vercel/blob";
 import { closingTime, describeDate, freeInstructors, freeSlots, isDate, nextFreeDay, today, toMinutes, toTime, type Entry } from "./schedule";
-import { serviceByName, shop, type Service } from "./shop";
+import { serviceByName, shop, type Pool, type Service } from "./shop";
 
 export type Booking = {
   code: string;
@@ -26,13 +26,15 @@ const MAX_PER_WINDOW = 3;
 // One private blob per booking, its name holding the time, length and stylist,
 // so reading the calendar never opens a file. Blobs refuse to overwrite and each claim is
 // re-checked after writing, so two customers racing for the same time can't both win.
-const pathFor = (date: string, time: string, minutes: number, slot: number) => `bookings/${date}/${time.replace(":", "")}-${minutes}-${slot}.json`;
+export const pathFor = (date: string, time: string, minutes: number, slot: number) =>
+  `bookings/${date}/${time.replace(":", "")}-${minutes}-${slot}.json`;
+export const BOOKING_PATH = /^bookings\/\d{4}-\d{2}-\d{2}\/\d{4}-\d{1,3}-\d\.json$/;
 
-async function entries() {
+export async function entries(prefix = "bookings/") {
   const found: (Entry & { pathname: string })[] = [];
   let cursor: string | undefined;
   do {
-    const page = await list({ prefix: "bookings/", cursor });
+    const page = await list({ prefix, cursor });
     for (const { pathname } of page.blobs) {
       const [, date, file] = pathname.split("/");
       const [time, minutes, slot] = file.replace(".json", "").split("-");
@@ -43,21 +45,31 @@ async function entries() {
   return found;
 }
 
-/** Claims the slot. False means someone else just took the time. */
-async function reserve(booking: Booking, service: Service, slot: number) {
+/**
+ * Claims the slot. False means someone else just took the time. `ignore` leaves one
+ * booking out of the clash check (the one being moved by the admin panel).
+ */
+export async function reserve(booking: Booking, length: { minutes: number; pool: Pool }, slot: number, ignore?: string) {
   const start = toMinutes(booking.time);
-  const path = pathFor(booking.date, booking.time, service.minutes, slot);
+  const path = pathFor(booking.date, booking.time, length.minutes, slot);
   let written = false;
   try {
     await put(path, JSON.stringify(booking), { access: "private", contentType: "application/json" });
     written = true;
-    const others = (await entries()).filter((e) => e.pathname !== path);
-    if (freeInstructors(service.pool, booking.date, start, service.minutes, others).includes(slot)) return true;
+    const others = (await entries()).filter((e) => e.pathname !== path && e.pathname !== ignore);
+    if (freeInstructors(length.pool, booking.date, start, length.minutes, others).includes(slot)) return true;
   } catch (err) {
     if (!(err instanceof Error && err.message.includes("already exists"))) throw err;
   }
   if (written) await del(path);
   return false;
+}
+
+/** A stored booking's details, or null if it has gone. */
+export async function readBooking(pathname: string) {
+  const res = await get(pathname, { access: "private", useCache: false });
+  if (!res || res.statusCode !== 200) return null;
+  return JSON.parse(await new Response(res.stream).text()) as Booking;
 }
 
 // Best-effort per-instance limit, so one visitor can't fill the calendar.

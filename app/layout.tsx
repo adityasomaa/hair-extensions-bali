@@ -9,6 +9,7 @@ import SmoothScroll from "@/components/SmoothScroll";
 import PageTransitionLoader from "@/components/loaders/PageTransitionLoader";
 import ConversionTracker from "@/components/ConversionTracker";
 import Chat from "@/components/Chat";
+import HideOnAdmin from "@/components/HideOnAdmin";
 
 // The AI receptionist demo project (hair-extensions-bali-ai) never tracks conversions or gets indexed.
 const LIVE = !process.env.VERCEL_PROJECT_PRODUCTION_URL?.startsWith("hair-extensions-bali-ai");
@@ -96,13 +97,21 @@ export default function RootLayout({
             <ConversionTracker />
           </>
         )}
-        <PageTransitionLoader />
+        <HideOnAdmin>
+          <PageTransitionLoader />
+        </HideOnAdmin>
         <SmoothScroll>
-          <Nav />
+          <HideOnAdmin>
+            <Nav />
+          </HideOnAdmin>
           <main>{children}</main>
-          <Footer />
+          <HideOnAdmin>
+            <Footer />
+          </HideOnAdmin>
         </SmoothScroll>
-        <Chat />
+        <HideOnAdmin>
+          <Chat />
+        </HideOnAdmin>
       </body>
     </html>
   );
