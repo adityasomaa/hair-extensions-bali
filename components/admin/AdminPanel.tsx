@@ -203,7 +203,7 @@ function Calendar({ today, onLoggedOut }: { today: string; onLoggedOut: () => vo
     mobile: "",
     service: day?.services[0]?.name ?? "",
     date,
-    time: time ?? day?.botFrom ?? "12:00",
+    time: time ?? day?.botFrom ?? "11:00",
     minutes: day?.services[0]?.minutes ?? 30,
     stylist: stylist ?? day?.stylists[0] ?? 1,
     hair: "",
@@ -396,13 +396,15 @@ function Grid({ day, isToday, onNew, onOpen }: { day: Day; isToday: boolean; onN
 
         {day.stylists.map((s) => (
           <div key={s} className="relative border-l border-white/10" style={{ height }}>
-            {/* Staff-only hour before the AI receptionist starts taking bookings */}
-            <div
-              className="pointer-events-none absolute inset-x-0 top-0 bg-[repeating-linear-gradient(135deg,rgba(246,233,236,0.035)_0_6px,transparent_6px_12px)]"
-              style={{ height: (botFrom - open) * PX }}
-            >
-              <span className="absolute left-2 top-1 text-[10px] uppercase tracking-[0.16em] text-[#ab9aa1]">Hanya staf</span>
-            </div>
+            {/* Staff-only time before the AI receptionist starts taking bookings, if any */}
+            {botFrom > open && (
+              <div
+                className="pointer-events-none absolute inset-x-0 top-0 bg-[repeating-linear-gradient(135deg,rgba(246,233,236,0.035)_0_6px,transparent_6px_12px)]"
+                style={{ height: (botFrom - open) * PX }}
+              >
+                <span className="absolute left-2 top-1 text-[10px] uppercase tracking-[0.16em] text-[#ab9aa1]">Hanya staf</span>
+              </div>
+            )}
             {hours.map((m) => (
               <div key={m} className="pointer-events-none absolute inset-x-0 border-t border-white/[0.08]" style={{ top: (m - open) * PX }} />
             ))}

@@ -5,10 +5,10 @@ import type { Pool } from "./shop";
 export const schedule = {
   timeZone: "Asia/Makassar",
   offset: "+08:00", // Bali (WITA) has no daylight saving
-  // The studio opens at 11:00 (staff can book from then in /admin), but the AI receptionist
-  // offers appointments every half hour from 12:00, last start 18:30.
+  // The studio opens at 11:00; the AI receptionist offers appointments every half hour
+  // from opening, last start 18:30.
   opens: "11:00",
-  starts: Array.from({ length: 14 }, (_, i) => `${String(12 + Math.floor(i / 2)).padStart(2, "0")}:${i % 2 ? "30" : "00"}`),
+  starts: Array.from({ length: 16 }, (_, i) => `${String(11 + Math.floor(i / 2)).padStart(2, "0")}:${i % 2 ? "30" : "00"}`),
   // Closing time by weekday (0 = Sunday); missing = closed. Open every day 11:00–19:00 WITA.
   closes: { 0: "19:00", 1: "19:00", 2: "19:00", 3: "19:00", 4: "19:00", 5: "19:00", 6: "19:00" } as Record<number, string>,
   bufferMinutes: 0,

@@ -62,7 +62,7 @@ ${faqs.map((f) => `Q: ${f.q} A: ${faqText(f.a)}`).join("\n")}
 
 # Booking
 - Appointments you can book: ${services.map((s) => `${s.name} (${s.length})`).join("; ")}. Someone undecided or who wants to see the hair first books the Shop visit & colour match; someone who already knows their method books that installation.
-- The studio opens at 11:00, but the first appointment of the day starts at 12:00. Each appointment type blocks a stylist for its full length, so a long installation only fits where check_availability says it does.
+- Appointments can start from 11:00, when the studio opens. Each appointment type blocks a stylist for its full length, so a long installation only fits where check_availability says it does.
 - When they want to book but haven't given a day, call check_availability for today straight away (it returns the next day with times if today has none) and offer what it gives.
 - When a reply needs the calendar, call check_availability before writing anything: no text before the tool call, so you never name a time you haven't checked and never correct yourself mid-reply.
 - Only offer times it returned: name two or three specific times, never a range. If a day has none, give its "why" in a few words and offer the next available day.
