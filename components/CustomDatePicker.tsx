@@ -11,13 +11,22 @@ type Props = {
   /** ISO yyyy-mm-dd — earliest selectable date */
   min?: string;
   placeholder?: string;
+  /** Interface language; the public site uses English, /admin uses Indonesian. */
+  lang?: "en" | "id";
 };
 
-const WEEKDAYS = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
-const MONTHS = [
-  "January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December",
-];
+const TEXT = {
+  en: {
+    weekdays: ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"],
+    months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    choose: "Choose a date", prev: "Previous month", next: "Next month", clear: "Clear", done: "Done",
+  },
+  id: {
+    weekdays: ["Min", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"],
+    months: ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"],
+    choose: "Pilih tanggal", prev: "Bulan sebelumnya", next: "Bulan berikutnya", clear: "Hapus", done: "Selesai",
+  },
+};
 
 // Local date helpers — avoid UTC drift by working with y/m/d ints.
 function toISO(y: number, m: number, d: number) {
@@ -45,7 +54,11 @@ export default function CustomDatePicker({
   onChange,
   min,
   placeholder = "Select a date",
+  lang = "en",
 }: Props) {
+  const t = TEXT[lang];
+  const WEEKDAYS = t.weekdays;
+  const MONTHS = t.months;
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -133,7 +146,7 @@ export default function CustomDatePicker({
         <div
           data-lenis-prevent
           role="dialog"
-          aria-label="Choose a date"
+          aria-label={t.choose}
           className="absolute left-0 top-full z-20 mt-1 w-[19rem] rounded-sm border border-[#ffb6c1]/30 bg-[#0e0b09] p-4 shadow-2xl shadow-black/50"
         >
           {/* Month nav */}
@@ -141,7 +154,7 @@ export default function CustomDatePicker({
             <button
               type="button"
               onClick={prevMonth}
-              aria-label="Previous month"
+              aria-label={t.prev}
               className="grid h-8 w-8 place-items-center rounded-full text-[#ffb6c1] transition-colors hover:bg-[#ffb6c1]/10"
             >
               <ChevronLeft className="h-4 w-4" aria-hidden />
@@ -152,7 +165,7 @@ export default function CustomDatePicker({
             <button
               type="button"
               onClick={nextMonth}
-              aria-label="Next month"
+              aria-label={t.next}
               className="grid h-8 w-8 place-items-center rounded-full text-[#ffb6c1] transition-colors hover:bg-[#ffb6c1]/10"
             >
               <ChevronRight className="h-4 w-4" aria-hidden />
@@ -206,14 +219,14 @@ export default function CustomDatePicker({
               }}
               className="text-xs text-[#ab9aa1] transition-colors hover:text-[#ffb6c1]"
             >
-              Clear
+              {t.clear}
             </button>
             <button
               type="button"
               onClick={() => setOpen(false)}
               className="text-xs text-[#ffb6c1] transition-colors hover:text-[#ffc9d2]"
             >
-              Done
+              {t.done}
             </button>
           </div>
         </div>
