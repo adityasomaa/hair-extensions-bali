@@ -57,7 +57,7 @@ const pricingPost: BlogPost = {
   intro:
     "Looking at hair extensions in Bali and wondering what to actually budget? This is the no-fluff 2026 pricing guide. We cover real prices per method (installation included), what pushes the bill up or down, why Bali is significantly cheaper than Sydney, London, or Singapore for the same quality hair, and where the hidden costs hide — so you don't get surprised at the counter.",
   sections: [
-    { kind: "heading", level: 2, text: "Pricing at a glance — six methods, real numbers" },
+    { kind: "heading", level: 2, text: "Pricing at a glance — five methods, real numbers" },
     {
       kind: "paragraph",
       text: `At The Hair Extensions Bali (Kerobokan), single drawn is IDR 3,500,000 and double drawn IDR 4,500,000 per 100 grams across methods, installation included. Prices are for wavy stock; straight and curly textures add IDR 200,000 per 100 g.`,
@@ -69,14 +69,13 @@ const pricingPost: BlogPost = {
         ["Keratin Bond", `${idr(3_500_000)} / ${idr(4_500_000)}`, "2 – 4 months"],
         ["Nano Ring", `${idr(3_500_000)} / ${idr(4_500_000)}`, "~ 2 months"],
         ["Weft (Sew-In)", `${idr(3_500_000)} / ${idr(4_500_000)}`, "~ 2 months"],
-        ["Tape-In", `${idr(3_500_000)} / ${idr(4_500_000)}`, "~ 2 months"],
         ["Halo Hair", `${idr(3_500_000)} / ${idr(4_500_000)}`, "6 – 12 months reusable"],
         ["Clip-In", `${idr(3_500_000)} / ${idr(4_500_000)}`, "6 – 12 months reusable"],
       ],
     },
     {
       kind: "paragraph",
-      text: "Bundle promos bring the per-gram rate down — e.g. Nano Ring single drawn 100 g at IDR 2,800,000, or Tape-In single 200 g at IDR 4,800,000. Premium keratin glue is priced by length: IDR 5,000,000 (40 cm) up to IDR 8,000,000 (70 cm) per 100 g, no discount. Weft Premium runs IDR 5,500,000.",
+      text: "Bundle promos bring the per-gram rate down — e.g. Nano Ring single drawn 100 g at IDR 2,800,000. Premium keratin glue is priced by length: IDR 5,000,000 (40 cm) up to IDR 8,000,000 (70 cm) per 100 g, no discount. Weft Premium runs IDR 5,500,000.",
     },
 
     { kind: "heading", level: 2, text: "What's actually included" },
@@ -138,7 +137,7 @@ const pricingPost: BlogPost = {
   faq: [
     {
       q: "What is the cheapest hair extension method in Bali?",
-      a: "At The Hair Extensions Bali, the lowest entry point is the bundle promo: Nano Ring, Tape-In, and Halo Hair single drawn 100 g go for IDR 2,800,000 — installation included (tape install 20,000 IDR/pair). Standard rate is IDR 3,500,000 single drawn / IDR 4,500,000 double drawn across methods.",
+      a: "At The Hair Extensions Bali, the lowest entry point is the bundle promo: Nano Ring and Halo Hair single drawn 100 g go for IDR 2,800,000 — installation included. Standard rate is IDR 3,500,000 single drawn / IDR 4,500,000 double drawn across methods.",
     },
     {
       q: "Do prices in Bali include installation?",
@@ -253,7 +252,7 @@ const indoVsRemyPost: BlogPost = {
     "best hair grade bali",
     "indonesian hair extensions",
   ],
-  relatedServices: ["keratin-bond", "weft", "tape-in"],
+  relatedServices: ["keratin-bond", "weft", "nano-ring"],
 };
 
 // ─── POST 3 — Extensions vs Wigs ────────────────────────────────────────
@@ -274,7 +273,7 @@ const extensionsVsWigsPost: BlogPost = {
     { kind: "heading", level: 2, text: "How hair extensions work" },
     {
       kind: "paragraph",
-      text: "Hair extensions attach added hair to your natural hair using one of six methods (keratin bond, nano ring, weft, tape-in, halo hair, or clip-in). They blend with your existing hair, move when your hair moves, and look most natural at the part line and roots. Most require an installation appointment (1 – 8 hours depending on method) and grow out with your natural hair, needing repositioning every 2 – 4 months — halo hair and clip-in are the wear-it-yourself exceptions.",
+      text: "Hair extensions attach added hair to your natural hair using one of several methods (keratin bond, nano ring, weft, halo hair, or clip-in). They blend with your existing hair, move when your hair moves, and look most natural at the part line and roots. Most require an installation appointment (1 – 8 hours depending on method) and grow out with your natural hair, needing repositioning every 2 – 4 months — halo hair and clip-in are the wear-it-yourself exceptions.",
     },
 
     { kind: "heading", level: 2, text: "How wigs work" },
@@ -329,7 +328,7 @@ const extensionsVsWigsPost: BlogPost = {
     {
       kind: "list",
       items: [
-        `Entry hair extensions (bundle promo, 100 g, single drawn, installed): from ${idr(2_800_000)} on nano ring, tape-in, and halo hair`,
+        `Entry hair extensions (bundle promo, 100 g, single drawn, installed): from ${idr(2_800_000)} on nano ring and halo hair`,
         `Entry human-hair wig (basic lace-front, ~30 cm): from IDR 1,500,000`,
         `Premium hair extensions (keratin glue premium 70 cm, 100 g, installed): up to ${idr(8_000_000)}`,
         "Premium human-hair wig (HD lace, ~50 cm, custom-coloured): IDR 5,000,000 – 8,000,000+",
@@ -350,7 +349,7 @@ const extensionsVsWigsPost: BlogPost = {
     { kind: "heading", level: 2, text: "Where to buy each in Bali" },
     {
       kind: "paragraph",
-      text: "For hair extensions, look for a specialist hair extension shop (toko rambut) rather than a general beauty salon. Specialists carry more shades and methods. The Hair Extensions Bali in Kerobokan is the island's largest such shop — 100+ shades on display, seven application methods, transparent pricing, installation by experienced stylists. Walk-in or by appointment, daily 11:00 – 19:00 WITA.",
+      text: "For hair extensions, look for a specialist hair extension shop (toko rambut) rather than a general beauty salon. Specialists carry more shades and methods. The Hair Extensions Bali in Kerobokan is the island's largest such shop — 100+ shades on display, five application methods, transparent pricing, installation by experienced stylists. Walk-in or by appointment, daily 11:00 – 19:00 WITA.",
     },
     {
       kind: "paragraph",

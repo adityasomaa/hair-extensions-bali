@@ -79,7 +79,7 @@ export const shopFeatures = [
     icon: "Eye",
     title: "Shop in person, install on the spot",
     body:
-      "Unlike most extension salons, we're a hair shop first. Walk in to browse the wall, feel every texture, hold shades against your own hair — then have your chosen extension professionally installed the same day, using whichever of our six methods suits you best.",
+      "Unlike most extension salons, we're a hair shop first. Walk in to browse the wall, feel every texture, hold shades against your own hair — then have your chosen extension professionally installed the same day, using whichever of our five methods suits you best.",
   },
   {
     icon: "DoorOpen",
@@ -434,83 +434,6 @@ export const services: Service[] = [
     },
   },
   {
-    slug: "tape-in",
-    name: "Tape-In",
-    tagline: "Lightweight, lies flat, the fastest application",
-    description:
-      "Thin, flat wefts pre-taped with medical-grade adhesive. The stylist sandwiches a thin section of your natural hair between two tape wefts.",
-    longDescription:
-      "Tape-ins are pre-cut, flat wefts of hair backed with a medical-grade hypoallergenic adhesive — the same family used for sensitive-skin medical tape. The stylist sandwiches a thin section of your natural hair between two tape wefts so the adhesive bonds top-to-top, leaving the section nearly invisible. Because the wefts lie flat against your scalp, tape-ins are the most comfortable everyday-wear option, the fastest to install, and the easiest to remove cleanly with the right oil-based releaser.",
-    durationLabel: "30 minutes per 20 pieces",
-    lasts: "6 – 8 weeks before repositioning",
-    reusable: "1 year, or 6 re-services",
-    serviceInterval: "Every 2 months",
-    suitability: { veryShort: false, shoulder: false, long: true, thin: true },
-    bestFor: [
-      "Anyone wanting the quickest application",
-      "Highlights, lowlights, or fullness",
-      "Comfortable everyday wear",
-      "Long hair, including fine or thin hair",
-    ],
-    prices: [
-      { label: "Single Drawn", amountIDR: 3_500_000 },
-      { label: "Double Drawn", amountIDR: 4_500_000 },
-    ],
-    unit: "per 100 g",
-    minPurchase: "Min. buy 1 tag (5 pairs / 10 pcs ±30 g) · install 20,000 IDR/pair",
-    promoBundles: [
-      { label: "Single 100 g", amountIDR: 2_800_000 },
-      { label: "Single 150 g", amountIDR: 3_800_000 },
-      { label: "Single 200 g", amountIDR: 4_800_000 },
-      { label: "Double 100 g", amountIDR: 3_800_000 },
-      { label: "Double 150 g", amountIDR: 5_800_000 },
-      { label: "Double 200 g", amountIDR: 6_800_000 },
-    ],
-    maintenance: {
-      rows: [
-        { label: "Install (per pair)", ours: "25,000" },
-        { label: "New glue (per pair)", ours: "25,000" },
-      ],
-      notes: ["Minimum service 20 pcs / 10 pairs"],
-    },
-    highlights: ["Lightweight", "Quick install", "Lies flat"],
-    materials: [
-      "100% real human hair (single drawn, flat-weft format)",
-      "Medical-grade hypoallergenic adhesive backing",
-      "Replacement tapes for refits",
-    ],
-    whatsIncluded: [
-      "Free WhatsApp color match before your visit",
-      "Full installation (under 1.5 hr)",
-      "Trim and style after install",
-      "Personalised aftercare guide",
-      "Refit using replacement tapes after 6 – 8 weeks",
-    ],
-    idealHairType: [
-      "Fine to medium density",
-      "Healthy hair without heavy oils at the scalp",
-      "Anyone wanting a fast install",
-      "Needs long hair — not suitable for short or shoulder-length",
-    ],
-    aftercare: [
-      "Wait 24 hours before your first wash",
-      "Always blow-dry after washing — never leave the tapes wet",
-      "Tie your hair up to swim, to sleep, and on the motorbike",
-      "No hair tonic and no oil-based products",
-      "Unlike keratin bonds, there's nothing to check between — the tapes sit flat",
-    ],
-    heroPhoto: "/photos/products/tape-in-wefts.jpg",
-    methodCard: {
-      wide: "/photos/method-cards/tape-in-wide.jpg",
-      tall: "/photos/method-cards/tape-in-tall.jpg",
-    },
-    beforeAfter: {
-      before: "/photos/before-after/tape1-before.jpg",
-      after: "/photos/before-after/tape1-after.jpg",
-      real: true,
-    },
-  },
-  {
     slug: "halo-hair",
     name: "Halo Hair",
     tagline: "A hidden wire, instant volume — zero attachment",
@@ -647,7 +570,7 @@ export const valueProps = [
     body: "International-grade single, double drawn, and premium hair — sourced for longevity and natural movement. Our stock is wavy texture; straight is straightened to order.",
   },
   {
-    title: "Six Application Methods",
+    title: "Five Application Methods",
     body: "From keratin bonds to clip-ins — we match the technique to your hair type, lifestyle, and goals.",
   },
   {
@@ -667,13 +590,6 @@ export const testimonials = [
     name: "Sophie",
     location: "Visiting from London",
     service: "Keratin Bond",
-  },
-  {
-    quote:
-      "I've been getting tape-ins here for over a year. They take care of my hair like it's their own. Worth flying back to Bali for.",
-    name: "Maya",
-    location: "Expat, Canggu",
-    service: "Tape-In",
   },
   {
     quote:
@@ -714,7 +630,6 @@ export const faqs: Faq[] = [
       items: [
         { label: "Keratin Bond", body: "2 – 4 months" },
         { label: "Nano Ring", body: "~ 2 months" },
-        { label: "Tape-In", body: "~ 2 months" },
         { label: "Weft", body: "~ 2 months" },
         {
           label: "Halo Hair",
@@ -741,10 +656,6 @@ export const faqs: Faq[] = [
         {
           label: "Nano Ring",
           body: "Less damaging than keratin bond. Risk still depends on whether your natural hair is healthy.",
-        },
-        {
-          label: "Tape-In",
-          body: "Low damage while worn. Most damage cases happen during removal — needs the correct technique.",
         },
         {
           label: "Weft",
@@ -775,7 +686,7 @@ export const faqs: Faq[] = [
         },
         {
           label: "Medium to thick hair",
-          body: "Tape-In, Weft, or Nano Ring — these methods carry more volume comfortably.",
+          body: "Weft or Nano Ring — these methods carry more volume comfortably.",
         },
         {
           label: "Temporary (events, travel, trying it out)",
@@ -817,11 +728,11 @@ export const faqs: Faq[] = [
     q: "When can I wash my hair after installation?",
     a: {
       intro:
-        "Always wait at least 48 hours before the first wash — bonds need time to cure and rings/tapes need to settle. After that:",
+        "Always wait at least 48 hours before the first wash — bonds need time to cure and rings need to settle. After that:",
       items: [
         {
-          label: "Keratin Bond / Tape-In",
-          body: "Sulfate-free, alcohol-free shampoo only. No oils, masks, or conditioner near the bond/tape line.",
+          label: "Keratin Bond",
+          body: "Sulfate-free, alcohol-free shampoo only. No oils, masks, or conditioner near the bond line.",
         },
         {
           label: "Nano Ring / Weft",
@@ -844,10 +755,6 @@ export const faqs: Faq[] = [
         {
           label: "Keratin Bond / Nano Ring",
           body: "~ 1 hour per 100 strands.",
-        },
-        {
-          label: "Tape-In",
-          body: "Under 1.5 hours for a full head.",
         },
         {
           label: "Weft",
@@ -965,15 +872,6 @@ export const googleReviews: GoogleReview[] = [
   {
     rating: 5,
     quote:
-      "I've been getting tape-ins here for over a year. They take care of my hair like it's their own. The colour matching is perfect every time.",
-    name: "Maya",
-    location: "Expat, Canggu",
-    service: "Tape-In",
-    when: "1 month ago",
-  },
-  {
-    rating: 5,
-    quote:
       "Got nano rings before my wedding — the photos came out beautifully and they lasted my entire honeymoon and beyond. So worth it.",
     name: "Annika",
     location: "Bride, Australia",
@@ -1038,7 +936,7 @@ export const tips: Tip[] = [
     photo: "/photos/detail-3-md.jpg",
     tag: "Aftercare",
     body: [
-      "If you've just left the studio with a fresh install — keratin bond, nano ring, weft, or tape-in — the single most important rule is to wait 48 hours before the first wash. Your bonds need time to fully cure (keratin) or settle (rings, tapes), and washing too early is the most common reason extensions slip in week one.",
+      "If you've just left the studio with a fresh install — keratin bond, nano ring, or weft — the single most important rule is to wait 48 hours before the first wash. Your bonds need time to fully cure (keratin) or settle (rings), and washing too early is the most common reason extensions slip in week one.",
       "After that 48-hour window, the rules are simple but unforgiving. Use a sulfate-free, alcohol-free shampoo — sulfates strip the oils that keep the bonds flexible, and alcohol dehydrates the hair shaft. We hand out a recommended product list at every appointment; ignore the celebrity endorsements and stick to what's on the list.",
       "Water temperature should be lukewarm, never hot. Hot water expands the hair cuticle and lifts colour faster, which means your match drifts and your install starts looking patchy by week three. Lukewarm rinse, cool finish — every time.",
       "Brushing technique matters more than people think. Always brush with a loop or paddle brush, starting at the very tips and working up section by section. Never tug. Never brush from the root down. The brush should never catch on the attachment point — if it does, slow down and untangle by hand.",
@@ -1066,7 +964,7 @@ export const tips: Tip[] = [
     photo: "/photos/products-1-md.jpg",
     tag: "Aftercare",
     body: [
-      "Real human hair extensions can be heat-styled exactly like your own hair — with one caveat: keep the iron at least 2 cm below the attachment point. Direct heat on a keratin bond will soften it and cause slippage. Direct heat on a tape weft will weaken the adhesive.",
+      "Real human hair extensions can be heat-styled exactly like your own hair — with one caveat: keep the iron at least 2 cm below the attachment point. Direct heat on a keratin bond will soften it and cause slippage.",
       "Always use a heat protectant spray before any iron. Apply mid-length to ends, never on the bonds.",
       "Maximum temperature: 180 °C / 360 °F. Anything higher is for synthetic hair, not real human hair. Real hair burns at higher temperatures and you'll see the damage as dryness within weeks.",
     ],
@@ -1075,13 +973,12 @@ export const tips: Tip[] = [
     slug: "when-to-schedule-maintenance",
     title: "When to come back for a refit",
     excerpt:
-      "Tape-ins: 6 – 8 weeks. Rings: 8 – 10 weeks. Bonds: 3 – 4 months. The exact timing matters.",
+      "Rings: 8 – 10 weeks. Bonds: 3 – 4 months. The exact timing matters.",
     readingMinutes: 2,
     photo: "/photos/products-3-md.jpg",
     tag: "Maintenance",
     body: [
       "Your natural hair grows ~1 – 1.5 cm per month. As it grows, the attachment point moves further from the scalp — eventually too far to look or feel natural.",
-      "Tape-ins: 6 – 8 weeks. The tapes start to drift visible around week six.",
       "Nano rings: 8 – 10 weeks. The rings stay in place; we just slide them up.",
       "Keratin bonds: 3 – 4 months. The longest-lasting method, and the slowest refit cycle.",
       "Wefts: 6 – 8 weeks for repositioning. The cornrow base needs to be redone.",
@@ -1099,21 +996,21 @@ export const tips: Tip[] = [
     body: [
       "Sulfates strip the natural oils that keep extension hair flexible. Within a few washes you'll see dryness at the tips and brittleness through the lengths. Read the label — anything ending in '-sulfate' is out.",
       "Alcohol-based products (most drugstore hair sprays, most volumising mousses) dehydrate the hair shaft. The lengths lose their bounce and start looking dull. Look for 'alcohol-free' or 'low-alcohol' on the label.",
-      "Heavy silicones (cyclomethicone, dimethicone) coat the hair, which makes it feel smooth but slowly slips your rings and weakens your tape adhesive. Use silicone-free leave-ins.",
-      "Clarifying shampoos and oil treatments at the root will dissolve any tape adhesive and slip rings. Both are fine on the lengths only — keep them away from the attachment band.",
+      "Heavy silicones (cyclomethicone, dimethicone) coat the hair, which makes it feel smooth but slowly slips your rings. Use silicone-free leave-ins.",
+      "Clarifying shampoos and oil treatments at the root soften keratin bonds and slip rings. Both are fine on the lengths only — keep them away from the attachment band.",
     ],
   },
   {
     slug: "choosing-the-right-method",
     title: "Choosing the right method for your hair",
     excerpt:
-      "Fine hair → nano or tape. Medium-thick → bond or weft. Need it temporary → clip-in or halo. Need volume fast → weft.",
+      "Fine hair → nano ring. Medium-thick → bond or weft. Need it temporary → clip-in or halo. Need volume fast → weft.",
     readingMinutes: 4,
     photo: "/photos/products-2-md.jpg",
     tag: "Choosing",
     body: [
       "The right method is the one that matches your hair density, lifestyle, and timeline. Here's the short version:",
-      "Fine or thin hair: nano ring or tape-in. Both are gentle and lie flat. Avoid heavier methods that can stress fragile hair.",
+      "Fine or thin hair: nano ring. It is gentle and lies flat. Avoid heavier methods that can stress fragile hair.",
       "Medium-to-thick hair: keratin bond, nano ring, or weft. Your hair has the density to hold the attachment without strain. Pick by lifestyle — bonds for low-maintenance, nano rings for versatile styling, wefts for dramatic transformations.",
       "Need it temporary: clip-in. Wear when you want, remove when you don't. Zero damage.",
       "Need volume fast: weft. One full-day appointment, dramatic transformation, brides and special-event clients only.",
@@ -1131,7 +1028,7 @@ export const tips: Tip[] = [
       "Salt water won't damage the bonds, but it will dry out the hair. Rinse with fresh water immediately after the ocean and apply a leave-in conditioner mid-length to ends.",
       "Chlorine is harsher than salt water. If you're swimming in pools regularly, wet your hair with fresh water before the pool — saturated hair absorbs less chlorine. After the pool, rinse and condition.",
       "Direct tropical sun fades colour faster than anywhere else. Tie hair up under a wide-brimmed hat between 11 AM and 3 PM. Yes, your hair colour really does drift if you don't.",
-      "Airport security: the metal detector will not flag nano rings (they're too small). Some scanners detect tape backing — rare. If asked, just say 'hair extensions' — they're entirely common in international travel.",
+      "Airport security: the metal detector will not flag nano rings (they're too small). If asked, just say 'hair extensions' — they're entirely common in international travel.",
       "For carry-on, pack: silk pillowcase, sulfate-free shampoo (decanted into <100 ml bottles), wide-tooth comb, leave-in conditioner. That's the entire travel kit.",
     ],
   },
@@ -1304,14 +1201,10 @@ export const gallery: GalleryItem[] = [
   { src: "/photos/before-after/keratin13-after.jpg", alt: "Same client after — thick brown length, Keratin Bond double 150 g", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/keratin14-before.jpg", alt: "Client before — blonde hair cut to the shoulders", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/keratin14-after.jpg", alt: "Same client after — long blonde length, Keratin Bond double 100 g", category: "before-after", aspect: "tall" },
-  { src: "/photos/before-after/tape3-before.jpg", alt: "Client before — black hair cut to the shoulders", category: "before-after", aspect: "tall" },
-  { src: "/photos/before-after/tape3-after.jpg", alt: "Same client after — long black waves, Tape-In double 150 g", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/keratin15-before.jpg", alt: "Client before — blonde bob with grown-out roots", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/keratin15-after.jpg", alt: "Same client after — long golden blonde, Keratin Bond premium 140 g", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/keratin10-before.jpg", alt: "Client before — mid-length copper curls", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/keratin10-after.jpg", alt: "Same client after — long defined curls, Keratin Bond curly 200 g", category: "before-after", aspect: "tall" },
-  { src: "/photos/before-after/tape2-before.jpg", alt: "Client before — brown bob", category: "before-after", aspect: "tall" },
-  { src: "/photos/before-after/tape2-after.jpg", alt: "Same client after — long copper waves, Tape-In single 150 g", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/keratin11-before.jpg", alt: "Client before — thin black hair to mid-back", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/keratin11-after.jpg", alt: "Same client after — full black length, Keratin Bond double 150 g", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/keratin12-before.jpg", alt: "Client before — dark hair cut to the shoulders", category: "before-after", aspect: "tall" },
@@ -1337,8 +1230,6 @@ export const gallery: GalleryItem[] = [
   { src: "/photos/before-after/nano3-after.jpg", alt: "Same client after — long dark curls, Nano Ring curly 100 g", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/nano5-before.jpg", alt: "Client before — shoulder-length golden blonde, fine through the ends", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/nano5-after.jpg", alt: "Same client after — long golden blonde beach waves, Nano Ring", category: "before-after", aspect: "tall" },
-  { src: "/photos/before-after/tape1-before.jpg", alt: "Client before — long dark hair tapering to thin ends", category: "before-after", aspect: "tall" },
-  { src: "/photos/before-after/tape1-after.jpg", alt: "Same client after — thick glossy dark length, Tape-In 200 g double drawn", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/keratin6-before.jpg", alt: "Client before — blonde hair with fine, tapering ends", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/keratin6-after.jpg", alt: "Same client after — full blonde waves, Keratin Bond 200 g single drawn", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/weft-before.jpg", alt: "Client before — natural black bob, ready for weft installation", category: "before-after", aspect: "tall" },
@@ -1386,8 +1277,6 @@ export const gallery: GalleryItem[] = [
   { src: "/photos/products/nano-ring-applied.jpg", alt: "Nano Rings fitted in a row along a sectioned parting", category: "products", aspect: "tall" },
   { src: "/photos/products/nano-ring-shades.jpg", alt: "Nano Ring beads and tipped strands across the full shade range", category: "products" },
   { src: "/photos/products/nano-ring-beads.jpg", alt: "Micro beads in black and blonde, laid out on straight dark hair", category: "products", aspect: "tall" },
-  { src: "/photos/products/tape-in-wefts.jpg", alt: "Tape-In wefts stacked in three shades on a stone surface", category: "products", aspect: "tall" },
-  { src: "/photos/products/tape-in-applied.jpg", alt: "Tape-In weft sandwiched at the root of dark hair", category: "products", aspect: "tall" },
   { src: "/photos/products/weft-hair-macro.jpg", alt: "Hand-tied weft close-up — fine seam running along the top edge", category: "products", aspect: "tall" },
   { src: "/photos/products/weft-applied.jpg", alt: "Weft sewn into a curved track around the crown", category: "products", aspect: "tall" },
   { src: "/photos/products/weft-rows.jpg", alt: "Weft rows fitted through the back, shown from two angles", category: "products", aspect: "tall" },

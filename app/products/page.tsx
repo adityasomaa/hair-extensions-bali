@@ -4,9 +4,9 @@ import { ScrollReveal, ScrollStagger } from "@/components/animations-gsap";
 import { brand, services, formatIDR } from "@/lib/content";
 
 export const metadata = {
-  title: "Hair Extensions Bali Prices — Keratin, Nano Ring, Weft, Tape-In",
+  title: "Hair Extensions Bali Prices — Keratin, Nano Ring, Weft, Halo Hair",
   description:
-    "Published prices for all six methods: Keratin Bond, Nano Ring, Weft, Tape-In, Halo Hair and Clip-In, from IDR 2,800,000 per 100 g of 100% real human hair.",
+    "Published prices for all five methods: Keratin Bond, Nano Ring, Weft, Halo Hair and Clip-In, from IDR 2,800,000 per 100 g of 100% real human hair.",
   alternates: { canonical: "/products" },
 };
 
@@ -20,7 +20,7 @@ export default function ProductsPage() {
               Hair extension prices · Bali
             </p>
             <h1 className="font-serif text-5xl leading-[1.05] md:text-7xl lg:text-[5.4rem]">
-              Six methods, one obsession with the{" "}
+              Five methods, one obsession with the{" "}
               <span className="font-script italic text-[#ffb6c1]">natural</span> finish.
             </h1>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#c2b3b8]">

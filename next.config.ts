@@ -28,6 +28,13 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        // Tape-In discontinued (Nov 2026) — the old product page goes to the
+        // price overview of the methods we still offer.
+        source: "/products/tape-in",
+        destination: "/products",
+        permanent: true,
+      },
+      {
         // One address for Google: www lands on the bare domain.
         source: "/:path*",
         has: [{ type: "host", value: "www.thehairextensionsbali.com" }],

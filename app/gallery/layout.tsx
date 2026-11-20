@@ -4,7 +4,7 @@ import { brand } from "@/lib/content";
 export const metadata = {
   title: `Hair Extensions Before & After in Bali — ${brand.name}`,
   description:
-    "Real before and after results from our Kerobokan studio: Keratin Bond, Nano Ring, Weft and Tape-In on real clients, added as new work comes in.",
+    "Real before and after results from our Kerobokan studio: Keratin Bond, Nano Ring and Weft on real clients, added as new work comes in.",
   alternates: { canonical: "/gallery" },
 };
 
