@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { MapPin, MessageCircle, Clock, ArrowUpRight } from "lucide-react";
+import { MapPin, MessageCircle, Clock } from "lucide-react";
 import { InstagramIcon as Instagram } from "@/components/icons";
 import { brand } from "@/lib/content";
+import BookCta from "@/components/BookCta";
 
 const groups = [
   {
@@ -19,7 +20,6 @@ const groups = [
       { href: "/products/keratin-bond", label: "Keratin Bond" },
       { href: "/products/nano-ring", label: "Nano Ring" },
       { href: "/products/weft", label: "Weft (Sew-In)" },
-      { href: "/products/tape-in", label: "Tape-In" },
       { href: "/products/halo-hair", label: "Halo Hair" },
       { href: "/products/clip-in", label: "Clip-In" },
     ],
@@ -44,7 +44,7 @@ export default function Footer() {
             </Link>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-[#b5a3a8]">
               Premium hair extensions, expertly applied in the heart of Bali.
-              International-quality hair, six methods, family feeling.
+              International-quality hair, five methods, family feeling.
             </p>
 
             <div className="mt-8 space-y-3 text-sm">
@@ -105,17 +105,7 @@ export default function Footer() {
 
           {/* Book CTA */}
           <div className="md:col-span-2 md:flex md:flex-col md:items-stretch md:justify-end">
-            <Link
-              href="/book"
-              className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#ffb6c1] px-7 py-4 text-sm font-medium text-[#0e0b09] transition-all hover:bg-[#ffc9d2]"
-            >
-              <MessageCircle className="h-4 w-4" aria-hidden />
-              Book a consultation
-              <ArrowUpRight
-                className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                aria-hidden
-              />
-            </Link>
+            <BookCta className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#ffb6c1] px-7 py-4 text-sm font-medium text-[#0e0b09] transition-all hover:bg-[#ffc9d2]" />
           </div>
         </div>
 

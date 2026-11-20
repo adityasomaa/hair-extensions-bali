@@ -80,7 +80,7 @@ function buildJsonLd(reviews: { rating: number; quote: string; name: string }[])
       name: brand.name,
       alternateName: brand.shortName,
       description:
-        "Bali's largest hair extension shop, located in Kerobokan (kami toko rambut, bukan salon). We specialise in hair extensions only — no cuts, colour, or styling. 100+ shades on display, six expert application methods (keratin bond, nano ring, weft, tape-in, halo hair, clip-in), 100% real human hair including Remy and Indonesian-sourced grades. Transparent published pricing, walk-in or by appointment.",
+        "Bali's largest hair extension shop, located in Kerobokan (kami toko rambut, bukan salon). We specialise in hair extensions only — no cuts, colour, or styling. 100+ shades on display, five expert application methods (keratin bond, nano ring, weft, halo hair, clip-in), 100% real human hair including Remy and Indonesian-sourced grades. Transparent published pricing, walk-in or by appointment.",
       url: siteUrl,
       telephone: brand.whatsapp,
       image: [`${siteUrl}/photos/hero-rack.jpg`, `${siteUrl}/photos/salon-1.jpg`],
@@ -179,7 +179,7 @@ function buildJsonLd(reviews: { rating: number; quote: string; name: string }[])
 export const metadata = {
   title: `${brand.name} — Bali's Largest Hair Extension Shop in Kerobokan`,
   description:
-    "Hair extensions in Bali: 100+ shades of 100% real human hair and six methods, fitted in Kerobokan near Seminyak and Canggu. Published prices, book on WhatsApp.",
+    "Hair extensions in Bali: 100+ shades of 100% real human hair and five methods, fitted in Kerobokan near Seminyak and Canggu. Published prices, book on WhatsApp.",
   alternates: { canonical: "/" },
   keywords: [
     "hair shop bali",
@@ -189,7 +189,6 @@ export const metadata = {
     "toko rambut bali",
     "toko hair extension bali",
     "keratin bond bali",
-    "tape-in extensions bali",
     "nano ring extensions bali",
     "weft extensions bali",
     "clip-in extensions bali",
@@ -241,8 +240,8 @@ export default async function HomePage() {
               <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#c2b3b8] md:text-xl">
                 Bali&rsquo;s largest hair extension shop, in the heart of
                 Kerobokan. 100+ shades on display — Remy and Indonesian-grade
-                real human hair — installed using six expert methods: keratin
-                bond, nano ring, weft, tape-in, halo hair, and clip-in.
+                real human hair — installed using five expert methods: keratin
+                bond, nano ring, weft, halo hair, and clip-in.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.4} duration={0.6}>
@@ -316,7 +315,7 @@ export default async function HomePage() {
       <div className="overflow-hidden border-y border-white/5 bg-[#0a0807] py-5">
         <div className="flex animate-[marquee_35s_linear_infinite] gap-12 whitespace-nowrap font-serif text-[#ab9aa1] text-xl tracking-wide">
           {Array.from({ length: 4 }).flatMap((_, i) =>
-            ["Keratin Bond", "Nano Ring", "Weft", "Tape-In", "Halo Hair", "Clip-In", "—"].map(
+            ["Keratin Bond", "Nano Ring", "Weft", "Halo Hair", "Clip-In", "—"].map(
               (s, j) => (
                 <span key={`${i}-${j}`} className="italic">
                   {s}
@@ -473,7 +472,7 @@ export default async function HomePage() {
                 Our services
               </p>
               <h2 className="font-serif text-4xl leading-tight md:text-5xl lg:text-6xl">
-                Six methods, one obsession with the{" "}
+                Five methods, one obsession with the{" "}
                 <span className="font-script italic text-[#ffb6c1]">natural</span> finish.
               </h2>
             </div>

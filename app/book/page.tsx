@@ -35,7 +35,7 @@ export default function BookPage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-28">
+      <section id="booking-form" className="scroll-mt-24 py-20 md:py-28">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 md:grid-cols-12 md:gap-16">
           {/* FORM */}
           <ScrollReveal className="md:col-span-7">
