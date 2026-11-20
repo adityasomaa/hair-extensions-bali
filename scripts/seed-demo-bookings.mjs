@@ -15,7 +15,7 @@ const DEMO = [
   [1, "12:00", 180, 1, "Emma Wilson", "+61 400 000 101", "Keratin Bond or Nano Ring installation", "shoulder length, fine, light brown; wants 55 cm keratin bond"],
   [1, "12:30", 150, 2, "Sari Dewi", "+62 812 0000 0102", "Weft (sew-in) installation", "long, thick, black; wants more volume, weft 150 g"],
   [1, "15:30", 30, 1, "Chloe Martin", "+61 400 000 103", "Shop visit & colour match", "bob, blonde balayage; undecided on method"],
-  [1, "16:00", 90, 2, "Olivia Brown", "+44 7700 000104", "Tape-in installation", "mid-length, fine, dark blonde; 40 pieces tape-in"],
+  [1, "16:00", 120, 2, "Olivia Brown", "+44 7700 000104", "Maintenance / move-up", "existing nano rings, 2 months old, move-up"],
   [2, "12:00", 120, 1, "Jessica Taylor", "+61 400 000 105", "Maintenance / move-up", "existing keratin bonds from us, 3 months old"],
   [2, "13:00", 180, 2, "Ayu Lestari", "+62 813 0000 0106", "Keratin Bond or Nano Ring installation", "short, very fine, dark brown; nano ring 100 g"],
   [2, "15:00", 30, 1, "Mia Thompson", "+61 400 000 107", "Halo or clip-in fitting", "long, thin ends; halo 50 cm"],
