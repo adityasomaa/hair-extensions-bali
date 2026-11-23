@@ -1,7 +1,7 @@
 import { randomBytes } from "node:crypto";
 import { del, get, list, put } from "@vercel/blob";
 import { closingTime, describeDate, freeInstructors, freeSlots, isDate, nextFreeDay, today, toMinutes, toTime, type Entry } from "./schedule";
-import { serviceByName, shop, type Pool, type Service } from "./shop";
+import { cleanGrams, hoursLabel, minutesFor, serviceByName, shop, type Pool, type Service } from "./shop";
 
 export type Booking = {
   code: string;
@@ -14,11 +14,15 @@ export type Booking = {
   notes: string;
   channel: string;
   createdAt: string;
+  /** Grams of hair for installations. */
+  grams?: number;
+  /** Private blob paths of photos the visitor attached in the chat. */
+  photos?: string[];
 };
 
-export type BookingRequest = Pick<Booking, "name" | "mobile" | "service" | "date" | "time" | "hair" | "notes">;
-export type AvailabilityRequest = Pick<Booking, "service" | "date">;
-export type Sender = { channel: string; sender: string };
+export type BookingRequest = Pick<Booking, "name" | "mobile" | "service" | "date" | "time" | "hair" | "notes"> & { grams?: number };
+export type AvailabilityRequest = Pick<Booking, "service" | "date"> & { grams?: number };
+export type Sender = { channel: string; sender: string; photos?: string[] };
 
 const WINDOW_MS = 60 * 60 * 1000;
 const MAX_PER_WINDOW = 3;
@@ -82,14 +86,17 @@ function limited(sender: string) {
   return times.length >= MAX_PER_WINDOW;
 }
 
-const slotsFor = (service: Service, date: string, taken: Entry[]) => freeSlots(service.pool, date, service.minutes, 1, taken);
+const slotsFor = (service: Service, minutes: number, date: string, taken: Entry[]) => freeSlots(service.pool, date, minutes, 1, taken);
 
-export async function availability({ service: name, date }: AvailabilityRequest) {
+export async function availability({ service: name, date, grams: rawGrams }: AvailabilityRequest) {
   const service = serviceByName(name);
   if (!service) return { date, free_times: [] };
+  const grams = cleanGrams(rawGrams);
+  const minutes = minutesFor(service, grams);
   const taken = await entries();
-  const free = slotsFor(service, date, taken);
-  if (free.length) return { date, weekday: describeDate(date), service: service.name, free_times: free, length: service.length };
+  const free = slotsFor(service, minutes, date, taken);
+  if (free.length)
+    return { date, weekday: describeDate(date), service: service.name, ...(service.perHundred ? { grams } : {}), free_times: free, length: hoursLabel(minutes) };
   // Say why, so "nothing left today" isn't reported as "fully booked"
   const why =
     date === today() ? "No more appointment times today." : !closingTime(date) ? "The showroom is closed that day." : "Fully booked that day.";
@@ -97,7 +104,7 @@ export async function availability({ service: name, date }: AvailabilityRequest)
     date,
     free_times: [],
     why,
-    next_available: nextFreeDay(service.pool, date, service.minutes, 1, taken),
+    next_available: nextFreeDay(service.pool, date, minutes, 1, taken),
   };
 }
 
@@ -114,17 +121,19 @@ export async function createBooking(input: BookingRequest, from: Sender) {
   if (!service) return { booked: false as const, reason: "That isn't one of the services." };
   if (limited(from.sender)) return { booked: false as const, reason: "Too many bookings from this visitor. Please message the team on WhatsApp." };
 
+  const grams = cleanGrams(input.grams);
+  const minutes = minutesFor(service, grams);
   const taken = await entries();
   const refused = {
     booked: false as const,
     reason: "That time isn't free.",
-    free_times: isDate(input.date) ? slotsFor(service, input.date, taken) : [],
+    free_times: isDate(input.date) ? slotsFor(service, minutes, input.date, taken) : [],
   };
   if (!refused.free_times.includes(input.time)) return refused;
 
   const start = toMinutes(input.time);
   const code = `HE-${randomBytes(2).toString("hex").toUpperCase()}`;
-  const slot = freeInstructors(service.pool, input.date, start, service.minutes, taken)[0];
+  const slot = freeInstructors(service.pool, input.date, start, minutes, taken)[0];
   const ok = await reserve(
     {
       code,
@@ -137,8 +146,10 @@ export async function createBooking(input: BookingRequest, from: Sender) {
       notes: input.notes.trim().slice(0, 500),
       channel: from.channel,
       createdAt: new Date().toISOString(),
+      ...(service.perHundred ? { grams } : {}),
+      ...(from.photos?.length ? { photos: from.photos } : {}),
     },
-    service,
+    { minutes, pool: service.pool },
     slot,
   );
   if (!ok) return refused;
@@ -151,7 +162,8 @@ export async function createBooking(input: BookingRequest, from: Sender) {
     hair,
     weekday: describeDate(input.date),
     time: input.time,
-    ends: toTime(start + service.minutes),
+    ends: toTime(start + minutes),
+    ...(from.photos?.length ? { photos_saved: from.photos.length } : {}),
     address: shop.addressShort,
     next_steps:
       service.id === "visit"

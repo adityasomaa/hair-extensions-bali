@@ -8,7 +8,7 @@ import CustomSelect from "@/components/CustomSelect";
 // Staff calendar for the studio: one day at a time, a column per stylist. It reads and
 // writes the same appointments the AI receptionist books, through /api/admin/bookings.
 
-type Service = { name: string; minutes: number };
+type Service = { name: string; minutes: number; perHundred: number | null };
 type Row = {
   path: string;
   code: string;
@@ -23,6 +23,8 @@ type Row = {
   hair: string;
   notes: string;
   channel: string;
+  grams?: number;
+  photos?: string[];
 };
 type Day = {
   date: string;
@@ -499,8 +501,10 @@ function Agenda({ day, onOpen, onNew }: { day: Day; onOpen: (r: Row) => void; on
               </span>
               <span>{b.code}</span>
             </p>
+            {b.grams && <p className="mt-2 text-[13px] text-[#c2b3b8]">Gramasi: {b.grams} g</p>}
             {b.hair && <p className="mt-2 text-[13px] text-[#c2b3b8]">Rambut: {b.hair}</p>}
             {b.notes && <p className="text-[13px] text-[#c2b3b8]">Catatan: {b.notes}</p>}
+            {b.photos?.length ? <Photos paths={b.photos} /> : null}
           </div>
           <div className="flex gap-2 sm:flex-col">
             <button onClick={() => onOpen(b)} className={btnGhost}>
@@ -613,7 +617,10 @@ function Editor({
                   const s = day.services.find((x) => x.name === v);
                   setF((p) => ({ ...p, service: v, minutes: s?.minutes ?? p.minutes }));
                 }}
-                options={day.services.map((s) => ({ value: s.name, label: `${s.name} · ${duration(s.minutes)}` }))}
+                options={day.services.map((s) => ({
+                  value: s.name,
+                  label: `${s.name} · ${s.perHundred ? `${duration(s.perHundred)} per 100 g` : duration(s.minutes)}`,
+                }))}
               />
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
@@ -647,6 +654,12 @@ function Editor({
 
           <fieldset className="space-y-4">
             <legend className="mb-3 font-serif text-[18px]">Klien</legend>
+            {(initial as Partial<Row>).photos?.length ? (
+              <div>
+                <p className={labelCls}>Foto dari chat</p>
+                <Photos paths={(initial as Partial<Row>).photos!} />
+              </div>
+            ) : null}
             <div>
               <label htmlFor="f-name" className={labelCls}>Nama</label>
               <input id="f-name" required value={f.name} onChange={(e) => set("name", e.target.value)} className={`${input} mt-2`} />
@@ -696,6 +709,22 @@ function Editor({
           )}
         </div>
       </form>
+    </div>
+  );
+}
+
+function Photos({ paths }: { paths: string[] }) {
+  return (
+    <div className="mt-2 flex gap-2">
+      {paths.map((p) => {
+        const src = `/api/admin/photo?path=${encodeURIComponent(p)}`;
+        return (
+          <a key={p} href={src} target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-sm border border-white/10 hover:border-[#ffb6c1]/60">
+            {/* eslint-disable-next-line @next/next/no-img-element -- private, auth-gated image */}
+            <img src={src} alt="Foto rambut dari klien" className="h-24 w-20 object-cover" loading="lazy" />
+          </a>
+        );
+      })}
     </div>
   );
 }

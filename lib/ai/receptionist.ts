@@ -1,7 +1,7 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { availability, createBooking, type AvailabilityRequest, type BookingRequest, type Sender } from "./bookings";
 import { serviceNames, shop } from "./shop";
-import { contextBlock, SYSTEM_PROMPT } from "./prompt";
+import { contextBlock, SYSTEM_PROMPT, type Lang } from "./prompt";
 
 // The receptionist itself, independent of where the conversation happens: the website's
 // /api/chat is one channel, and WhatsApp or Instagram can call reply() the same way.
@@ -14,6 +14,14 @@ const MAX_TOOL_ROUNDS = 4;
 const client = new Anthropic();
 
 const SERVICE = { type: "string", enum: serviceNames, description: "The appointment type, exactly as named in the list." };
+const GRAMS = {
+  type: "integer",
+  description: "Grams of hair for an installation (it sets how long the appointment is). 100 if they don't know yet, and 100 for appointments that aren't installations.",
+};
+const MAINTENANCE_METHODS = ["Keratin Bond", "Nano Ring", "Weft", "all"];
+
+/** Shown to the visitor as a price table in the chat, not as text. */
+export const tableMarker = (method: string) => `[[maintenance:${method.toLowerCase().replace(/\s+/g, "-")}]]`;
 
 const TOOLS: Anthropic.Tool[] = [
   {
@@ -26,8 +34,9 @@ const TOOLS: Anthropic.Tool[] = [
       properties: {
         service: SERVICE,
         date: { type: "string", description: "The date, as YYYY-MM-DD." },
+        grams: GRAMS,
       },
-      required: ["service", "date"],
+      required: ["service", "date", "grams"],
       additionalProperties: false,
     },
   },
@@ -42,12 +51,27 @@ const TOOLS: Anthropic.Tool[] = [
         name: { type: "string", description: "The customer's full name." },
         mobile: { type: "string", description: "The customer's WhatsApp number, as given." },
         service: SERVICE,
+        grams: GRAMS,
         date: { type: "string", description: "The date, as YYYY-MM-DD." },
         time: { type: "string", description: "A time from check_availability, as HH:MM." },
         hair: { type: "string", description: "Their natural hair and the result they want, as they described it, e.g. 'shoulder length, fine, dark brown; wants 50 cm, keratin bond'." },
         notes: { type: "string", description: "Garments and how many, style or colour in mind, number of people in a wedding party, budget if mentioned. Empty if none." },
       },
-      required: ["name", "mobile", "service", "date", "time", "hair", "notes"],
+      required: ["name", "mobile", "service", "grams", "date", "time", "hair", "notes"],
+      additionalProperties: false,
+    },
+  },
+  {
+    name: "show_maintenance_prices",
+    description:
+      "Show the maintenance price table (remove, re-install, new glue, weft repositioning; with hair bought from us and with outside hair) in the chat. Use it whenever someone asks about maintenance, move-ups, refits or removal prices.",
+    strict: true,
+    input_schema: {
+      type: "object",
+      properties: {
+        method: { type: "string", enum: MAINTENANCE_METHODS, description: "The method they asked about, or all." },
+      },
+      required: ["method"],
       additionalProperties: false,
     },
   },
@@ -56,9 +80,11 @@ const TOOLS: Anthropic.Tool[] = [
 async function runTool(tool: Anthropic.ToolUseBlock, from: Sender): Promise<Anthropic.ToolResultBlockParam> {
   try {
     const result =
-      tool.name === "check_availability"
-        ? await availability(tool.input as AvailabilityRequest)
-        : await createBooking(tool.input as BookingRequest, from);
+      tool.name === "show_maintenance_prices"
+        ? { shown: true, note: "The visitor now sees the table. Don't repeat the numbers; add one short line at most." }
+        : tool.name === "check_availability"
+          ? await availability(tool.input as AvailabilityRequest)
+          : await createBooking(tool.input as BookingRequest, from);
     return { type: "tool_result", tool_use_id: tool.id, content: JSON.stringify(result) };
   } catch (err) {
     console.error("[receptionist] tool error", tool.name, err instanceof Error ? err.message : err);
@@ -67,7 +93,7 @@ async function runTool(tool: Anthropic.ToolUseBlock, from: Sender): Promise<Anth
 }
 
 /** Streams the receptionist's reply, running its tools along the way. */
-export async function* reply(messages: Anthropic.MessageParam[], from: Sender): AsyncGenerator<string> {
+export async function* reply(messages: Anthropic.MessageParam[], from: Sender, lang: Lang = "en"): AsyncGenerator<string> {
   const convo = [...messages];
   let sent = false;
 
@@ -80,7 +106,7 @@ export async function* reply(messages: Anthropic.MessageParam[], from: Sender): 
       tools: TOOLS,
       system: [
         { type: "text", text: SYSTEM_PROMPT, cache_control: { type: "ephemeral" } },
-        { type: "text", text: contextBlock() },
+        { type: "text", text: contextBlock(new Date(), lang) },
       ],
       messages: convo,
     });
@@ -115,6 +141,12 @@ export async function* reply(messages: Anthropic.MessageParam[], from: Sender): 
 
     if (wrote) yield "\n\n";
     const calls = final.content.filter((b): b is Anthropic.ToolUseBlock => b.type === "tool_use");
+    for (const c of calls) {
+      if (c.name === "show_maintenance_prices") {
+        yield `${tableMarker(String((c.input as { method?: string }).method ?? "all"))}\n\n`;
+        sent = true;
+      }
+    }
     convo.push({ role: "assistant", content: final.content });
     convo.push({ role: "user", content: await Promise.all(calls.map((c) => runTool(c, from))) });
   }

@@ -95,6 +95,9 @@ export async function saveBooking(input: AdminInput, previous?: string) {
     notes: input.notes,
     channel: old?.channel ?? "admin",
     createdAt: old?.createdAt ?? new Date().toISOString(),
+    // Keep what the chat collected (grams, the visitor's photos) when staff edit the time.
+    ...(old?.grams ? { grams: old.grams } : {}),
+    ...(old?.photos?.length ? { photos: old.photos } : {}),
   };
   const path = `bookings/${input.date}/${input.time.replace(":", "")}-${input.minutes}-${input.stylist}.json`;
 
@@ -124,5 +127,5 @@ export const dayInfo = (date: string) => ({
   closes: closingTime(date),
   botFrom: schedule.starts[0],
   stylists,
-  services: services.map((s) => ({ name: s.name, minutes: s.minutes })),
+  services: services.map((s) => ({ name: s.name, minutes: s.minutes, perHundred: s.perHundred ?? null })),
 });
