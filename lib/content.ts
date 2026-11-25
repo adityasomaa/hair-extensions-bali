@@ -1063,6 +1063,24 @@ export const gallery: GalleryItem[] = [
   // Before & After — real client photos
   // August 2026 batch, straight from the studio's WhatsApp drops.
   // Newest first so the gallery opens on the most recent work.
+  // 24 November 2026 — one pair, captioned "nano ring single 100gr" in the group.
+  { src: "/photos/before-after/nano16-before.jpg", alt: "Client before — damp copper hair just past the shoulders, thin at the ends", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/nano16-after.jpg", alt: "Same client after — long copper waves with a full hemline, Nano Ring single 100 g", category: "before-after", aspect: "tall" },
+  // 23 November 2026 — one pair, captioned "Keratin Double 150gr" in the group.
+  { src: "/photos/before-after/keratin39-before.jpg", alt: "Client before — wavy blonde balayage cut above the shoulder blades", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin39-after.jpg", alt: "Same client after — long honey-blonde waves to the chair back, Keratin Bond double 150 g", category: "before-after", aspect: "tall" },
+  // 22 November 2026 — one pair, captioned "Weft 100gr Double" in the group.
+  { src: "/photos/before-after/weft21-before.jpg", alt: "Client before — ash-blonde hair, thin and uneven below the shoulders", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/weft21-after.jpg", alt: "Same client after — sleek straight blonde length with a blunt, even hemline, Weft double 100 g", category: "before-after", aspect: "tall" },
+  // 21 November 2026 — two pairs, captioned "Nano ring 100gr double straight" and
+  // "Keratin 150gr Double" in the group.
+  { src: "/photos/before-after/nano15-before.jpg", alt: "Client before — straight dark brown hair, thinner through the lengths", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/nano15-after.jpg", alt: "Same client after — fuller straight dark brown length, Nano Ring double 100 g", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin38-before.jpg", alt: "Client before — straight dark-blonde hair to the shoulder blades", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin38-after.jpg", alt: "Same client after — long caramel waves past the chair back, Keratin Bond double 150 g", category: "before-after", aspect: "tall" },
+  // 18 November 2026 — one pair, captioned "Keratin Single 200gr" in the group.
+  { src: "/photos/before-after/keratin37-before.jpg", alt: "Client before — platinum blonde hair cut to the shoulders", category: "before-after", aspect: "tall" },
+  { src: "/photos/before-after/keratin37-after.jpg", alt: "Same client after — long platinum length down the back, Keratin Bond single 200 g", category: "before-after", aspect: "tall" },
   // 16 November 2026, evening — one pair, captioned "Keratin single 100gr" in the group.
   { src: "/photos/before-after/keratin36-before.jpg", alt: "Client before — damp, shoulder-length dark-blonde hair, thin and uneven at the ends", category: "before-after", aspect: "tall" },
   { src: "/photos/before-after/keratin36-after.jpg", alt: "Same client after — long honey-blonde waves past the chair back, Keratin Bond single 100 g", category: "before-after", aspect: "tall" },
